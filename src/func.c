@@ -17,7 +17,7 @@
 #include <string.h>
 
 Vector2 sSize = {SWIDTH, SHEIGHT};
-
+int noiseRange = NOISERANGE;
 
 /**
  * @brief Cria um elemento para a lista de elementos
@@ -28,11 +28,11 @@ Vector2 sSize = {SWIDTH, SHEIGHT};
  */
 Node *MakeNode(char value, Vector2 position)
 {
-    if (!NodeInBounds(position)){
-        printf("\n Posicao {%d,%d} fora da matrix! Elemeto discartado.", position.x,  position.y);
+    if (!NodeInBounds(position))
+    {
+        printf("\n Posicao {%d,%d} fora da matrix! Elemeto discartado.", position.x, position.y);
         return NULL;
     }
-        
 
     Node *p = (Node *)malloc(sizeof(Node));
 
@@ -72,16 +72,17 @@ Node *InsertNode(Node *dnew, Node *st)
     if (dnew == NULL)
         return st;
 
-    if (!ValidNodePos(dnew, st)){
+    if (!ValidNodePos(dnew, st))
+    {
         if (dnew->value != '#')
         {
-            printf("\n Posicao {%d,%d} ocupada! Elemeto %c discartado.", dnew->pos.x,  dnew->pos.y,dnew->value );
+            printf("\n Posicao {%d,%d} ocupada! Elemeto %c discartado.", dnew->pos.x, dnew->pos.y, dnew->value);
         }
-        
+
         free(dnew);
         return st;
     }
-        
+
     dnew->next = st;
     st = dnew;
 
@@ -92,9 +93,11 @@ Node *InsertNode(Node *dnew, Node *st)
 
 Node *RemoveNode(Node *rm, Node *st)
 {
-    if (rm == NULL) return st;
-    if (st == NULL) return st;
-    
+    if (rm == NULL)
+        return st;
+    if (st == NULL)
+        return st;
+
     Node *current = st;
     Node *aux;
 
@@ -123,6 +126,9 @@ Node *RemoveNode(Node *rm, Node *st)
 
 Node *ClearNoise(Node *st)
 {
+    if (st == NULL)
+        return st;
+
     Node *current = st;
     Node *aux;
 
@@ -172,9 +178,9 @@ Node *NoiseCheck(Node *st)
         cpos.x = current->pos.x;
         cpos.y = current->pos.y;
 
-        for (int y = -NOISERANGE; y <= NOISERANGE; y++)
+        for (int y = -noiseRange; y <= noiseRange; y++)
         {
-            for (int x = -NOISERANGE; x <= NOISERANGE; x++)
+            for (int x = -noiseRange; x <= noiseRange; x++)
             {
 
                 if (!NodeInBounds((Vector2){cpos.x + x, cpos.y + y}) || (x == 0 && y == 0))
@@ -246,9 +252,6 @@ bool Vector2Compare(Vector2 a, Vector2 b)
 void DrawMatrix(Node *st)
 {
 
-    if (st == NULL)
-        return;
-
     Node *tp;
     Vector2 tpos;
 
@@ -257,6 +260,12 @@ void DrawMatrix(Node *st)
         printf("\n");
         for (int x = 0; x < sSize.x; x++)
         {
+            if (st == NULL)
+            {
+                printf(". ");
+                continue;
+            }
+
             tp = FindNodePos(st, (Vector2){x, y});
             if (tp != NULL)
             {
@@ -283,36 +292,41 @@ Node *ReadListFile(const char *filename)
     Node *st = NULL;
     int y = 0;
     int x = 0;
-    int height, width = 0;
     char ch;
 
-    while ((ch = fgetc(file)) != EOF) {
-        
-        if (ch == ' ') continue;
+    while ((ch = fgetc(file)) != EOF)
+    {
+
+        if (ch == ' ')
+            continue;
 
         if (ch != '.' && ch != ' ' && ch != '\n' && ch != '#')
         {
             printf("\n (%d, %d), %c", x, y, ch);
             st = InsertNode(MakeNode(ch, (Vector2){x, y}), st);
             x++;
-        }else if (ch == '.'){
+        }
+        else if (ch == '.')
+        {
             x++;
         }
-        
-        width = (ch == '\n' && y == 0) ? x : width;
+
+        if (x > sSize.x)
+        {
+            sSize.x = x;
+        }
 
         if (ch == '\n')
         {
-            x=0;
+            x = 0;
             y++;
+            if (y + 1 > sSize.y)
+            {
+                sSize.y = y + 1;
+            }
         }
     }
-    height = y+1;
-    
-    sSize.x = width;
-    sSize.y = height;
 
-    printf ("\n Standard size: %d, %d", width, height);
     /*
     while (fgets(line, sSize.x*2+2, file))
     {
@@ -336,7 +350,8 @@ Node *ReadListFile(const char *filename)
 
 void SaveList(const char *filename, Node *st)
 {
-    if (st == NULL) return;
+    if (st == NULL)
+        return;
     Node *tp;
     Vector2 tpos;
     FILE *file = fopen(filename, "w");
@@ -348,8 +363,9 @@ void SaveList(const char *filename, Node *st)
 
     for (int y = 0; y < sSize.y; y++)
     {
-        if (y != 0 ) fprintf(file,"\n");
-        
+        if (y != 0)
+            fprintf(file, "\n");
+
         for (int x = 0; x < sSize.x; x++)
         {
             tp = FindNodePos(st, (Vector2){x, y});
@@ -362,9 +378,7 @@ void SaveList(const char *filename, Node *st)
                 fprintf(file, ".");
             }
             fprintf(file, " ");
-
         }
-        
     }
     fclose(file);
 }
@@ -376,17 +390,21 @@ void DrawMenu()
     printf("\n 2 -> Remove element;");
     printf("\n 3 -> Show matrix;");
     printf("\n 4 -> Show list;");
-    printf("\n 5 -> Load file;");
-    printf("\n 6 -> Save file;");
+    printf("\n 5 -> Show noise;");
+    printf("\n 6 -> Load file;");
+    printf("\n 7 -> Save file;");
+    printf("\n 8 -> Settings;");
     printf("\n 0 -> Exit;\n");
 }
 
 void Menu(Node *st)
 {
-    
+
     int op = 0;
     Vector2 pos;
     char value;
+    int range;
+    char filename[MAXINPUT];
     do
     {
         DrawMenu();
@@ -418,13 +436,53 @@ void Menu(Node *st)
             Pause();
             break;
         case 4:
-            ShowList(st);
+            ShowList(st, '.');
             break;
         case 5:
-            st = ReadListFile("file.txt");
+            ShowList(st, '#');
             break;
         case 6:
-            SaveList("file.txt", st);
+            printf("\n Insert file name (default:%s) : ", SFILE);
+            scanf("%s", filename);
+            if (strcmp(filename, " ")== 0)
+            {
+                st = ReadListFile(SFILE);
+            }else{
+                st = ReadListFile(filename);
+            }
+            break;
+        case 7:
+            printf("\n Insert file name (default:%s) : ", SFILE);
+            scanf("%s", filename);
+            if (strcmp(filename, " ")== 0)
+            {
+                SaveList(SFILE, st);
+            }else{
+                SaveList(filename, st);
+            }
+            break;
+        case 8:
+            getchar();
+            printf("\n a -> Change Scale (current: {%d, %d})", sSize.x, sSize.y);
+            printf("\n b -> Change Noise range (current: %d)", noiseRange);
+            printf("\n Choose option: ");
+            int o = getchar();
+            if (o == 'a')
+            {
+                printf("\n Insert scale (type:vector2int) x,y: ");
+                scanf("%d,%d", &pos.x, &pos.y);
+                sSize.x = pos.x;
+                sSize.y = pos.y;
+            }else if (0 == 'b')
+            {
+                printf("\n Insert scale (type:vector2int) x,y: ");
+                scanf("%d", range);
+                noiseRange = range;
+                st = ClearNoise(st);
+                st = NoiseCheck(st);
+            }else{
+                printf("\n Invalid option, try again.");
+            }
             break;
         default:
             printf("\n Invalid option, try again.");
@@ -439,10 +497,11 @@ void DrawCommands()
     printf("\n\n ..... Commands .....");
     printf("\n > add [char] [x,y]");
     printf("\n > remove [x,y]");
-    printf("\n > show matrix");
-    printf("\n > show list");
+    printf("\n > show [matrix|list|noise]");
     printf("\n > load [filename.txt]");
     printf("\n > save [filename.txt]");
+    printf("\n > set scale [x,y]");
+    printf("\n > set noiseRange [int]");
     printf("\n > exit\n");
 }
 
@@ -462,11 +521,11 @@ void CommandIO(Node *st)
 
         char *command = strtok(ip, " ");
 
-        if (command == NULL){
+        if (command == NULL)
+        {
             printf("\n No commands detected, try again.");
             continue;
         }
-           
 
         if (strcmp(command, "add") == 0)
         {
@@ -480,9 +539,10 @@ void CommandIO(Node *st)
                 pos.x = atoi(arg2);
                 pos.y = atoi(arg3);
                 st = InsertNode(MakeNode(value, (Vector2){pos.x, pos.y}), st);
-            }else{
+            }
+            else
+            {
                 printf("\nMissing parameter! [char] [x,y].");
-
             }
         }
         else if (strcmp(command, "remove") == 0)
@@ -495,9 +555,9 @@ void CommandIO(Node *st)
                 pos.y = atoi(arg2);
                 st = RemoveNode(FindNodePos(st, pos), st);
             }
-            else{
+            else
+            {
                 printf("\nMissing parameter! [x,y].");
-
             }
         }
         else if (strcmp(command, "show") == 0)
@@ -505,20 +565,27 @@ void CommandIO(Node *st)
             char *arg1 = strtok(NULL, " ");
             if (arg1 != NULL)
             {
-                if (strcmp(arg1, "matrix")==0)
+                if (strcmp(arg1, "matrix") == 0)
                 {
                     DrawMatrix(st);
                     Pause();
                 }
-                else if (strcmp(arg1, "list")==0)
+                else if (strcmp(arg1, "list") == 0)
                 {
-                    ShowList(st);
-                }else{
+                    ShowList(st, '.');
+                }
+                else if (strcmp(arg1, "noise") == 0)
+                {
+                    ShowList(st, '#');
+                }
+                else
+                {
                     printf("\nInvalid parameter! (matrix,list).");
                 }
-
-            }else{
-                //printf("\nMissing parameter! (matrix,list).");
+            }
+            else
+            {
+                // printf("\nMissing parameter! (matrix,list).");
                 DrawMatrix(st);
                 Pause();
             }
@@ -529,7 +596,9 @@ void CommandIO(Node *st)
             if (arg1 != NULL)
             {
                 st = ReadListFile(arg1);
-            }else{
+            }
+            else
+            {
                 st = ReadListFile(SFILE);
             }
         }
@@ -539,25 +608,82 @@ void CommandIO(Node *st)
             if (arg1 != NULL)
             {
                 SaveList(arg1, st);
-            }else{
+            }
+            else
+            {
                 SaveList(SFILE, st);
             }
-        }else if (strcmp(ip, "exit") != 0)
+        }
+        else if (strcmp(command, "set") == 0)
+        {
+            char *arg1 = strtok(NULL, " ");
+            if (arg1 != NULL)
+            {
+                if (strcmp(arg1, "scale") == 0)
+                {
+                    char *arg2 = strtok(NULL, ", ");
+                    char *arg3 = strtok(NULL, ", ");
+                    if (arg2 != NULL && arg3 != NULL)
+                    {
+                        sSize.x = atoi(arg2);
+                        sSize.y = atoi(arg3);
+                        printf("\n Matrix limits set to : {%d, %d}", sSize.x, sSize.y);
+                    }
+                    else
+                    {
+                        printf("\n Matrix limits set to : {%d, %d}", sSize.x, sSize.y);
+                    }
+                }
+                else if (strcmp(arg1, "noiseRange") == 0)
+                {
+                    char *arg2 = strtok(NULL, " ");
+                    if (arg2 != NULL)
+                    {
+                        noiseRange = atoi(arg2);
+                        st = ClearNoise(st);
+                        st = NoiseCheck(st);
+                        printf("\n Noise range set to : %d", noiseRange);
+                    }
+                    else
+                    {
+                        printf("\n Noise range set to : %d", noiseRange);
+                    }
+                }
+                else
+                {
+                    printf("\nInvalid parameter! (scale, noiseRange).");
+                }
+            }
+        }
+        else if (strcmp(ip, "exit") != 0)
         {
             printf("\n No valid commands detected, try again.");
         }
-        
 
     } while (strcmp(ip, "exit") != 0);
 }
 
-void ShowList(Node *st)
+void ShowList(Node *st, char filter)
 {
     Node *current = st;
-    printf("\n List: ");
+    printf("\n| Value | Position |");
     while (current != NULL)
     {
-        printf("%c\t", current->value);
+        if (filter == '.')
+        {
+            printf("\n|   %c   | ", current->value);
+            printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
+            // printf("%c\t", current->value);
+        }
+        else
+        {
+            if (current->value == filter)
+            {
+                printf("\n|   %c   | ", current->value);
+                printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
+            }
+        }
+
         current = current->next;
     }
 }

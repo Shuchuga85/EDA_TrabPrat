@@ -62,7 +62,7 @@ void DrawCommands();
 
 void CommandIO(Node* st);
 
-void ShowList(Node *st);
+void ShowList(Node *st, char filter);
 
 void Pause();
 
