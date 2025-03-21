@@ -12,6 +12,8 @@
 #define SHEIGHT 15
 #define NOISERANGE 3
 #define MAXINPUT 100
+#define SFILE "file.txt"
+
 
 #include <stdbool.h>
 
@@ -27,7 +29,7 @@ typedef struct Node
     char value;
     struct Node* next;    
 }Node;
-
+    
 Node* MakeNode(char value, Vector2 position);
 
 bool NodeInBounds(Vector2 pos);

@@ -12,9 +12,11 @@
 #include <stdio.h>
 #include "func.h"
 
+
 int main(){
 
     Node* st =NULL;
+    
     
     /*st = InsertNode(MakeNode('A',(Vector2){7,6}),NULL);
     st = InsertNode(MakeNode('A',(Vector2){5,7}),st);

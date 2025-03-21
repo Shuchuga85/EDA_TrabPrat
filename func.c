@@ -10,10 +10,14 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "func.h"
 #include <malloc.h>
 #include <stdbool.h>
 #include <string.h>
+
+Vector2 sSize = {SWIDTH, SHEIGHT};
+
 
 /**
  * @brief Cria um elemento para a lista de elementos
@@ -51,7 +55,7 @@ Node *MakeNode(char value, Vector2 position)
  */
 bool NodeInBounds(Vector2 pos)
 {
-    return (pos.x >= 0 && pos.y >= 0 && pos.x < SWIDTH && pos.y < SHEIGHT);
+    return (pos.x >= 0 && pos.y >= 0 && pos.x < sSize.x && pos.y < sSize.y);
 }
 
 /**
@@ -69,7 +73,11 @@ Node *InsertNode(Node *dnew, Node *st)
         return st;
 
     if (!ValidNodePos(dnew, st)){
-        printf("\n Posicao {%d,%d} ocupada! Elemeto discartado.", dnew->pos.x,  dnew->pos.y);
+        if (dnew->value != '#')
+        {
+            printf("\n Posicao {%d,%d} ocupada! Elemeto %c discartado.", dnew->pos.x,  dnew->pos.y,dnew->value );
+        }
+        
         free(dnew);
         return st;
     }
@@ -244,10 +252,10 @@ void DrawMatrix(Node *st)
     Node *tp;
     Vector2 tpos;
 
-    for (int y = 0; y < SHEIGHT; y++)
+    for (int y = 0; y < sSize.y; y++)
     {
         printf("\n");
-        for (int x = 0; x < SWIDTH; x++)
+        for (int x = 0; x < sSize.x; x++)
         {
             tp = FindNodePos(st, (Vector2){x, y});
             if (tp != NULL)
@@ -273,14 +281,43 @@ Node *ReadListFile(const char *filename)
     }
 
     Node *st = NULL;
-    char line[(SWIDTH * 2) + 2]; // cada
     int y = 0;
     int x = 0;
+    int height, width = 0;
+    char ch;
 
-    while (fgets(line, sizeof(line), file))
+    while ((ch = fgetc(file)) != EOF) {
+        
+        if (ch == ' ') continue;
+
+        if (ch != '.' && ch != ' ' && ch != '\n' && ch != '#')
+        {
+            printf("\n (%d, %d), %c", x, y, ch);
+            st = InsertNode(MakeNode(ch, (Vector2){x, y}), st);
+            x++;
+        }else if (ch == '.'){
+            x++;
+        }
+        
+        width = (ch == '\n' && y == 0) ? x : width;
+
+        if (ch == '\n')
+        {
+            x=0;
+            y++;
+        }
+    }
+    height = y+1;
+    
+    sSize.x = width;
+    sSize.y = height;
+
+    printf ("\n Standard size: %d, %d", width, height);
+    /*
+    while (fgets(line, sSize.x*2+2, file))
     {
         x = 0;
-        for (int i = 0; line[i] != '\0' && x < SWIDTH; i += 2)
+        for (int i = 0; line[i] != '\0' && x < sSize.x; i += 2)
         {
             if (line[i] != '.' && line[i] != ' ' && line[i] != '\n' && line[i] != '#')
             {
@@ -291,7 +328,8 @@ Node *ReadListFile(const char *filename)
             x++;
         }
         y++;
-    }
+    }*/
+
     fclose(file);
     return st;
 }
@@ -308,11 +346,11 @@ void SaveList(const char *filename, Node *st)
         return;
     }
 
-    for (int y = 0; y < SHEIGHT; y++)
+    for (int y = 0; y < sSize.y; y++)
     {
         if (y != 0 ) fprintf(file,"\n");
         
-        for (int x = 0; x < SWIDTH; x++)
+        for (int x = 0; x < sSize.x; x++)
         {
             tp = FindNodePos(st, (Vector2){x, y});
             if (tp != NULL)
@@ -345,6 +383,7 @@ void DrawMenu()
 
 void Menu(Node *st)
 {
+    
     int op = 0;
     Vector2 pos;
     char value;
@@ -479,8 +518,9 @@ void CommandIO(Node *st)
                 }
 
             }else{
-                printf("\nMissing parameter! (matrix,list).");
-
+                //printf("\nMissing parameter! (matrix,list).");
+                DrawMatrix(st);
+                Pause();
             }
         }
         else if (strcmp(command, "load") == 0)
@@ -489,6 +529,8 @@ void CommandIO(Node *st)
             if (arg1 != NULL)
             {
                 st = ReadListFile(arg1);
+            }else{
+                st = ReadListFile(SFILE);
             }
         }
         else if (strcmp(command, "save") == 0)
@@ -497,6 +539,8 @@ void CommandIO(Node *st)
             if (arg1 != NULL)
             {
                 SaveList(arg1, st);
+            }else{
+                SaveList(SFILE, st);
             }
         }else if (strcmp(ip, "exit") != 0)
         {
