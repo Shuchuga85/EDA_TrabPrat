@@ -14,17 +14,22 @@
 
 int main(){
 
-    Node* st;
+    Node* st =NULL;
     
-    st = InsertNode(MakeNode('A',(Vector2){7,6}),NULL);
+    /*st = InsertNode(MakeNode('A',(Vector2){7,6}),NULL);
     st = InsertNode(MakeNode('A',(Vector2){5,7}),st);
     st = InsertNode(MakeNode('O',(Vector2){13,7}),st);
-    st = InsertNode(MakeNode('O',(Vector2){13,9}),st);
+    st = InsertNode(MakeNode('O',(Vector2){13,9}),st);*/
 
+    Menu(st);
+    /*
+    st = ReadListFile("file.txt");
+    
+    SaveList("file.txt",st);
 
     DrawMatrix(st);
     //ShowList(st);
-
+    */
     Pause();
     return 0;
 }
