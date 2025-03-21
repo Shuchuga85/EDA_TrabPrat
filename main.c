@@ -21,7 +21,25 @@ int main(){
     st = InsertNode(MakeNode('O',(Vector2){13,7}),st);
     st = InsertNode(MakeNode('O',(Vector2){13,9}),st);*/
 
-    Menu(st);
+    int op = 0;
+    printf("\n 1 - Options Menu");
+    printf("\n 2 - Command Line");
+    printf("\n 0 - Exit");
+    printf("\n Option > ");
+    scanf("%d", &op);
+
+    switch (op)
+    {
+    case 1:
+        Menu(st);
+        break;
+    case 2:
+        CommandIO(st);
+        break;
+    default:
+        break;
+    }
+    
     /*
     st = ReadListFile("file.txt");
     
@@ -30,6 +48,5 @@ int main(){
     DrawMatrix(st);
     //ShowList(st);
     */
-    Pause();
     return 0;
 }

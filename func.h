@@ -11,6 +11,7 @@
 #define SWIDTH 30
 #define SHEIGHT 15
 #define NOISERANGE 3
+#define MAXINPUT 100
 
 #include <stdbool.h>
 
@@ -54,6 +55,10 @@ void SaveList(const char* filename, Node* st);
 void DrawMenu();
 
 void Menu(Node* st);
+
+void DrawCommands();
+
+void CommandIO(Node* st);
 
 void ShowList(Node *st);
 
