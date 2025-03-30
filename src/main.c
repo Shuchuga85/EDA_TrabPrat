@@ -16,13 +16,7 @@
 int main(){
 
     Node* st =NULL;
-    
-    
-    /*st = InsertNode(MakeNode('A',(Vector2){7,6}),NULL);
-    st = InsertNode(MakeNode('A',(Vector2){5,7}),st);
-    st = InsertNode(MakeNode('O',(Vector2){13,7}),st);
-    st = InsertNode(MakeNode('O',(Vector2){13,9}),st);*/
-
+  
     int op = 0;
     printf("\n 1 - Options Menu");
     printf("\n 2 - Command Line");
@@ -41,7 +35,13 @@ int main(){
     default:
         break;
     }
-    
+
+
+      /*st = InsertNode(MakeNode('A',(Vector2){7,6}),NULL);
+    st = InsertNode(MakeNode('A',(Vector2){5,7}),st);
+    st = InsertNode(MakeNode('O',(Vector2){13,7}),st);
+    st = InsertNode(MakeNode('O',(Vector2){13,9}),st);*/
+
     /*
     st = ReadListFile("file.txt");
     

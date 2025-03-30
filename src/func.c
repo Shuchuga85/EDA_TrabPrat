@@ -1,7 +1,7 @@
 /**
  * @file func.c
  * @author Vitor Rezende (a31521@alunos.ipca.pt)
- * @brief
+ * @brief Implementação de funções para manipulação de uma lista de elementos representados em matriz.
  * @version 0.1
  * @date 2025-03-18
  *
@@ -19,18 +19,24 @@
 Vector2 sSize = {SWIDTH, SHEIGHT};
 int noiseRange = NOISERANGE;
 
+#pragma region Node
+
 /**
- * @brief Cria um elemento para a lista de elementos
+ * @brief Cria um novo elemento (nó) para a lista.
  *
- * @param value  = Valor do Elemento (ex: antena tipo A, efeito nefasto #).
- * @param position = Posicao na matrix.
- * @return Node*
+ * @param value Valor do elemento (ex: antena tipo A, efeito nefasto '#').
+ * @param position Posição na matriz.
+ * @return Ponteiro para o novo nó criado.
  */
 Node *MakeNode(char value, Vector2 position)
 {
     if (!NodeInBounds(position))
     {
-        printf("\n Posicao {%d,%d} fora da matrix! Elemeto discartado.", position.x, position.y);
+        if (value != '#')
+        {
+            printf("\n Posicao {%d,%d} fora da matrix! Elemeto discartado.", position.x, position.y);
+        }
+
         return NULL;
     }
 
@@ -47,11 +53,10 @@ Node *MakeNode(char value, Vector2 position)
 }
 
 /**
- * @brief
+ * @brief Verifica se a posição está dentro dos limites da matriz.
  *
- * @param pos
- * @return true
- * @return false
+ * @param pos Posição a ser verificada.
+ * @return true se estiver dentro dos limites, false caso contrário.
  */
 bool NodeInBounds(Vector2 pos)
 {
@@ -59,11 +64,11 @@ bool NodeInBounds(Vector2 pos)
 }
 
 /**
- * @brief
+ * @brief Insere um novo nó na lista, verificando se a posição está disponível.
  *
- * @param st
- * @param new
- * @return Node*
+ * @param dnew Novo nó a ser inserido.
+ * @param st Ponteiro para a lista.
+ * @return Ponteiro para a lista atualizada.
  */
 Node *InsertNode(Node *dnew, Node *st)
 {
@@ -86,11 +91,18 @@ Node *InsertNode(Node *dnew, Node *st)
     dnew->next = st;
     st = dnew;
 
-    st = NoiseCheck(st);
+    st = NoiseCheckAlt(st);
 
     return st;
 }
 
+/**
+ * @brief Remove um nó da lista.
+ *
+ * @param rm Ponteiro para o nó a ser removido.
+ * @param st Ponteiro para a lista.
+ * @return Ponteiro para a lista atualizada.
+ */
 Node *RemoveNode(Node *rm, Node *st)
 {
     if (rm == NULL)
@@ -124,6 +136,14 @@ Node *RemoveNode(Node *rm, Node *st)
     return st;
 }
 
+#pragma endregion
+
+/**
+ * @brief Limpa elementos de ruído ('#') da lista.
+ *
+ * @param st Ponteiro para a lista.
+ * @return Ponteiro para a lista sem elementos de ruído.
+ */
 Node *ClearNoise(Node *st)
 {
     if (st == NULL)
@@ -154,13 +174,26 @@ Node *ClearNoise(Node *st)
     return st;
 }
 
+/**
+ * @brief Verifica se a posição de um novo nó é válida (sem sobreposição).
+ *
+ * @param dnew Novo nó.
+ * @param st Ponteiro para a lista.
+ * @return true se a posição for válida, false caso contrário.
+ */
 bool ValidNodePos(Node *dnew, Node *st)
 {
     if (FindNodePos(st, dnew->pos) != NULL)
-        return false; // Se encontrar elemento na posicao x,y. nao e valido
+        return false; // Se encontrar elemento na posicao x,y. e falso
     return true;
 }
 
+/**
+ * @brief Verifica e aplica a regra de efeito nefasto aos elementos na lista.
+ *
+ * @param st Lista de nós.
+ * @return Node* Lista atualizada após a verificação do efeito nefasto.
+ */
 Node *NoiseCheck(Node *st)
 {
     Node *current = st;
@@ -193,10 +226,6 @@ Node *NoiseCheck(Node *st)
 
                 if (p->value == current->value) // Se os elementos forem iguais, entao ha efeito nefasto
                 {
-                    /*printf("\n {%d, %d}",cpos.x, cpos.y);
-                    printf("\n {%d, %d}",x, y);
-                    printf("\n {%d, %d}",p->pos.x, p->pos.y);
-                    printf("\n {%d, %d}", p->pos.x + x, p->pos.y + y);*/
                     st = InsertNode(MakeNode('#', (Vector2){p->pos.x + x, p->pos.y + y}), st); // adiciona
                 }
             }
@@ -209,11 +238,63 @@ Node *NoiseCheck(Node *st)
 }
 
 /**
- * @brief Retorna o elemento, se existe, com a posicao indicada
+ * @brief Versão alternativa da verificação de ruído que compara todos os elementos entre si.
  *
- * @param st
- * @param npos
- * @return Node*
+ * @param st Lista de nós.
+ * @return Node* Lista atualizada após a verificação do efeito nefasto.
+ */
+Node *NoiseCheckAlt(Node *st)
+{
+    Node *current = st;
+    Node *p = NULL;
+    Node *start = st;
+    Vector2 diff, npos;
+
+    if (st == NULL)
+        return NULL;
+
+    while (current != NULL)
+    {
+        if (current->value == '#')
+        {
+            current = current->next;
+            continue;
+        }
+
+        p = st;
+
+        while (p != NULL)
+        {
+
+            if (Vector2Compare(p->pos, current->pos))
+            {
+                p = p->next;
+                continue;
+            }
+
+            if (current->value == p->value)
+            {
+                diff = Vector2Subtract(p->pos, current->pos);
+                npos = Vector2Add(p->pos, diff);
+
+                start = InsertNode(MakeNode('#', npos), start);
+            }
+
+            p = p->next;
+        }
+        current = current->next;
+    }
+
+    st = start;
+    return start;
+}
+
+/**
+ * @brief Procura um nó na lista pela sua posição.
+ *
+ * @param st Ponteiro para a lista.
+ * @param npos Posição do nó a ser encontrado.
+ * @return Ponteiro para o nó encontrado, ou NULL se não existir.
  */
 Node *FindNodePos(Node *st, Vector2 npos)
 {
@@ -231,23 +312,57 @@ Node *FindNodePos(Node *st, Vector2 npos)
     return NULL;
 }
 
+#pragma region Vector2
+
 /**
- * @brief Compara a estrutura vetor com x e y iguais
+ * @brief Compara se dois vetores possuem as mesmas coordenadas.
  *
- * @param a
- * @param b
- * @return true
- * @return false
+ * @param a Primeiro vetor.
+ * @param b Segundo vetor.
+ * @return true Se forem iguais.
+ * @return false Se forem diferentes.
  */
 bool Vector2Compare(Vector2 a, Vector2 b)
 {
     return (a.x == b.x && a.y == b.y);
 }
+/**
+ * @brief Subtrai um vetor do outro.
+ *
+ * @param a Primeiro vetor.
+ * @param b Segundo vetor.
+ * @return Vector2 Resultado da subtração.
+ */
+Vector2 Vector2Subtract(Vector2 a, Vector2 b)
+{
+    Vector2 result;
+    result.x = a.x - b.x;
+    result.y = a.y - b.y;
+    return ((Vector2){a.x - b.x, a.y - b.y});
+}
+/**
+ * @brief Soma dois vetores.
+ *
+ * @param a Primeiro vetor.
+ * @param b Segundo vetor.
+ * @return Vector2 Resultado da soma.
+ */
+Vector2 Vector2Add(Vector2 a, Vector2 b)
+{
+    Vector2 result;
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
+    return result;
+}
+
+#pragma endregion
+
+#pragma region Output
 
 /**
- * @brief
+ * @brief Desenha a matriz com os elementos presentes na lista.
  *
- * @param st
+ * @param st Lista de nós.
  */
 void DrawMatrix(Node *st)
 {
@@ -280,6 +395,47 @@ void DrawMatrix(Node *st)
     }
 }
 
+/**
+ * @brief Exibe a lista de nós, com um filtro opcional.
+ *
+ * @param st Lista de nós.
+ * @param filter Caracter usado para filtrar os elementos exibidos.
+ */
+void ShowList(Node *st, char filter)
+{
+    Node *current = st;
+    printf("\n| Value | Position |");
+    while (current != NULL)
+    {
+        if (filter == '.')
+        {
+            printf("\n|   %c   | ", current->value);
+            printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
+            // printf("%c\t", current->value);
+        }
+        else
+        {
+            if (current->value == filter)
+            {
+                printf("\n|   %c   | ", current->value);
+                printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
+            }
+        }
+
+        current = current->next;
+    }
+}
+
+#pragma endregion
+
+#pragma region File
+
+/**
+ * @brief Lê uma lista de elementos a partir de um ficheiro.
+ *
+ * @param filename Nome do ficheiro.
+ * @return Node* Lista carregada do ficheiro.
+ */
 Node *ReadListFile(const char *filename)
 {
     FILE *file = fopen(filename, "r");
@@ -327,27 +483,16 @@ Node *ReadListFile(const char *filename)
         }
     }
 
-    /*
-    while (fgets(line, sSize.x*2+2, file))
-    {
-        x = 0;
-        for (int i = 0; line[i] != '\0' && x < sSize.x; i += 2)
-        {
-            if (line[i] != '.' && line[i] != ' ' && line[i] != '\n' && line[i] != '#')
-            {
-                printf("\n (%d, %d), %c", x, y, line[i]);
-                st = InsertNode(MakeNode(line[i], (Vector2){x, y}), st);
-                ;
-            }
-            x++;
-        }
-        y++;
-    }*/
-
     fclose(file);
     return st;
 }
 
+/**
+ * @brief Guarda a lista de elementos num ficheiro.
+ *
+ * @param filename Nome do ficheiro onde os dados serão armazenados.
+ * @param st Lista de nós a ser salva.
+ */
 void SaveList(const char *filename, Node *st)
 {
     if (st == NULL)
@@ -369,7 +514,7 @@ void SaveList(const char *filename, Node *st)
         for (int x = 0; x < sSize.x; x++)
         {
             tp = FindNodePos(st, (Vector2){x, y});
-            if (tp != NULL)
+            if (tp != NULL && tp->value != '#')
             {
                 fprintf(file, "%c", tp->value);
             }
@@ -377,12 +522,18 @@ void SaveList(const char *filename, Node *st)
             {
                 fprintf(file, ".");
             }
-            fprintf(file, " ");
         }
     }
     fclose(file);
 }
 
+#pragma endregion
+
+#pragma region Interface
+
+/**
+ * @brief Desenha o menu de opções no terminal.
+ */
 void DrawMenu()
 {
     printf("\n\n ..... Main Menu .....");
@@ -397,6 +548,11 @@ void DrawMenu()
     printf("\n 0 -> Exit;\n");
 }
 
+/**
+ * @brief Gerencia a interface do utilizador e manipulação da lista de nós.
+ *
+ * @param st Lista de nós.
+ */
 void Menu(Node *st)
 {
 
@@ -444,20 +600,24 @@ void Menu(Node *st)
         case 6:
             printf("\n Insert file name (default:%s) : ", SFILE);
             scanf("%s", filename);
-            if (strcmp(filename, " ")== 0)
+            if (strcmp(filename, " ") == 0)
             {
                 st = ReadListFile(SFILE);
-            }else{
+            }
+            else
+            {
                 st = ReadListFile(filename);
             }
             break;
         case 7:
             printf("\n Insert file name (default:%s) : ", SFILE);
             scanf("%s", filename);
-            if (strcmp(filename, " ")== 0)
+            if (strcmp(filename, " ") == 0)
             {
                 SaveList(SFILE, st);
-            }else{
+            }
+            else
+            {
                 SaveList(filename, st);
             }
             break;
@@ -473,14 +633,17 @@ void Menu(Node *st)
                 scanf("%d,%d", &pos.x, &pos.y);
                 sSize.x = pos.x;
                 sSize.y = pos.y;
-            }else if (0 == 'b')
+            }
+            else if (0 == 'b')
             {
                 printf("\n Insert scale (type:vector2int) x,y: ");
                 scanf("%d", range);
                 noiseRange = range;
                 st = ClearNoise(st);
                 st = NoiseCheck(st);
-            }else{
+            }
+            else
+            {
                 printf("\n Invalid option, try again.");
             }
             break;
@@ -492,6 +655,9 @@ void Menu(Node *st)
     } while (op != 0);
 }
 
+/**
+ * @brief Exibe os comandos disponíveis para manipulação da lista.
+ */
 void DrawCommands()
 {
     printf("\n\n ..... Commands .....");
@@ -505,6 +671,11 @@ void DrawCommands()
     printf("\n > exit\n");
 }
 
+/**
+ * @brief Interface baseada em comandos para manipulação da lista de elementos.
+ *
+ * @param st Lista de nós.
+ */
 void CommandIO(Node *st)
 {
     char ip[MAXINPUT];
@@ -663,31 +834,11 @@ void CommandIO(Node *st)
     } while (strcmp(ip, "exit") != 0);
 }
 
-void ShowList(Node *st, char filter)
-{
-    Node *current = st;
-    printf("\n| Value | Position |");
-    while (current != NULL)
-    {
-        if (filter == '.')
-        {
-            printf("\n|   %c   | ", current->value);
-            printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
-            // printf("%c\t", current->value);
-        }
-        else
-        {
-            if (current->value == filter)
-            {
-                printf("\n|   %c   | ", current->value);
-                printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
-            }
-        }
+#pragma endregion
 
-        current = current->next;
-    }
-}
-
+/**
+ * @brief Pausa a execução do programa até que o usuário pressione uma tecla.
+ */
 void Pause()
 {
     printf("\nPressione qualquer tecla para continuar...");
