@@ -1,0 +1,172 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tocbibind} % Para adicionar a bibliografia ao índice
+\usepackage{fancyhdr} % Para personalizar os cabeçalhos
+\usepackage{geometry}
+
+% Configuração do layout da página
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+\title{Relatório do Projeto - Estruturas de Dados Avançadas}
+\author{Vitor Rezende}
+\date{Março de 2025}
+
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeblue}{rgb}{0.25,0.35,0.75}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codebackground}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{CStyle}{
+    language=C,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{codeblue}\bfseries,
+    stringstyle=\color{codegreen},
+    commentstyle=\color{codegray}\itshape,
+    backgroundcolor=\color{codebackground},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    frame=single,
+    breaklines=true
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Relatório do Projeto EDA}
+\fancyhead[C]{Vitor Rezende}
+\fancyhead[R]{Março de 2025}
+
+\begin{document}
+
+% Capa
+\maketitle
+\newpage
+
+% Índice
+\tableofcontents
+\newpage
+
+% Introdução
+\section{Introdução}
+Este projeto faz parte da avaliação individual da Unidade Curricular de Estruturas de Dados Avançadas (EDA). O objetivo é reforçar e aplicar conhecimentos adquiridos, especialmente no uso e manipulação de estruturas de dados dinâmicas na linguagem C. Além disso, a implementação exige modularização, armazenamento de dados em ficheiros e documentação utilizando Doxygen.
+
+\newpage
+
+% Contextualização
+\section{Contextualização}
+O projeto modela uma cidade com várias antenas, cada uma sintonizada numa frequência específica (representada por um caractere). A matriz a seguir ilustra um exemplo de disposição das antenas:
+
+\begin{verbatim}
+............
+........0...
+.....0......
+.......0....
+....0.......
+......A.....
+............
+............
+........A...
+.........A..
+............
+............
+\end{verbatim}
+
+Antenas de mesma frequência podem gerar efeitos nefastos (\#), que aparecem em locais específicos dependendo da distância entre as antenas.
+
+\newpage
+
+% Objetivos e Funcionalidades
+\section{Objetivos e Funcionalidades}
+O projeto deve implementar as seguintes funcionalidades:
+\begin{itemize}
+    \item Definição de uma estrutura de dados dinâmica (lista ligada) para armazenar as antenas e suas posições.
+    \item Leitura dos dados de um ficheiro e armazenamento na estrutura de dados.
+    \item Manipulação da lista: inserção e remoção de antenas.
+    \item Identificação automática de locais com efeito nefasto e armazenamento desses locais.
+    \item Exibição da matriz e dos dados em formato tabular no terminal.
+\end{itemize}
+
+\newpage
+
+% Estruturas de Dados
+\section{Estruturas de Dados}
+Foram utilizadas as seguintes estruturas de dados:
+
+\subsection{Vector2}
+\begin{lstlisting}[style=CStyle]
+typedef struct Vector2 {
+    int x;
+    int y;
+} Vector2;
+\end{lstlisting}
+
+Esta estrutura representa um vetor bidimensional para armazenar coordenadas da matriz.
+
+\subsection{Node}
+\begin{lstlisting}[style=CStyle]
+typedef struct Node {
+    Vector2 pos;
+    char value;
+    struct Node* next;
+} Node;
+\end{lstlisting}
+
+Cada nó da lista ligada armazena a posição de uma antena e seu valor (frequência).
+
+\newpage
+
+% Explicação das Funções
+\section{Explicação das Funções}
+
+A seguir, são apresentadas as explicações detalhadas de algumas funções importantes do projeto.
+
+\subsection{Função NoiseCheck}
+\begin{lstlisting}[style=CStyle]
+Node *NoiseCheck(Node *st);
+\end{lstlisting}
+
+A função \texttt{NoiseCheck} percorre a lista de antenas e verifica se existe algum efeito nefasto causado pelas antenas. A verificação é realizada com base na comparação de distâncias entre antenas da mesma frequência e, quando uma das antenas está duas vezes mais distante que a outra, aplica-se o efeito nefasto no local correspondente.
+
+\subsection{Função NoiseCheckAlt}
+\begin{lstlisting}[style=CStyle]
+Node *NoiseCheckAlt(Node *st);
+\end{lstlisting}
+
+A função \texttt{NoiseCheckAlt} é uma versão alternativa da \texttt{NoiseCheck}, mas ela compara todas as antenas entre si de forma mais exaustiva. Isso é feito percorrendo a lista inteira e verificando para todas as combinações possíveis de antenas se ocorre o efeito nefasto.
+
+\subsection{Função ReadListFile}
+\begin{lstlisting}[style=CStyle]
+Node* ReadListFile(const char* filename);
+\end{lstlisting}
+
+A função \texttt{ReadListFile} é responsável por carregar os dados das antenas de um ficheiro de texto e armazená-los em uma lista ligada. O ficheiro deve seguir um formato específico onde cada linha representa uma posição da matriz e os caracteres indicam a presença de antenas.
+
+\subsection{Função SaveList}
+\begin{lstlisting}[style=CStyle]
+void SaveList(const char* filename, Node* st);
+\end{lstlisting}
+
+A função \texttt{SaveList} salva a lista de antenas em um ficheiro de texto. Cada nó da lista é percorrido e seus dados (coordenadas e frequência) são gravados no ficheiro de saída.
+
+\newpage
+
+% Resultados e Conclusões
+\section{Resultados e Conclusões}
+O projeto permite a manipulação de antenas e a análise dos efeitos nefastos de forma eficiente. Com a estrutura dinâmica implementada, é possível adicionar e remover antenas, além de visualizar a matriz e seus impactos. A verificação do efeito nefasto e a atualização da matriz são feitas de forma eficaz e modular.
+
+\newpage
+
+% Bibliografia
+\section{Bibliografia}
+\begin{itemize}
+    \item ISO/IEC 9899:2011, \textit{Programming languages – C}.
+    \item Doxygen Documentation. \url{https://www.doxygen.nl/index.html}.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho-Pratico_EDA: Código-Fonte de src/func.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho-Pratico_EDA
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">func.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="func_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define SWIDTH 12</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define SHEIGHT 12</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define NOISERANGE 4</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define MAXINPUT 100</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define SFILE &quot;file.txt&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_vector2.html">   25</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_vector2.html">Vector2</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_vector2.html#a6150e0515f7202e2fb518f7206ed97dc">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_vector2.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>;  </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_vector2.html#a0a2f84ed7838f07779ae24c5a9086d33">   28</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_vector2.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>;  </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="func_8h.html#a682e0907769244e5f75f92e91460878f">   29</a></span>}<a class="code hl_typedef" href="func_8h.html#a682e0907769244e5f75f92e91460878f">Vector2</a>;</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_node.html">   37</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_node.html">Node</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_node.html#ac72b18fae976bd97b4832279df736b62">   39</a></span>    <a class="code hl_struct" href="struct_vector2.html">Vector2</a> <a class="code hl_variable" href="struct_node.html#ac72b18fae976bd97b4832279df736b62">pos</a>;        </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_node.html#a1de5cca0fbfc376f5a6997b84006e25e">   40</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="struct_node.html#a1de5cca0fbfc376f5a6997b84006e25e">value</a>;         </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_node.html#aa162dd1e0693188a22b1f13b9a2a0ef0">   41</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_node.html">Node</a>* <a class="code hl_variable" href="struct_node.html#aa162dd1e0693188a22b1f13b9a2a0ef0">next</a>;  </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="func_8h.html#a3b09f37e675bcd48a01bf22155996872">   42</a></span>}<a class="code hl_typedef" href="func_8h.html#a3b09f37e675bcd48a01bf22155996872">Node</a>;</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_struct" href="struct_node.html">Node</a>* <a class="code hl_function" href="func_8h.html#a67a3b2f72e59f620bbc56dffd61715f5">MakeNode</a>(<span class="keywordtype">char</span> <a class="code hl_variable" href="struct_node.html#a1de5cca0fbfc376f5a6997b84006e25e">value</a>, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> position);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">bool</span> <a class="code hl_function" href="func_8h.html#ad0bddc06c2720a7ee20a85ddb4c5666a">NodeInBounds</a>(<a class="code hl_struct" href="struct_vector2.html">Vector2</a> <a class="code hl_variable" href="struct_node.html#ac72b18fae976bd97b4832279df736b62">pos</a>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><a class="code hl_struct" href="struct_node.html">Node</a>* <a class="code hl_function" href="func_8h.html#a70bbb1c93db2333346b26e22ec3bda09">InsertNode</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st ,<a class="code hl_struct" href="struct_node.html">Node</a>* dnew);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_struct" href="struct_node.html">Node</a> *<a class="code hl_function" href="func_8h.html#ad9b9f58ca8ab0113298378d8238354ac">RemoveNode</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *rm, <a class="code hl_struct" href="struct_node.html">Node</a> *st);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_struct" href="struct_node.html">Node</a>* <a class="code hl_function" href="func_8h.html#a1c0148015e29414921d92ac23554f9a8">ClearNoise</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">bool</span> <a class="code hl_function" href="func_8h.html#af993d0fdd95ecfeb7ebafec3bc80b74a">ValidNodePos</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *dnew, <a class="code hl_struct" href="struct_node.html">Node</a> *st);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><a class="code hl_struct" href="struct_node.html">Node</a> *<a class="code hl_function" href="func_8h.html#a674ee4c1a8c8226b6f069608db3c63b3">NoiseCheck</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *st);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><a class="code hl_struct" href="struct_node.html">Node</a> *<a class="code hl_function" href="func_8h.html#a160664f3d263e4e13020cb93ad1b943c">NoiseCheckAlt</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *st);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><a class="code hl_struct" href="struct_node.html">Node</a>* <a class="code hl_function" href="func_8h.html#aa1d47b76a7910f0ad9895087baa394b4">FindNodePos</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> npos);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keywordtype">bool</span> <a class="code hl_function" href="func_8h.html#ab165979aa96500904b0b234640b80d53">Vector2Compare</a>(<a class="code hl_struct" href="struct_vector2.html">Vector2</a> a, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> b);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><a class="code hl_struct" href="struct_vector2.html">Vector2</a> <a class="code hl_function" href="func_8h.html#ac813f12efe4bfd7bd2dbec18f58f2bba">Vector2Subtract</a>(<a class="code hl_struct" href="struct_vector2.html">Vector2</a> a, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> b);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><a class="code hl_struct" href="struct_vector2.html">Vector2</a> <a class="code hl_function" href="func_8h.html#a38193ad14e49953c1c6038eec5ec0ff1">Vector2Add</a>(<a class="code hl_struct" href="struct_vector2.html">Vector2</a> a, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> b);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#a7be92bf9b511af4d5466b4b9f637099b">DrawMatrix</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *st);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#a2640af73bd39be7651f501c56562b8db">ShowList</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *st, <span class="keywordtype">char</span> filter);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><a class="code hl_struct" href="struct_node.html">Node</a>* <a class="code hl_function" href="func_8h.html#acb620d127f79c45f6bc5317ff1fd7471">ReadListFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#aa32dc0e8d65723f683a1d254e30ef108">SaveList</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, <a class="code hl_struct" href="struct_node.html">Node</a>* st);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#a1483313e0618043fde85fc7a5abe9d4d">DrawMenu</a>();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#add83fc1f29fff30765786c6deaf5fd8d">Menu</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#abd85956a0342471aea47c1fbebe72531">DrawCommands</a>();</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#ab34e5ea3b4b5e91383136179e6b66c02">CommandIO</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keywordtype">void</span> <a class="code hl_function" href="func_8h.html#a70babc5227ddd16ca31dccc6cec0bb22">Pause</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="ttc" id="afunc_8h_html_a1483313e0618043fde85fc7a5abe9d4d"><div class="ttname"><a href="func_8h.html#a1483313e0618043fde85fc7a5abe9d4d">DrawMenu</a></div><div class="ttdeci">void DrawMenu()</div><div class="ttdoc">Desenha o menu de opções no terminal.</div><div class="ttdef"><b>Definição</b> func.c:537</div></div>
+<div class="ttc" id="afunc_8h_html_a160664f3d263e4e13020cb93ad1b943c"><div class="ttname"><a href="func_8h.html#a160664f3d263e4e13020cb93ad1b943c">NoiseCheckAlt</a></div><div class="ttdeci">Node * NoiseCheckAlt(Node *st)</div><div class="ttdoc">Versão alternativa da verificação de ruído que compara todos os elementos entre si.</div><div class="ttdef"><b>Definição</b> func.c:246</div></div>
+<div class="ttc" id="afunc_8h_html_a1c0148015e29414921d92ac23554f9a8"><div class="ttname"><a href="func_8h.html#a1c0148015e29414921d92ac23554f9a8">ClearNoise</a></div><div class="ttdeci">Node * ClearNoise(Node *st)</div><div class="ttdoc">Limpa elementos de ruído ('#') da lista.</div><div class="ttdef"><b>Definição</b> func.c:147</div></div>
+<div class="ttc" id="afunc_8h_html_a2640af73bd39be7651f501c56562b8db"><div class="ttname"><a href="func_8h.html#a2640af73bd39be7651f501c56562b8db">ShowList</a></div><div class="ttdeci">void ShowList(Node *st, char filter)</div><div class="ttdoc">Exibe a lista de nós, com um filtro opcional.</div><div class="ttdef"><b>Definição</b> func.c:404</div></div>
+<div class="ttc" id="afunc_8h_html_a38193ad14e49953c1c6038eec5ec0ff1"><div class="ttname"><a href="func_8h.html#a38193ad14e49953c1c6038eec5ec0ff1">Vector2Add</a></div><div class="ttdeci">Vector2 Vector2Add(Vector2 a, Vector2 b)</div><div class="ttdoc">Soma dois vetores.</div><div class="ttdef"><b>Definição</b> func.c:350</div></div>
+<div class="ttc" id="afunc_8h_html_a3b09f37e675bcd48a01bf22155996872"><div class="ttname"><a href="func_8h.html#a3b09f37e675bcd48a01bf22155996872">Node</a></div><div class="ttdeci">struct Node Node</div><div class="ttdoc">Representa um nó de uma lista ligada de elementos na matriz.</div></div>
+<div class="ttc" id="afunc_8h_html_a674ee4c1a8c8226b6f069608db3c63b3"><div class="ttname"><a href="func_8h.html#a674ee4c1a8c8226b6f069608db3c63b3">NoiseCheck</a></div><div class="ttdeci">Node * NoiseCheck(Node *st)</div><div class="ttdoc">Verifica e aplica a regra de efeito nefasto aos elementos na lista.</div><div class="ttdef"><b>Definição</b> func.c:197</div></div>
+<div class="ttc" id="afunc_8h_html_a67a3b2f72e59f620bbc56dffd61715f5"><div class="ttname"><a href="func_8h.html#a67a3b2f72e59f620bbc56dffd61715f5">MakeNode</a></div><div class="ttdeci">Node * MakeNode(char value, Vector2 position)</div><div class="ttdoc">Cria um novo elemento (nó) para a lista.</div><div class="ttdef"><b>Definição</b> func.c:31</div></div>
+<div class="ttc" id="afunc_8h_html_a682e0907769244e5f75f92e91460878f"><div class="ttname"><a href="func_8h.html#a682e0907769244e5f75f92e91460878f">Vector2</a></div><div class="ttdeci">struct Vector2 Vector2</div><div class="ttdoc">Representa um vetor bidimensional com coordenadas inteiras.</div></div>
+<div class="ttc" id="afunc_8h_html_a70babc5227ddd16ca31dccc6cec0bb22"><div class="ttname"><a href="func_8h.html#a70babc5227ddd16ca31dccc6cec0bb22">Pause</a></div><div class="ttdeci">void Pause()</div><div class="ttdoc">Pausa a execução do programa até que o usuário pressione uma tecla.</div><div class="ttdef"><b>Definição</b> func.c:842</div></div>
+<div class="ttc" id="afunc_8h_html_a70bbb1c93db2333346b26e22ec3bda09"><div class="ttname"><a href="func_8h.html#a70bbb1c93db2333346b26e22ec3bda09">InsertNode</a></div><div class="ttdeci">Node * InsertNode(Node *st, Node *dnew)</div><div class="ttdoc">Insere um novo nó na lista, verificando se a posição está disponível.</div><div class="ttdef"><b>Definição</b> func.c:73</div></div>
+<div class="ttc" id="afunc_8h_html_a7be92bf9b511af4d5466b4b9f637099b"><div class="ttname"><a href="func_8h.html#a7be92bf9b511af4d5466b4b9f637099b">DrawMatrix</a></div><div class="ttdeci">void DrawMatrix(Node *st)</div><div class="ttdoc">Desenha a matriz com os elementos presentes na lista.</div><div class="ttdef"><b>Definição</b> func.c:367</div></div>
+<div class="ttc" id="afunc_8h_html_aa1d47b76a7910f0ad9895087baa394b4"><div class="ttname"><a href="func_8h.html#aa1d47b76a7910f0ad9895087baa394b4">FindNodePos</a></div><div class="ttdeci">Node * FindNodePos(Node *st, Vector2 npos)</div><div class="ttdoc">Procura um nó em uma posição específica.</div><div class="ttdef"><b>Definição</b> func.c:299</div></div>
+<div class="ttc" id="afunc_8h_html_aa32dc0e8d65723f683a1d254e30ef108"><div class="ttname"><a href="func_8h.html#aa32dc0e8d65723f683a1d254e30ef108">SaveList</a></div><div class="ttdeci">void SaveList(const char *filename, Node *st)</div><div class="ttdoc">Guarda a lista de elementos num ficheiro.</div><div class="ttdef"><b>Definição</b> func.c:496</div></div>
+<div class="ttc" id="afunc_8h_html_ab165979aa96500904b0b234640b80d53"><div class="ttname"><a href="func_8h.html#ab165979aa96500904b0b234640b80d53">Vector2Compare</a></div><div class="ttdeci">bool Vector2Compare(Vector2 a, Vector2 b)</div><div class="ttdoc">Compara se dois vetores possuem as mesmas coordenadas.</div><div class="ttdef"><b>Definição</b> func.c:325</div></div>
+<div class="ttc" id="afunc_8h_html_ab34e5ea3b4b5e91383136179e6b66c02"><div class="ttname"><a href="func_8h.html#ab34e5ea3b4b5e91383136179e6b66c02">CommandIO</a></div><div class="ttdeci">void CommandIO(Node *st)</div><div class="ttdoc">Interface baseada em comandos para manipulação da lista de elementos.</div><div class="ttdef"><b>Definição</b> func.c:679</div></div>
+<div class="ttc" id="afunc_8h_html_abd85956a0342471aea47c1fbebe72531"><div class="ttname"><a href="func_8h.html#abd85956a0342471aea47c1fbebe72531">DrawCommands</a></div><div class="ttdeci">void DrawCommands()</div><div class="ttdoc">Exibe os comandos disponíveis para manipulação da lista.</div><div class="ttdef"><b>Definição</b> func.c:661</div></div>
+<div class="ttc" id="afunc_8h_html_ac813f12efe4bfd7bd2dbec18f58f2bba"><div class="ttname"><a href="func_8h.html#ac813f12efe4bfd7bd2dbec18f58f2bba">Vector2Subtract</a></div><div class="ttdeci">Vector2 Vector2Subtract(Vector2 a, Vector2 b)</div><div class="ttdoc">Subtrai um vetor do outro.</div><div class="ttdef"><b>Definição</b> func.c:336</div></div>
+<div class="ttc" id="afunc_8h_html_acb620d127f79c45f6bc5317ff1fd7471"><div class="ttname"><a href="func_8h.html#acb620d127f79c45f6bc5317ff1fd7471">ReadListFile</a></div><div class="ttdeci">Node * ReadListFile(const char *filename)</div><div class="ttdoc">Lê uma lista de elementos a partir de um ficheiro.</div><div class="ttdef"><b>Definição</b> func.c:439</div></div>
+<div class="ttc" id="afunc_8h_html_ad0bddc06c2720a7ee20a85ddb4c5666a"><div class="ttname"><a href="func_8h.html#ad0bddc06c2720a7ee20a85ddb4c5666a">NodeInBounds</a></div><div class="ttdeci">bool NodeInBounds(Vector2 pos)</div><div class="ttdoc">Verifica se a posição está dentro dos limites da matriz.</div><div class="ttdef"><b>Definição</b> func.c:61</div></div>
+<div class="ttc" id="afunc_8h_html_ad9b9f58ca8ab0113298378d8238354ac"><div class="ttname"><a href="func_8h.html#ad9b9f58ca8ab0113298378d8238354ac">RemoveNode</a></div><div class="ttdeci">Node * RemoveNode(Node *rm, Node *st)</div><div class="ttdoc">Remove um nó da lista.</div><div class="ttdef"><b>Definição</b> func.c:106</div></div>
+<div class="ttc" id="afunc_8h_html_add83fc1f29fff30765786c6deaf5fd8d"><div class="ttname"><a href="func_8h.html#add83fc1f29fff30765786c6deaf5fd8d">Menu</a></div><div class="ttdeci">void Menu(Node *st)</div><div class="ttdoc">Gerencia a interface do utilizador e manipulação da lista de nós.</div><div class="ttdef"><b>Definição</b> func.c:556</div></div>
+<div class="ttc" id="afunc_8h_html_af993d0fdd95ecfeb7ebafec3bc80b74a"><div class="ttname"><a href="func_8h.html#af993d0fdd95ecfeb7ebafec3bc80b74a">ValidNodePos</a></div><div class="ttdeci">bool ValidNodePos(Node *dnew, Node *st)</div><div class="ttdoc">Verifica se a posição de um novo nó é válida (sem sobreposição).</div><div class="ttdef"><b>Definição</b> func.c:184</div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdoc">Representa um nó de uma lista ligada de elementos na matriz.</div><div class="ttdef"><b>Definição</b> func.h:38</div></div>
+<div class="ttc" id="astruct_node_html_a1de5cca0fbfc376f5a6997b84006e25e"><div class="ttname"><a href="struct_node.html#a1de5cca0fbfc376f5a6997b84006e25e">Node::value</a></div><div class="ttdeci">char value</div><div class="ttdoc">Valor do nó (ex: antena tipo A, efeito nefasto '#')</div><div class="ttdef"><b>Definição</b> func.h:40</div></div>
+<div class="ttc" id="astruct_node_html_aa162dd1e0693188a22b1f13b9a2a0ef0"><div class="ttname"><a href="struct_node.html#aa162dd1e0693188a22b1f13b9a2a0ef0">Node::next</a></div><div class="ttdeci">struct Node * next</div><div class="ttdoc">Ponteiro para o próximo nó na lista.</div><div class="ttdef"><b>Definição</b> func.h:41</div></div>
+<div class="ttc" id="astruct_node_html_ac72b18fae976bd97b4832279df736b62"><div class="ttname"><a href="struct_node.html#ac72b18fae976bd97b4832279df736b62">Node::pos</a></div><div class="ttdeci">Vector2 pos</div><div class="ttdoc">Posição do nó na matriz.</div><div class="ttdef"><b>Definição</b> func.h:39</div></div>
+<div class="ttc" id="astruct_vector2_html"><div class="ttname"><a href="struct_vector2.html">Vector2</a></div><div class="ttdoc">Representa um vetor bidimensional com coordenadas inteiras.</div><div class="ttdef"><b>Definição</b> func.h:26</div></div>
+<div class="ttc" id="astruct_vector2_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="struct_vector2.html#a0a2f84ed7838f07779ae24c5a9086d33">Vector2::y</a></div><div class="ttdeci">int y</div><div class="ttdoc">Coordenada Y.</div><div class="ttdef"><b>Definição</b> func.h:28</div></div>
+<div class="ttc" id="astruct_vector2_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="struct_vector2.html#a6150e0515f7202e2fb518f7206ed97dc">Vector2::x</a></div><div class="ttdeci">int x</div><div class="ttdoc">Coordenada X.</div><div class="ttdef"><b>Definição</b> func.h:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

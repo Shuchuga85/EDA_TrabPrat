@@ -1,0 +1,715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho-Pratico_EDA: Referência ao ficheiro src/func.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho-Pratico_EDA
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro func.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação de funções para manipulação de uma lista de elementos representados em matriz.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="func_8h_source.html">func.h</a>&quot;</code><br />
+<code>#include &lt;malloc.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a67a3b2f72e59f620bbc56dffd61715f5" id="r_a67a3b2f72e59f620bbc56dffd61715f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67a3b2f72e59f620bbc56dffd61715f5">MakeNode</a> (char value, <a class="el" href="struct_vector2.html">Vector2</a> position)</td></tr>
+<tr class="memdesc:a67a3b2f72e59f620bbc56dffd61715f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo elemento (nó) para a lista.  <br /></td></tr>
+<tr class="separator:a67a3b2f72e59f620bbc56dffd61715f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bddc06c2720a7ee20a85ddb4c5666a" id="r_ad0bddc06c2720a7ee20a85ddb4c5666a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0bddc06c2720a7ee20a85ddb4c5666a">NodeInBounds</a> (<a class="el" href="struct_vector2.html">Vector2</a> pos)</td></tr>
+<tr class="memdesc:ad0bddc06c2720a7ee20a85ddb4c5666a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a posição está dentro dos limites da matriz.  <br /></td></tr>
+<tr class="separator:ad0bddc06c2720a7ee20a85ddb4c5666a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f757f48825475c14f135eb41eeee24" id="r_a67f757f48825475c14f135eb41eeee24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67f757f48825475c14f135eb41eeee24">InsertNode</a> (<a class="el" href="struct_node.html">Node</a> *dnew, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a67f757f48825475c14f135eb41eeee24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere um novo nó na lista, verificando se a posição está disponível.  <br /></td></tr>
+<tr class="separator:a67f757f48825475c14f135eb41eeee24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b9f58ca8ab0113298378d8238354ac" id="r_ad9b9f58ca8ab0113298378d8238354ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9b9f58ca8ab0113298378d8238354ac">RemoveNode</a> (<a class="el" href="struct_node.html">Node</a> *rm, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:ad9b9f58ca8ab0113298378d8238354ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um nó da lista.  <br /></td></tr>
+<tr class="separator:ad9b9f58ca8ab0113298378d8238354ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c0148015e29414921d92ac23554f9a8" id="r_a1c0148015e29414921d92ac23554f9a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c0148015e29414921d92ac23554f9a8">ClearNoise</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a1c0148015e29414921d92ac23554f9a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa elementos de ruído ('#') da lista.  <br /></td></tr>
+<tr class="separator:a1c0148015e29414921d92ac23554f9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af993d0fdd95ecfeb7ebafec3bc80b74a" id="r_af993d0fdd95ecfeb7ebafec3bc80b74a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af993d0fdd95ecfeb7ebafec3bc80b74a">ValidNodePos</a> (<a class="el" href="struct_node.html">Node</a> *dnew, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:af993d0fdd95ecfeb7ebafec3bc80b74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a posição de um novo nó é válida (sem sobreposição).  <br /></td></tr>
+<tr class="separator:af993d0fdd95ecfeb7ebafec3bc80b74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a674ee4c1a8c8226b6f069608db3c63b3" id="r_a674ee4c1a8c8226b6f069608db3c63b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a674ee4c1a8c8226b6f069608db3c63b3">NoiseCheck</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a674ee4c1a8c8226b6f069608db3c63b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica e aplica a regra de efeito nefasto aos elementos na lista.  <br /></td></tr>
+<tr class="separator:a674ee4c1a8c8226b6f069608db3c63b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a160664f3d263e4e13020cb93ad1b943c" id="r_a160664f3d263e4e13020cb93ad1b943c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a160664f3d263e4e13020cb93ad1b943c">NoiseCheckAlt</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a160664f3d263e4e13020cb93ad1b943c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Versão alternativa da verificação de ruído que compara todos os elementos entre si.  <br /></td></tr>
+<tr class="separator:a160664f3d263e4e13020cb93ad1b943c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d47b76a7910f0ad9895087baa394b4" id="r_aa1d47b76a7910f0ad9895087baa394b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1d47b76a7910f0ad9895087baa394b4">FindNodePos</a> (<a class="el" href="struct_node.html">Node</a> *st, <a class="el" href="struct_vector2.html">Vector2</a> npos)</td></tr>
+<tr class="memdesc:aa1d47b76a7910f0ad9895087baa394b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um nó na lista pela sua posição.  <br /></td></tr>
+<tr class="separator:aa1d47b76a7910f0ad9895087baa394b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab165979aa96500904b0b234640b80d53" id="r_ab165979aa96500904b0b234640b80d53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab165979aa96500904b0b234640b80d53">Vector2Compare</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
+<tr class="memdesc:ab165979aa96500904b0b234640b80d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compara se dois vetores possuem as mesmas coordenadas.  <br /></td></tr>
+<tr class="separator:ab165979aa96500904b0b234640b80d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac813f12efe4bfd7bd2dbec18f58f2bba" id="r_ac813f12efe4bfd7bd2dbec18f58f2bba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac813f12efe4bfd7bd2dbec18f58f2bba">Vector2Subtract</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
+<tr class="memdesc:ac813f12efe4bfd7bd2dbec18f58f2bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtrai um vetor do outro.  <br /></td></tr>
+<tr class="separator:ac813f12efe4bfd7bd2dbec18f58f2bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38193ad14e49953c1c6038eec5ec0ff1" id="r_a38193ad14e49953c1c6038eec5ec0ff1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38193ad14e49953c1c6038eec5ec0ff1">Vector2Add</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
+<tr class="memdesc:a38193ad14e49953c1c6038eec5ec0ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soma dois vetores.  <br /></td></tr>
+<tr class="separator:a38193ad14e49953c1c6038eec5ec0ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be92bf9b511af4d5466b4b9f637099b" id="r_a7be92bf9b511af4d5466b4b9f637099b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7be92bf9b511af4d5466b4b9f637099b">DrawMatrix</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a7be92bf9b511af4d5466b4b9f637099b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha a matriz com os elementos presentes na lista.  <br /></td></tr>
+<tr class="separator:a7be92bf9b511af4d5466b4b9f637099b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2640af73bd39be7651f501c56562b8db" id="r_a2640af73bd39be7651f501c56562b8db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2640af73bd39be7651f501c56562b8db">ShowList</a> (<a class="el" href="struct_node.html">Node</a> *st, char filter)</td></tr>
+<tr class="memdesc:a2640af73bd39be7651f501c56562b8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe a lista de nós, com um filtro opcional.  <br /></td></tr>
+<tr class="separator:a2640af73bd39be7651f501c56562b8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb620d127f79c45f6bc5317ff1fd7471" id="r_acb620d127f79c45f6bc5317ff1fd7471"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb620d127f79c45f6bc5317ff1fd7471">ReadListFile</a> (const char *filename)</td></tr>
+<tr class="memdesc:acb620d127f79c45f6bc5317ff1fd7471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê uma lista de elementos a partir de um ficheiro.  <br /></td></tr>
+<tr class="separator:acb620d127f79c45f6bc5317ff1fd7471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32dc0e8d65723f683a1d254e30ef108" id="r_aa32dc0e8d65723f683a1d254e30ef108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32dc0e8d65723f683a1d254e30ef108">SaveList</a> (const char *filename, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:aa32dc0e8d65723f683a1d254e30ef108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda a lista de elementos num ficheiro.  <br /></td></tr>
+<tr class="separator:aa32dc0e8d65723f683a1d254e30ef108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1483313e0618043fde85fc7a5abe9d4d" id="r_a1483313e0618043fde85fc7a5abe9d4d"><td class="memItemLeft" align="right" valign="top"><a id="a1483313e0618043fde85fc7a5abe9d4d" name="a1483313e0618043fde85fc7a5abe9d4d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawMenu</b> ()</td></tr>
+<tr class="memdesc:a1483313e0618043fde85fc7a5abe9d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha o menu de opções no terminal. <br /></td></tr>
+<tr class="separator:a1483313e0618043fde85fc7a5abe9d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add83fc1f29fff30765786c6deaf5fd8d" id="r_add83fc1f29fff30765786c6deaf5fd8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add83fc1f29fff30765786c6deaf5fd8d">Menu</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:add83fc1f29fff30765786c6deaf5fd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerencia a interface do utilizador e manipulação da lista de nós.  <br /></td></tr>
+<tr class="separator:add83fc1f29fff30765786c6deaf5fd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd85956a0342471aea47c1fbebe72531" id="r_abd85956a0342471aea47c1fbebe72531"><td class="memItemLeft" align="right" valign="top"><a id="abd85956a0342471aea47c1fbebe72531" name="abd85956a0342471aea47c1fbebe72531"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawCommands</b> ()</td></tr>
+<tr class="memdesc:abd85956a0342471aea47c1fbebe72531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe os comandos disponíveis para manipulação da lista. <br /></td></tr>
+<tr class="separator:abd85956a0342471aea47c1fbebe72531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab34e5ea3b4b5e91383136179e6b66c02" id="r_ab34e5ea3b4b5e91383136179e6b66c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab34e5ea3b4b5e91383136179e6b66c02">CommandIO</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:ab34e5ea3b4b5e91383136179e6b66c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface baseada em comandos para manipulação da lista de elementos.  <br /></td></tr>
+<tr class="separator:ab34e5ea3b4b5e91383136179e6b66c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70babc5227ddd16ca31dccc6cec0bb22" id="r_a70babc5227ddd16ca31dccc6cec0bb22"><td class="memItemLeft" align="right" valign="top"><a id="a70babc5227ddd16ca31dccc6cec0bb22" name="a70babc5227ddd16ca31dccc6cec0bb22"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr>
+<tr class="memdesc:a70babc5227ddd16ca31dccc6cec0bb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausa a execução do programa até que o usuário pressione uma tecla. <br /></td></tr>
+<tr class="separator:a70babc5227ddd16ca31dccc6cec0bb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:ac82c57dbdc66c72053d5936eaf2ce047" id="r_ac82c57dbdc66c72053d5936eaf2ce047"><td class="memItemLeft" align="right" valign="top"><a id="ac82c57dbdc66c72053d5936eaf2ce047" name="ac82c57dbdc66c72053d5936eaf2ce047"></a>
+<a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sSize</b> = {SWIDTH, SHEIGHT}</td></tr>
+<tr class="separator:ac82c57dbdc66c72053d5936eaf2ce047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537bc895eb2248dfd72d987c66140754" id="r_a537bc895eb2248dfd72d987c66140754"><td class="memItemLeft" align="right" valign="top"><a id="a537bc895eb2248dfd72d987c66140754" name="a537bc895eb2248dfd72d987c66140754"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>noiseRange</b> = NOISERANGE</td></tr>
+<tr class="separator:a537bc895eb2248dfd72d987c66140754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação de funções para manipulação de uma lista de elementos representados em matriz. </p>
+<dl class="section author"><dt>Autor</dt><dd>Vitor Rezende (<a href="#" onclick="location.href='mai'+'lto:'+'a31'+'52'+'1@a'+'lu'+'nos'+'.i'+'pca'+'.p'+'t'; return false;">a3152<span class="obfuscator">.nosp@m.</span>1@al<span class="obfuscator">.nosp@m.</span>unos.<span class="obfuscator">.nosp@m.</span>ipca<span class="obfuscator">.nosp@m.</span>.pt</a>) </dd></dl>
+<dl class="section version"><dt>Versão</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2025-03-18</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a1c0148015e29414921d92ac23554f9a8" name="a1c0148015e29414921d92ac23554f9a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0148015e29414921d92ac23554f9a8">&#9670;&#160;</a></span>ClearNoise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * ClearNoise </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Limpa elementos de ruído ('#') da lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para a lista sem elementos de ruído. </dd></dl>
+
+</div>
+</div>
+<a id="ab34e5ea3b4b5e91383136179e6b66c02" name="ab34e5ea3b4b5e91383136179e6b66c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab34e5ea3b4b5e91383136179e6b66c02">&#9670;&#160;</a></span>CommandIO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandIO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface baseada em comandos para manipulação da lista de elementos. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7be92bf9b511af4d5466b4b9f637099b" name="a7be92bf9b511af4d5466b4b9f637099b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be92bf9b511af4d5466b4b9f637099b">&#9670;&#160;</a></span>DrawMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Desenha a matriz com os elementos presentes na lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1d47b76a7910f0ad9895087baa394b4" name="aa1d47b76a7910f0ad9895087baa394b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d47b76a7910f0ad9895087baa394b4">&#9670;&#160;</a></span>FindNodePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * FindNodePos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>npos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Procura um nó na lista pela sua posição. </p>
+<p>Procura um nó em uma posição específica.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
+    <tr><td class="paramname">npos</td><td>Posição do nó a ser encontrado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o nó encontrado, ou NULL se não existir. </dd></dl>
+
+</div>
+</div>
+<a id="a67f757f48825475c14f135eb41eeee24" name="a67f757f48825475c14f135eb41eeee24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f757f48825475c14f135eb41eeee24">&#9670;&#160;</a></span>InsertNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * InsertNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere um novo nó na lista, verificando se a posição está disponível. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dnew</td><td>Novo nó a ser inserido. </td></tr>
+    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para a lista atualizada. </dd></dl>
+
+</div>
+</div>
+<a id="a67a3b2f72e59f620bbc56dffd61715f5" name="a67a3b2f72e59f620bbc56dffd61715f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a3b2f72e59f620bbc56dffd61715f5">&#9670;&#160;</a></span>MakeNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * MakeNode </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>position</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo elemento (nó) para a lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Valor do elemento (ex: antena tipo A, efeito nefasto '#'). </td></tr>
+    <tr><td class="paramname">position</td><td>Posição na matriz. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o novo nó criado. </dd></dl>
+
+</div>
+</div>
+<a id="add83fc1f29fff30765786c6deaf5fd8d" name="add83fc1f29fff30765786c6deaf5fd8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add83fc1f29fff30765786c6deaf5fd8d">&#9670;&#160;</a></span>Menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gerencia a interface do utilizador e manipulação da lista de nós. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad0bddc06c2720a7ee20a85ddb4c5666a" name="ad0bddc06c2720a7ee20a85ddb4c5666a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bddc06c2720a7ee20a85ddb4c5666a">&#9670;&#160;</a></span>NodeInBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NodeInBounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se a posição está dentro dos limites da matriz. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Posição a ser verificada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se estiver dentro dos limites, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a674ee4c1a8c8226b6f069608db3c63b3" name="a674ee4c1a8c8226b6f069608db3c63b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a674ee4c1a8c8226b6f069608db3c63b3">&#9670;&#160;</a></span>NoiseCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * NoiseCheck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica e aplica a regra de efeito nefasto aos elementos na lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Node* Lista atualizada após a verificação do efeito nefasto. </dd></dl>
+
+</div>
+</div>
+<a id="a160664f3d263e4e13020cb93ad1b943c" name="a160664f3d263e4e13020cb93ad1b943c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a160664f3d263e4e13020cb93ad1b943c">&#9670;&#160;</a></span>NoiseCheckAlt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * NoiseCheckAlt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Versão alternativa da verificação de ruído que compara todos os elementos entre si. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Node* Lista atualizada após a verificação do efeito nefasto. </dd></dl>
+
+</div>
+</div>
+<a id="acb620d127f79c45f6bc5317ff1fd7471" name="acb620d127f79c45f6bc5317ff1fd7471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb620d127f79c45f6bc5317ff1fd7471">&#9670;&#160;</a></span>ReadListFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * ReadListFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê uma lista de elementos a partir de um ficheiro. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nome do ficheiro. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Node* Lista carregada do ficheiro. </dd></dl>
+
+</div>
+</div>
+<a id="ad9b9f58ca8ab0113298378d8238354ac" name="ad9b9f58ca8ab0113298378d8238354ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b9f58ca8ab0113298378d8238354ac">&#9670;&#160;</a></span>RemoveNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * RemoveNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>rm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um nó da lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rm</td><td>Ponteiro para o nó a ser removido. </td></tr>
+    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para a lista atualizada. </dd></dl>
+
+</div>
+</div>
+<a id="aa32dc0e8d65723f683a1d254e30ef108" name="aa32dc0e8d65723f683a1d254e30ef108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32dc0e8d65723f683a1d254e30ef108">&#9670;&#160;</a></span>SaveList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveList </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda a lista de elementos num ficheiro. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nome do ficheiro onde os dados serão armazenados. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista de nós a ser salva. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2640af73bd39be7651f501c56562b8db" name="a2640af73bd39be7651f501c56562b8db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2640af73bd39be7651f501c56562b8db">&#9670;&#160;</a></span>ShowList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShowList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exibe a lista de nós, com um filtro opcional. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+    <tr><td class="paramname">filter</td><td>Caracter usado para filtrar os elementos exibidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af993d0fdd95ecfeb7ebafec3bc80b74a" name="af993d0fdd95ecfeb7ebafec3bc80b74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af993d0fdd95ecfeb7ebafec3bc80b74a">&#9670;&#160;</a></span>ValidNodePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ValidNodePos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se a posição de um novo nó é válida (sem sobreposição). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dnew</td><td>Novo nó. </td></tr>
+    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se a posição for válida, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a38193ad14e49953c1c6038eec5ec0ff1" name="a38193ad14e49953c1c6038eec5ec0ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38193ad14e49953c1c6038eec5ec0ff1">&#9670;&#160;</a></span>Vector2Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vector2.html">Vector2</a> Vector2Add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Soma dois vetores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Primeiro vetor. </td></tr>
+    <tr><td class="paramname">b</td><td>Segundo vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a> Resultado da soma. </dd></dl>
+
+</div>
+</div>
+<a id="ab165979aa96500904b0b234640b80d53" name="ab165979aa96500904b0b234640b80d53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab165979aa96500904b0b234640b80d53">&#9670;&#160;</a></span>Vector2Compare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Vector2Compare </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compara se dois vetores possuem as mesmas coordenadas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Primeiro vetor. </td></tr>
+    <tr><td class="paramname">b</td><td>Segundo vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se forem iguais. </dd>
+<dd>
+false Se forem diferentes. </dd></dl>
+
+</div>
+</div>
+<a id="ac813f12efe4bfd7bd2dbec18f58f2bba" name="ac813f12efe4bfd7bd2dbec18f58f2bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac813f12efe4bfd7bd2dbec18f58f2bba">&#9670;&#160;</a></span>Vector2Subtract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vector2.html">Vector2</a> Vector2Subtract </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtrai um vetor do outro. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Primeiro vetor. </td></tr>
+    <tr><td class="paramname">b</td><td>Segundo vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a> Resultado da subtração. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

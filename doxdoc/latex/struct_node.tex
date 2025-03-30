@@ -1,0 +1,33 @@
+\doxysection{Referência à estrutura Node}
+\hypertarget{struct_node}{}\label{struct_node}\index{Node@{Node}}
+
+
+Representa um nó de uma lista ligada de elementos na matriz.  
+
+
+
+
+{\ttfamily \#include $<$func.\+h$>$}
+
+\doxysubsubsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_node_ac72b18fae976bd97b4832279df736b62}\label{struct_node_ac72b18fae976bd97b4832279df736b62} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} {\bfseries pos}
+\begin{DoxyCompactList}\small\item\em Posição do nó na matriz. \end{DoxyCompactList}\item 
+\Hypertarget{struct_node_a1de5cca0fbfc376f5a6997b84006e25e}\label{struct_node_a1de5cca0fbfc376f5a6997b84006e25e} 
+char {\bfseries value}
+\begin{DoxyCompactList}\small\item\em Valor do nó (ex\+: antena tipo A, efeito nefasto \textquotesingle{}\#\textquotesingle{}) \end{DoxyCompactList}\item 
+\Hypertarget{struct_node_aa162dd1e0693188a22b1f13b9a2a0ef0}\label{struct_node_aa162dd1e0693188a22b1f13b9a2a0ef0} 
+struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} {\bfseries next}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o próximo nó na lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Representa um nó de uma lista ligada de elementos na matriz. 
+
+Cada nó contém um valor (por exemplo, um tipo de antena ou um efeito nefasto), uma posição na matriz representada por um \doxylink{struct_vector2}{Vector2}, e um ponteiro para o próximo nó da lista. 
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{func_8h}{func.\+h}}\end{DoxyCompactItemize}
