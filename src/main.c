@@ -15,8 +15,14 @@
 
 int main(){
 
-    Node* st =NULL;
-  
+    InitLog();
+
+    Node* st = NULL;
+    Graph* gr = InitGraph();
+    
+    CommandIO(st, gr);
+
+    /*
     int op = 0;
     printf("\n 1 - Options Menu");
     printf("\n 2 - Command Line");
@@ -27,14 +33,16 @@ int main(){
     switch (op)
     {
     case 1:
-        Menu(st);
+        Menu(st, gr);
         break;
     case 2:
-        CommandIO(st);
+        CommandIO(st, gr);
         break;
     default:
         break;
     }
+
+    */
 
 
       /*st = InsertNode(MakeNode('A',(Vector2){7,6}),NULL);

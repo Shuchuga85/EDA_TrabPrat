@@ -8,13 +8,20 @@
  * @copyright Copyright (c) 2025
  * 
 */
+#pragma once
+
+#define LOG "log.txt"
+#define LOG_OLD "log_old.txt"
+
 #define SWIDTH 12
 #define SHEIGHT 12
 #define NOISERANGE 4
 #define MAXINPUT 100
+
 #define SFILE "file.txt"
 
 #include <stdbool.h>
+
 
 /**
  * @brief Representa um vetor bidimensional com coordenadas inteiras.
@@ -40,6 +47,28 @@ typedef struct Node
     char value;         ///< Valor do nó (ex: antena tipo A, efeito nefasto '#')
     struct Node* next;  ///< Ponteiro para o próximo nó na lista
 }Node;
+
+// Aresta (ligação entre antenas com mesma frequência)
+typedef struct Edge {
+    float weight; 
+    struct Vertex* dest;
+    struct Edge* next;
+} Edge;
+
+// Vértice (antena)
+typedef struct Vertex {
+    int id;
+    Vector2 pos;
+    char value;
+    Edge* edges;
+    struct Vertex* next;
+} Vertex;
+
+// Grafo
+typedef struct Graph{
+    int count;
+    Vertex* vertices;
+} Graph;
 
 /**
  * @brief Cria um novo elemento (nó) para a lista.
@@ -116,7 +145,33 @@ Node *NoiseCheckAlt(Node *st);
  * @param npos Posição a ser pesquisada.
  * @return Node* Ponteiro para o nó encontrado ou NULL se não existir.
  */
+Node* FreeList(Node *head);
+
 Node* FindNodePos(Node* st, Vector2 npos);
+
+Graph* InitGraph();
+
+Vertex* MakeVertex(char value, Vector2 position, int *id);
+
+bool InsertEdge(Vertex* from, Vertex* dest);
+
+bool IsNewEdge(Vertex* from, Vertex* dest);
+
+Vertex *InsertVertex(Vertex *dnew, Vertex *st);
+
+Vertex *RemoveVertex(Vertex *rm, Vertex *st);
+
+bool RemoveEdges(Vertex* old);
+
+bool EdgeFindDest(Edge** current, Edge** previous, Vertex* pick);
+
+bool AddEdges(Vertex* new, Vertex* st);
+
+Vertex *FindVertexAt(Vertex *st, Vector2 npos);
+
+bool FreeGraph(Graph *gr);
+
+void ShowGraph(Graph * gr, char filter);
 
 /**
  * @brief Compara se dois vetores possuem as mesmas coordenadas.
@@ -161,13 +216,17 @@ void DrawMatrix(Node *st);
  */
 void ShowList(Node *st, char filter);
 
+bool ReadGraphFile(const char *filename, Graph *gr);
+
+bool SaveGraphFile(const char *filename, Graph *gr);
+
 /**
  * @brief Lê uma lista de elementos a partir de um ficheiro.
  *
  * @param filename Nome do ficheiro.
  * @return Node* Lista carregada do ficheiro.
  */
-Node* ReadListFile(const char* filename);
+Node *ReadListFile(const char *filename, Node *st);
 
 /**
  * @brief Guarda a lista de elementos num ficheiro.
@@ -175,7 +234,13 @@ Node* ReadListFile(const char* filename);
  * @param filename Nome do ficheiro onde os dados serão armazenados.
  * @param st Lista de nós a ser salva.
  */
-void SaveList(const char* filename, Node* st);
+bool SaveList(const char* filename, Node* st);
+
+
+bool CopyListToGraph(Node* st, Graph* gr);
+
+Node* CopyGraphToList(Graph* gr, Node* st);
+
 
 /**
  * @brief Desenha o menu de opções no terminal.
@@ -187,7 +252,7 @@ void DrawMenu();
  *
  * @param st Lista de nós.
  */
-void Menu(Node* st);
+void Menu(Node* st, Graph* gr);
 
 /**
  * @brief Exibe os comandos disponíveis para manipulação da lista.
@@ -199,10 +264,18 @@ void DrawCommands();
  *
  * @param st Lista de nós.
  */
-void CommandIO(Node* st);
+void CommandIO(Node* st, Graph* gr);
+
+bool HasBinExtension(const char *filename);
 
 /**
  * @brief Pausa a execução do programa até que o usuário pressione uma tecla.
  */
 void Pause();
+
+void InitLog();
+
+void Log(const char *format, ...);
+
+
 

@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "xutility": "c",
+        "algorithm": "c",
+        "optional": "c",
+        "type_traits": "c",
+        "xtr1common": "c"
+    }
+}
