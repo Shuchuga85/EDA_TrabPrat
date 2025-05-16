@@ -12,15 +12,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "func.h"
+#include "interface.h"
 #include <malloc.h>
 #include <stdbool.h>
 #include <string.h>
-#include <stdarg.h>
-#include <time.h>
+
 #include <math.h>
 
-Vector2 sSize = {SWIDTH, SHEIGHT};
-int noiseRange = NOISERANGE;
+Vector2 sSize = { SWIDTH, SHEIGHT };
+int noiseRange = NOISERANGE;   
 
 #pragma region Node
 
@@ -347,12 +347,12 @@ Node *FindNodePos(Node *st, Vector2 npos)
     return NULL;
 }
 
-Node* FreeList(Node *head)
+Node* FreeNodes(Node *st)
 {
-    if (head == NULL)
-        return head;
+    if (st == NULL)
+        return st;
 
-    Node *current = head;
+    Node *current = st;
     Node *next;
 
     while (current != NULL)
@@ -361,7 +361,8 @@ Node* FreeList(Node *head)
         free(current);
         current = next;
     }
-    return head;
+    st = NULL;
+    return st;
 }
 
 #pragma endregion
@@ -515,7 +516,7 @@ Vertex *RemoveVertex(Vertex *rm, Vertex *st)
     Vertex *current = st;
     Vertex *aux;
 
-    RemoveEdges(rm);
+    ClearEdges(rm);
 
     if (current == rm)
     {
@@ -535,7 +536,7 @@ Vertex *RemoveVertex(Vertex *rm, Vertex *st)
     return st;
 }
 
-bool RemoveEdges(Vertex *old)
+bool ClearEdges(Vertex *old)
 {
     if (old == NULL)
         return 0;
@@ -553,20 +554,20 @@ bool RemoveEdges(Vertex *old)
         {
             if (previous == NULL)
             {
-                Log("[RemoveEdges] previous is null");
+                Log("[ClearEdges] previous is null");
 
                 cedge->dest->edges = current->next; // first
             }
             else
             {
-                Log("[RemoveEdges] previous is not null");
+                Log("[ClearEdges] previous is not null");
 
                 previous->next = current->next; // in the middle
             }
             free(current);
         }
 
-        Log("[RemoveEdges] removing cedge");
+        Log("[ClearEdges] removing cedge");
 
         next = cedge->next;
         free(cedge);
@@ -576,6 +577,36 @@ bool RemoveEdges(Vertex *old)
     Log("[AddEdges] Successfully Removed edges for vertex : %c {%d,%d}", old->value, old->pos.x, old->pos.y);
     return 1;
 }
+
+bool RemoveEdge(Vertex *from, Vertex *dest){
+ if (from == NULL || dest == NULL || IsNewEdge(from, dest))
+    {
+        return false;
+    }
+
+    Edge* current = from->edges;
+    Edge* previous = NULL;
+    while (current)
+    {
+        if (current->dest == dest) break;
+        
+        previous = current;
+        current = current->next;
+    }
+
+    if (current == NULL) return false;
+    
+
+    if (previous == NULL)
+        from->edges = current->next;
+    else
+        previous->next = current->next; 
+    
+
+    free(current);
+    return true;
+}
+
 
 bool EdgeFindDest(Edge **current, Edge **previous, Vertex *pick)
 {
@@ -633,6 +664,16 @@ Vertex *FindVertexAt(Vertex *st, Vector2 npos)
     return NULL;
 }
 
+Vertex* FindVertexById(Vertex *vertices, int id)
+{
+    while(vertices)
+    {
+        if(vertices->id == id) return vertices;
+        vertices = vertices->next;
+    }
+    return NULL;
+}
+
 bool FreeGraph(Graph *gr)
 {
     if (gr->vertices == NULL)
@@ -648,6 +689,293 @@ bool FreeGraph(Graph *gr)
         current = next;
     }
     return true;
+}
+#pragma region Search
+
+bool ClearSeen(Vertex *st){
+    if (st == NULL) return false;
+    
+    Vertex* current = st;
+    while (current)
+    {
+        current->seen = 0;
+        current= current->next;
+    }
+    return true;
+}
+
+Element* GraphDFS(Graph* gr, Vertex* start) {
+    if (!gr || !start) return NULL;
+    ClearSeen(gr->vertices);
+
+    Path* path = (Path*)malloc(sizeof(Path));
+    path->first = NULL;
+    path->max = 1;
+
+    DFSVisit(start, path);
+    Element* first = path->first;
+    FreeElements(path->first);
+    free(path);
+    return first;
+}
+
+void DFSVisit(Vertex* current, Path* path) {
+    current->seen = path->max;
+    path->max++;
+
+    path->first = InsertElementAtEnd(MakeElement(current), path->first);
+
+    Edge* e = current->edges;
+    while (e) {
+        if (!e->dest->seen) {
+            DFSVisit(e->dest, path);
+        }
+        e = e->next;
+    }
+}
+
+Element* GraphBFS(Graph* gr, Vertex* start) {
+    if (!gr || !start) return NULL;
+    ClearSeen(gr->vertices);
+
+    Path* queue = (Path*)malloc(sizeof(Path));
+    queue->first = NULL;
+    queue->max = 1;
+    queue->first = InsertElementAtEnd(MakeElement(start), queue->first);;
+
+    start->seen = queue->max++;
+    
+    Element* c = queue->first;
+    while (c) {
+        Vertex* current = c->item;
+
+        Edge* cedge = current->edges;
+        while (cedge) {
+
+            if (cedge->dest->seen == 0) {
+                cedge->dest->seen = queue->max++;
+                queue->first = InsertElementAtEnd(MakeElement(cedge->dest), queue->first);
+            }
+            cedge = cedge->next;
+        }
+
+        queue->first = RemoveElement(c,queue->first);
+        c = queue->first;
+    }
+    
+    int i = queue->max;
+    FreeElements(queue->first);
+    free(queue);
+    return MakeSeenList(gr, i);
+}
+
+Element* MakeSeenList(Graph* gr, int max){
+    Element* seenst = NULL;
+    for (int i = 1; i < max; i++) {
+        Vertex* current = gr->vertices;
+        while (current) {
+            if (current->seen == i) {
+                seenst = InsertElementAtEnd(MakeElement(current), seenst);
+                break; 
+            }
+            current = current->next;
+        }
+    }
+    return seenst;
+}
+
+Element* GraphPaths(Graph *gr, Vertex *start, Vertex *end){
+    if (!gr || !start || !end) return false;
+    ClearSeen(gr->vertices);
+
+    Path* path = (Path*)malloc(sizeof(Path));
+    path->first = NULL;
+    path->max = 1;
+
+    Pathing(start, end, path, gr);
+    Element* first = path->first;
+    free(path);
+    return first;
+}
+
+void Pathing(Vertex *current, Vertex *end, Path* path, Graph *gr)
+{
+    current->seen = path->max;
+    path->max++;
+    if (current == end)
+    {
+        AddPath(path, gr, path->max);
+    }
+    else
+    {
+        Edge *e = current->edges;
+        while (e)
+        {
+            if (!e->dest->seen)
+                Pathing(e->dest, end, path, gr);
+            e = e->next;
+        }
+    }
+    path->max--;
+    current->seen = 0;
+}
+
+void AddPath(Path* path, Graph *gr, int max) {
+    for (int i = 1; i < max; i++) {
+        Vertex* current = gr->vertices;
+        while (current) {
+            if (current->seen == i) {
+                path->first = InsertElementAtEnd(MakeElement(current), path->first);
+                break; 
+            }
+            current = current->next;
+        }
+    }
+}
+
+void FindIntersections(Graph *gr)
+{
+    if (!gr) return;
+
+    printf("Vertices with intersections (degree > 2):\n");
+
+    Vertex *v = gr->vertices;
+    while (v)
+    {
+        int edgeCount = 0;
+        Edge *e = v->edges;
+        while (e)
+        {
+            edgeCount++;
+            e = e->next;
+        }
+
+        if (edgeCount > 2)
+        {
+            printf("Vertex %c*%d at {%d,%d} with %d edges\n", v->value, v->id, v->pos.x, v->pos.y, edgeCount);
+        }
+
+        v = v->next;
+    }
+}
+
+
+#pragma endregion
+
+
+#pragma endregion
+
+#pragma region Element
+
+Element *MakeElement(Vertex* value)
+{
+    Element *e = (Element*)malloc(sizeof(Element));
+
+    if (e == NULL)
+    {
+        Log("[MakeElement] Failed to allocate memory.");
+        return NULL;
+    }
+    e->item = value;
+    e->next = NULL;
+
+    Log("[MakeElement] Successfully made a Element");
+    return e;
+}
+
+
+Element *InsertElement(Element *dnew, Element *st)
+{
+    if (st == NULL)
+        return dnew;
+    if (dnew == NULL)
+        return st;
+
+    /*Element *tmp = NULL;
+    if ((tmp = FindElement(dnew->item, st)) != NULL)
+    {
+        return st;
+    }*/
+
+    dnew->next = st;
+    st = dnew;
+
+    Log("[InsertElement] Successfully inserted element");
+
+    return st;
+}
+
+Element *InsertElementAtEnd(Element* new, Element* st) {
+
+    Element* current = st;
+    if (current == NULL) return new;
+    while (current->next) current = current->next;
+    current->next = new;
+
+    return st;
+}
+
+Element *RemoveElement(Element *rm, Element *st)
+{
+    if (rm == NULL)
+        return st;
+    if (st == NULL)
+        return st;
+
+    Element *current = st;
+    Element *aux;
+
+    if (current == rm)
+    {
+        st = current->next;
+        free(rm);
+        return st;
+    }
+
+    while (current->next != rm)
+    {
+        current = current->next;
+    }
+
+    aux = rm->next;
+
+    free(rm);
+    current->next = aux;
+    return st;
+}
+
+
+Element *FindElement(void* item,Element *st)
+{
+    Element *current = st;
+
+    while (current != NULL)
+    {
+        if (current->item == item)
+        {
+            return current;
+        }
+        current = current->next;
+    }
+    return NULL;
+}
+
+Element* FreeElements(Element *path)
+{
+    if (path == NULL)
+        return path;
+
+    Element *current = path;
+    Element *next;
+
+    while (current != NULL)
+    {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    path = NULL;
+    return path;
 }
 
 #pragma endregion
@@ -693,131 +1021,6 @@ Vector2 Vector2Add(Vector2 a, Vector2 b)
     result.x = a.x + b.x;
     result.y = a.y + b.y;
     return result;
-}
-
-#pragma endregion
-
-#pragma region Output
-
-/**
- * @brief Desenha a matriz com os elementos presentes na lista.
- *
- * @param st Lista de nós.
- */
-void DrawMatrix(Node *st)
-{
-    if (st == NULL)
-    {
-        Log("[DrawMatrix] Missing list, *st is null");
-    }
-
-    Node *tp;
-    Vector2 tpos;
-
-    for (int y = 0; y < sSize.y; y++)
-    {
-        printf("\n");
-        for (int x = 0; x < sSize.x; x++)
-        {
-            if (st == NULL)
-            {
-                printf(". ");
-                continue;
-            }
-
-            tp = FindNodePos(st, (Vector2){x, y});
-            if (tp != NULL)
-            {
-                printf("%c", tp->value);
-            }
-            else
-            {
-                printf(".");
-            }
-            printf(" ");
-        }
-    }
-}
-
-/**
- * @brief Exibe a lista de nós, com um filtro opcional.
- *
- * @param st Lista de nós.
- * @param filter Caracter usado para filtrar os elementos exibidos.
- */
-void ShowList(Node *st, char filter)
-{
-    if (st == NULL)
-    {
-        Log("[ShowList] Missing list, *st is null");
-        printf("\n List is empty!");
-        return;
-    }
-
-    Node *current = st;
-    printf("\n| Value | Position |");
-    while (current != NULL)
-    {
-        if (filter == '.' || filter == ' ')
-        {
-            printf("\n|   %c   | ", current->value);
-            printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
-            // printf("%c\t", current->value);
-        }
-        else
-        {
-            if (current->value == filter)
-            {
-                printf("\n|   %c   | ", current->value);
-                printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
-            }
-        }
-
-        current = current->next;
-    }
-}
-
-void ShowGraph(Graph *gr, char filter)
-{
-    if (gr == NULL)
-    {
-        Log("[ShowGraph] Missing graph, *gr is null");
-        printf("\n Graph is empty!");
-        return;
-    }
-
-    Vertex *current = gr->vertices;
-    Edge *cedge = NULL;
-    printf("\n| Value | Position | Edges");
-    while (current != NULL)
-    {
-        if (filter == '.' || filter == ' ')
-        {
-            printf("\n|  %c*%d  | ", current->value, current->id);
-            printf("{%-2d,%-2d}  | ", current->pos.x, current->pos.y);
-            cedge = current->edges;
-            while (cedge != NULL)
-            {
-                printf(" %c*%d (w:%.2f) -", cedge->dest->value, cedge->dest->id, cedge->weight);
-                cedge = cedge->next;
-            }
-        }
-        else
-        {
-            if (current->value == filter)
-            {
-                printf("\n|  %c*%d  | ", current->value, current->id);
-                printf("{%-2d,%-2d}  |", current->pos.x, current->pos.y);
-            }
-            cedge = current->edges;
-            while (cedge != NULL)
-            {
-                printf(" %c*%d (w:%.2f) -", cedge->dest->value, cedge->dest->id, cedge->weight);
-                cedge = cedge->next;
-            }
-        }
-        current = current->next;
-    }
 }
 
 #pragma endregion
@@ -892,7 +1095,7 @@ Node *ReadListFile(const char *filename, Node *st)
         return NULL;
     }
 
-    FreeList(st);
+    FreeNodes(st);
     st = NULL;
     int y = 0;
     int x = 0;
@@ -1006,7 +1209,7 @@ Node* CopyGraphToList(Graph *gr, Node *st)
         Log("[CopyGraphToList] Missing vertices, *gr->vertices is null");
         return NULL;
     }
-    FreeList(st);
+    FreeNodes(st);
     st = NULL;
     Vertex *current = gr->vertices;
     while (current != NULL)
@@ -1020,417 +1223,3 @@ Node* CopyGraphToList(Graph *gr, Node *st)
 
 #pragma endregion
 
-#pragma region Interface
-
-/**
- * @brief Desenha o menu de opções no terminal.
- */
-void DrawMenu()
-{
-    printf("\n\n ..... Main Menu .....");
-    printf("\n 1 -> Add element;");
-    printf("\n 2 -> Remove element;");
-    printf("\n 3 -> Show matrix;");
-    printf("\n 4 -> Show list;");
-    printf("\n 5 -> Show noise;");
-    printf("\n 6 -> Load file;");
-    printf("\n 7 -> Save file;");
-    printf("\n 8 -> Settings;");
-    printf("\n 0 -> Exit;\n");
-}
-
-/**
- * @brief Gerencia a interface do utilizador e manipulação da lista de nós.
- *
- * @param st Lista de nós.
- */
-void Menu(Node *st, Graph *gr)
-{
-    Log("Starting menu...");
-    int op = 0;
-    Vector2 pos;
-    char value;
-    int range;
-    char filename[MAXINPUT];
-    do
-    {
-        DrawMenu();
-        printf("\nChoose Option : ");
-        scanf("%d", &op);
-
-        switch (op)
-        {
-        case 0:
-            break;
-        case 1:
-            printf("\n Adding element:");
-            getchar();
-            printf("\n Insert value (type:char) : ");
-            scanf("%c", &value);
-            printf("\n Insert coordinates (type:vector2int) x,y : ");
-            scanf("%d,%d", &pos.x, &pos.y);
-            st = InsertNode(MakeNode(value, (Vector2){pos.x, pos.y}), st);
-            break;
-        case 2:
-            getchar();
-            printf("\n Removing element:");
-            printf("\n Insert coordinates (type:vector2int) x,y : ");
-            scanf("%d,%d", &pos.x, &pos.y);
-            st = RemoveNode(FindNodePos(st, pos), st);
-            break;
-        case 3:
-            DrawMatrix(st);
-            Pause();
-            break;
-        case 4:
-            ShowList(st, '.');
-            break;
-        case 5:
-            ShowList(st, '#');
-            break;
-        case 6:
-            printf("\n Insert file name (default:%s) : ", SFILE);
-            scanf("%s", filename);
-            if (strcmp(filename, " ") == 0)
-            {
-                st = ReadListFile(SFILE, st);
-                if (st != NULL)
-                    printf("\nRead list successfuly!\n");
-                else
-                    printf("\nFailed to read list!\n");
-
-                CopyListToGraph(st, gr);
-            }
-            else
-            {
-                st = ReadListFile(filename, st);
-                if (st != NULL)
-                    printf("\nRead list successfuly!\n");
-                else
-                    printf("\nFailed to read list!\n");
-                CopyListToGraph(st, gr);
-            }
-            break;
-        case 7:
-            printf("\n Insert file name (default:%s) : ", SFILE);
-            scanf("%s", filename);
-            if (strcmp(filename, " ") == 0)
-            {
-                if (SaveList(SFILE, st))
-                    printf("\nSaved list successfuly!\n");
-                else
-                    printf("\nFailed to save list!\n");
-            }
-            else
-            {
-                if (SaveList(filename, st))
-                    printf("\nSaved list successfuly!\n");
-                else
-                    printf("\nFailed to save list!\n");
-            }
-            break;
-        case 8:
-            getchar();
-            printf("\n a -> Change Scale (current: {%d, %d})", sSize.x, sSize.y);
-            printf("\n b -> Change Noise range (current: %d)", noiseRange);
-            printf("\n Choose option: ");
-            int o = getchar();
-            if (o == 'a')
-            {
-                printf("\n Insert scale (type:vector2int) x,y: ");
-                scanf("%d,%d", &pos.x, &pos.y);
-                sSize.x = pos.x;
-                sSize.y = pos.y;
-            }
-            else if (0 == 'b')
-            {
-                printf("\n Insert scale (type:vector2int) x,y: ");
-                scanf("%d", range);
-                noiseRange = range;
-                st = ClearNoise(st);
-                st = NoiseCheck(st);
-            }
-            else
-            {
-                printf("\n Invalid option, try again.");
-            }
-            break;
-        default:
-            printf("\n Invalid option, try again.");
-            break;
-        }
-
-    } while (op != 0);
-}
-
-/**
- * @brief Exibe os comandos disponíveis para manipulação da lista.
- */
-void DrawCommands()
-{
-    printf("\n\n ..... Commands .....");
-    printf("\n > add [char] [x,y]");
-    printf("\n > remove [x,y]");
-    printf("\n > show [matrix|list|noise|graph]");
-    printf("\n > load [filename.txt]");
-    printf("\n > save [filename.txt]");
-    printf("\n > set scale [x,y]");
-    printf("\n > set noiseRange [int]");
-    printf("\n > clear");
-    printf("\n > exit\n");
-}
-
-/**
- * @brief Interface baseada em comandos para manipulação da lista de elementos.
- *
- * @param st Lista de nós.
- */
-void CommandIO(Node *st, Graph *gr)
-{
-    Log("Starting commandIO...");
-
-    char ip[MAXINPUT];
-    Vector2 pos;
-    char value;
-    do
-    {
-        DrawCommands();
-        printf("\nEnter command > ");
-
-        fgets(ip, MAXINPUT, stdin);
-
-        ip[strcspn(ip, "\n")] = 0;
-
-        char *command = strtok(ip, " ");
-
-        if (command == NULL)
-        {
-            printf("\n No commands detected, try again.");
-            continue;
-        }
-
-        if (strcmp(command, "add") == 0)
-        {
-            char *arg1 = strtok(NULL, " ");
-            char *arg2 = strtok(NULL, ", ");
-            char *arg3 = strtok(NULL, ", ");
-
-            if (arg1 != NULL && arg2 != NULL && arg3 != NULL)
-            {
-                value = arg1[0];
-                pos.x = atoi(arg2);
-                pos.y = atoi(arg3);
-                st = InsertNode(MakeNode(value, (Vector2){pos.x, pos.y}), st);
-                gr->vertices = InsertVertex(MakeVertex(value, (Vector2){pos.x, pos.y}, &gr->count), gr->vertices);
-            }
-            else
-            {
-                printf("\nMissing parameter! [char] [x,y].");
-            }
-        }
-        else if (strcmp(command, "remove") == 0)
-        {
-            char *arg1 = strtok(NULL, ", ");
-            char *arg2 = strtok(NULL, ", ");
-            if (arg1 != NULL && arg2 != NULL)
-            {
-                pos.x = atoi(arg1);
-                pos.y = atoi(arg2);
-                st = RemoveNode(FindNodePos(st, pos), st);
-                gr->vertices = RemoveVertex(FindVertexAt(gr->vertices, pos), gr->vertices);
-            }
-            else
-            {
-                printf("\nMissing parameter! [x,y].");
-            }
-        }
-        else if (strcmp(command, "show") == 0)
-        {
-            char *arg1 = strtok(NULL, " ");
-            if (arg1 != NULL)
-            {
-                if (strcmp(arg1, "matrix") == 0)
-                {
-                    DrawMatrix(st);
-                }
-                else if (strcmp(arg1, "list") == 0)
-                {
-                    ShowList(st, '.');
-                }
-                else if (strcmp(arg1, "noise") == 0)
-                {
-                    ShowList(st, '#');
-                }
-                else if (strcmp(arg1, "graph") == 0)
-                {
-                    ShowGraph(gr, ' ');
-                }
-                else
-                {
-                    printf("\nInvalid parameter! (matrix,list).");
-                }
-                Pause();
-            }
-            else
-            {
-                // printf("\nMissing parameter! (matrix,list).");
-                DrawMatrix(st);
-                Pause();
-            }
-        }
-        else if (strcmp(command, "load") == 0)
-        {
-            char *arg1 = strtok(NULL, " ");
-            arg1 = (arg1 == NULL) ? SFILE : arg1;
-
-            if (HasBinExtension(arg1))
-            {
-                if (ReadGraphFile(arg1, gr))
-                    printf("\nRead graph successfuly!\n");
-                else
-                    printf("\nFailed to read graph!\n");
-                st = CopyGraphToList(gr, st);
-            }
-            else
-            {
-                if ((st=ReadListFile(arg1, st)) != NULL)
-                    printf("\nRead list successfuly!\n");
-                else
-                    printf("\nFailed to read list!\n");
-                CopyListToGraph(st, gr);
-            }
-        }
-        else if (strcmp(command, "save") == 0)
-        {
-            char *arg1 = strtok(NULL, " ");
-            arg1 = (arg1 == NULL) ? SFILE : arg1;
-
-            if (HasBinExtension(arg1))
-            {
-                if (SaveGraphFile(arg1, gr))
-                    printf("\nSaved graph successfuly!\n");
-                else
-                    printf("\nFailed to save graph!\n");
-            }
-            else
-            {
-                if (SaveList(arg1, st))
-                    printf("\nSaved list successfuly!\n");
-                else
-                    printf("\nFailed to save list!\n");
-            }
-        }
-        else if (strcmp(command, "set") == 0)
-        {
-            char *arg1 = strtok(NULL, " ");
-            if (arg1 != NULL)
-            {
-                if (strcmp(arg1, "scale") == 0)
-                {
-                    char *arg2 = strtok(NULL, ", ");
-                    char *arg3 = strtok(NULL, ", ");
-                    if (arg2 != NULL && arg3 != NULL)
-                    {
-                        sSize.x = atoi(arg2);
-                        sSize.y = atoi(arg3);
-                        printf("\n Matrix limits set to : {%d, %d}", sSize.x, sSize.y);
-                    }
-                    else
-                    {
-                        printf("\n Matrix limits set to : {%d, %d}", sSize.x, sSize.y);
-                    }
-                }
-                else if (strcmp(arg1, "noiseRange") == 0)
-                {
-                    char *arg2 = strtok(NULL, " ");
-                    if (arg2 != NULL)
-                    {
-                        noiseRange = atoi(arg2);
-                        st = ClearNoise(st);
-                        st = NoiseCheck(st);
-                        printf("\n Noise range set to : %d", noiseRange);
-                    }
-                    else
-                    {
-                        printf("\n Noise range set to : %d", noiseRange);
-                    }
-                }
-                else
-                {
-                    printf("\nInvalid parameter! (scale, noiseRange).");
-                }
-            }
-        }
-        else if (strcmp(ip, "clear") == 0)
-        {
-            FreeGraph(gr);
-            st = FreeList(st);
-        }
-        else if (strcmp(ip, "exit") != 0)
-        {
-            printf("\n No valid commands detected, try again.");
-        }
-
-    } while (strcmp(ip, "exit") != 0);
-}
-
-bool HasBinExtension(const char *filename)
-{
-    if (filename == NULL)
-        return false;
-
-    const char *ext = strrchr(filename, '.'); // procura o último ponto
-    return (ext != NULL && strcmp(ext, ".bin") == 0);
-}
-
-#pragma endregion
-
-#pragma region Debug
-
-/**
- * @brief Pausa a execução do programa até que o usuário pressione uma tecla.
- */
-void Pause()
-{
-    printf("\n\nPressione qualquer tecla para continuar...");
-    getchar();
-    getchar();
-}
-
-void InitLog()
-{
-    remove(LOG_OLD);
-
-    rename(LOG, LOG_OLD);
-
-    FILE *logFile = fopen(LOG, "w");
-    if (logFile)
-    {
-        time_t now = time(NULL);
-        struct tm *t = localtime(&now);
-        fprintf(logFile, "[%02d:%02d:%02d] Log initialized\n",
-                t->tm_hour, t->tm_min, t->tm_sec);
-        fclose(logFile);
-    }
-}
-
-void Log(const char *format, ...)
-{
-    FILE *logFile = fopen(LOG, "a");
-    if (!logFile)
-        return;
-
-    time_t now = time(NULL);
-    struct tm *t = localtime(&now);
-    fprintf(logFile, "[%02d:%02d:%02d] ", t->tm_hour, t->tm_min, t->tm_sec);
-
-    va_list args;
-    va_start(args, format);
-    vfprintf(logFile, format, args);
-    va_end(args);
-
-    fprintf(logFile, "\n");
-    fclose(logFile);
-}
-
-#pragma endregion

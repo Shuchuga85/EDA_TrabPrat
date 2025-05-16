@@ -8,20 +8,15 @@
  * @copyright Copyright (c) 2025
  * 
 */
-#pragma once
-
-#define LOG "log.txt"
-#define LOG_OLD "log_old.txt"
+#ifndef FUNC_H
+#define FUNC_H
 
 #define SWIDTH 12
 #define SHEIGHT 12
 #define NOISERANGE 4
 #define MAXINPUT 100
 
-#define SFILE "file.txt"
-
 #include <stdbool.h>
-
 
 /**
  * @brief Representa um vetor bidimensional com coordenadas inteiras.
@@ -34,6 +29,9 @@ typedef struct Vector2
     int x;  ///< Coordenada X
     int y;  ///< Coordenada Y
 }Vector2;
+
+extern Vector2 sSize;
+extern int noiseRange;
 
 /**
  * @brief Representa um nó de uma lista ligada de elementos na matriz.
@@ -61,6 +59,7 @@ typedef struct Vertex {
     Vector2 pos;
     char value;
     Edge* edges;
+    int seen;
     struct Vertex* next;
 } Vertex;
 
@@ -69,6 +68,21 @@ typedef struct Graph{
     int count;
     Vertex* vertices;
 } Graph;
+
+//Elemento
+typedef struct Element{
+    Vertex* item;
+    struct Element* next;
+}Element;
+
+//Primeiro elemento
+typedef struct Path{
+    Element* first;
+    int max;
+}Path;
+
+
+
 
 /**
  * @brief Cria um novo elemento (nó) para a lista.
@@ -145,7 +159,7 @@ Node *NoiseCheckAlt(Node *st);
  * @param npos Posição a ser pesquisada.
  * @return Node* Ponteiro para o nó encontrado ou NULL se não existir.
  */
-Node* FreeList(Node *head);
+Node* FreeNodes(Node *head);
 
 Node* FindNodePos(Node* st, Vector2 npos);
 
@@ -161,7 +175,9 @@ Vertex *InsertVertex(Vertex *dnew, Vertex *st);
 
 Vertex *RemoveVertex(Vertex *rm, Vertex *st);
 
-bool RemoveEdges(Vertex* old);
+bool ClearEdges(Vertex* old);
+
+bool RemoveEdge(Vertex *from, Vertex *dest);
 
 bool EdgeFindDest(Edge** current, Edge** previous, Vertex* pick);
 
@@ -169,9 +185,49 @@ bool AddEdges(Vertex* new, Vertex* st);
 
 Vertex *FindVertexAt(Vertex *st, Vector2 npos);
 
+Vertex* FindVertexById(Vertex *vertices, int id);
+
 bool FreeGraph(Graph *gr);
 
-void ShowGraph(Graph * gr, char filter);
+//search
+bool ClearSeen(Vertex *st);
+
+Element* GraphDFS(Graph* gr, Vertex* start);
+
+void DFSVisit(Vertex* current, Path* path);
+
+Element* GraphBFS(Graph* gr, Vertex* start);
+
+Element* MakeSeenList(Graph* gr, int max);
+
+void PrintPath(Vertex *path[], int pathLen);
+
+Element* GraphPaths(Graph *gr, Vertex *start, Vertex *end);
+
+void Pathing(Vertex *current, Vertex *end, Path* head,Graph *gr);
+
+void AddPath(Path* head, Graph *gr, int max);
+
+/*
+void FindPathsUtil(Vertex *current, Vertex *end, bool visited[], Vertex *path[], int pathLen);
+
+void FindPaths(Graph *gr, Vertex *start, Vertex *end);
+*/
+void FindIntersections(Graph *gr);
+
+//elements
+
+Element *MakeElement(Vertex* value);
+
+Element *InsertElement(Element *dnew, Element *st);
+
+Element *InsertElementAtEnd(Element* new, Element* st);
+
+Element *RemoveElement(Element *rm, Element *st);
+
+Element *FindElement(void* item,Element *st);
+
+Element* FreeElements(Element *head);
 
 /**
  * @brief Compara se dois vetores possuem as mesmas coordenadas.
@@ -201,20 +257,6 @@ Vector2 Vector2Subtract(Vector2 a, Vector2 b);
  */
 Vector2 Vector2Add(Vector2 a, Vector2 b);
 
-/**
- * @brief Desenha a matriz com os elementos presentes na lista.
- *
- * @param st Lista de nós.
- */
-void DrawMatrix(Node *st);
-
-/**
- * @brief Exibe a lista de nós, com um filtro opcional.
- *
- * @param st Lista de nós.
- * @param filter Caracter usado para filtrar os elementos exibidos.
- */
-void ShowList(Node *st, char filter);
 
 bool ReadGraphFile(const char *filename, Graph *gr);
 
@@ -241,41 +283,4 @@ bool CopyListToGraph(Node* st, Graph* gr);
 
 Node* CopyGraphToList(Graph* gr, Node* st);
 
-
-/**
- * @brief Desenha o menu de opções no terminal.
- */
-void DrawMenu();
-
-/**
- * @brief Gerencia a interface do utilizador e manipulação da lista de nós.
- *
- * @param st Lista de nós.
- */
-void Menu(Node* st, Graph* gr);
-
-/**
- * @brief Exibe os comandos disponíveis para manipulação da lista.
- */
-void DrawCommands();
-
-/**
- * @brief Interface baseada em comandos para manipulação da lista de elementos.
- *
- * @param st Lista de nós.
- */
-void CommandIO(Node* st, Graph* gr);
-
-bool HasBinExtension(const char *filename);
-
-/**
- * @brief Pausa a execução do programa até que o usuário pressione uma tecla.
- */
-void Pause();
-
-void InitLog();
-
-void Log(const char *format, ...);
-
-
-
+#endif 

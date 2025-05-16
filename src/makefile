@@ -3,8 +3,11 @@ all: main
 func.o: func.c func.h
 	gcc -c func.c
 
-main: main.c func.o
-	gcc main.c func.o -o main
+interface.o: interface.c interface.h
+	gcc -c interface.c
+
+main: main.c func.o interface.o
+	gcc main.c func.o  interface.o -o main
 
 run: main.exe
 	.\main.exe

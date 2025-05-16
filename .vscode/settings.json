@@ -1,6 +1,14 @@
 {
     "files.associations": {
         "xutility": "c",
-        "*.m": "c"
+        "*.m": "c",
+        "math.h": "c",
+        "stdarg.h": "c",
+        "string.h": "c",
+        "utility": "c",
+        "algorithm": "c",
+        "optional": "c",
+        "type_traits": "c",
+        "xtr1common": "c"
     }
 }

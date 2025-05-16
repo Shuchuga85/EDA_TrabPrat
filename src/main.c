@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "func.h"
+#include "interface.h"
 
 
 int main(){
