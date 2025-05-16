@@ -194,7 +194,9 @@ bool ClearSeen(Vertex *st);
 
 Element* GraphDFS(Graph* gr, Vertex* start);
 
-void DFSVisit(Vertex* current, Path* path);
+void DFSMark(Vertex* current, int* count);
+
+//void DFSVisit(Vertex* current, Path* path);
 
 Element* GraphBFS(Graph* gr, Vertex* start);
 

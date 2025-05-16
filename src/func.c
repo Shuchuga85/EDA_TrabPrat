@@ -604,6 +604,7 @@ bool RemoveEdge(Vertex *from, Vertex *dest){
     
 
     free(current);
+    RemoveEdge(dest, from);
     return true;
 }
 
@@ -708,13 +709,36 @@ Element* GraphDFS(Graph* gr, Vertex* start) {
     if (!gr || !start) return NULL;
     ClearSeen(gr->vertices);
 
+    int count = 1;
+    DFSMark(start, &count);
+
+    return MakeSeenList(gr, count);
+}
+
+void DFSMark(Vertex* current, int* count) {
+    current->seen = (*count)++;
+    
+    Edge* e = current->edges;
+    while (e) {
+        if (!e->dest->seen) {
+            DFSMark(e->dest, count);
+        }
+        e = e->next;
+    }
+}
+
+
+/*
+Element* GraphDFS(Graph* gr, Vertex* start) {
+    if (!gr || !start) return NULL;
+    ClearSeen(gr->vertices);
+
     Path* path = (Path*)malloc(sizeof(Path));
     path->first = NULL;
     path->max = 1;
 
     DFSVisit(start, path);
     Element* first = path->first;
-    FreeElements(path->first);
     free(path);
     return first;
 }
@@ -733,7 +757,7 @@ void DFSVisit(Vertex* current, Path* path) {
         e = e->next;
     }
 }
-
+*/
 Element* GraphBFS(Graph* gr, Vertex* start) {
     if (!gr || !start) return NULL;
     ClearSeen(gr->vertices);
