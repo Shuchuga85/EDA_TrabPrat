@@ -2,7 +2,7 @@
  * @file main.c
  * @author Vitor Rezende (a31521@alunos.ipca.pt)
  * @brief 
- * @version 0.1
+ * @version 0.10
  * @date 2025-03-18
  * 
  * @copyright Copyright (c) 2025

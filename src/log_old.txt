@@ -1,675 +1,191 @@
-[12:08:37] Log initialized
-[12:08:37] Starting commandIO...
-[12:08:49] [MakeNode] Successfully made a Node : (B, {10, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (F, {23, 3})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (C, {5, 4})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (F, {21, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (F, {25, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (A, {8, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (F, {20, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (F, {23, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (A, {5, 7})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (C, {8, 7})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (O, {13, 7})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (O, {13, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 11})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 11})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 11})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeNode] Successfully made a Node : (K, {23, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {13, 11})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 1})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 3})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 6})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {22, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {26, 0})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {2, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {15, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {21, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 8})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {29, 4})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {25, 2})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {11, 10})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {23, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {17, 9})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {27, 5})
-[12:08:49] [MakeNode] Successfully made a Node : (#, {19, 5})
-[12:08:49] [NoiseCheckAlt] Successfully calculated noise
-[12:08:49] [InsertNode] Successfully inserted node in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (K, 1, {23, 10})
-[12:08:49] [MakeVertex] Successfully made a Vertex : (O, 2, {13, 9})
-[12:08:49] [AddEdges] Successfully added edges for vertex : O {13,9}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (O, 3, {13, 7})
-[12:08:49] [AddEdges] Successfully added edges for vertex : O {13,7}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (C, 4, {8, 7})
-[12:08:49] [AddEdges] Successfully added edges for vertex : C {8,7}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (A, 5, {5, 7})
-[12:08:49] [AddEdges] Successfully added edges for vertex : A {5,7}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (F, 6, {23, 6})
-[12:08:49] [AddEdges] Successfully added edges for vertex : F {23,6}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (F, 7, {20, 6})
-[12:08:49] [AddEdges] Successfully added edges for vertex : F {20,6}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (A, 8, {8, 5})
-[12:08:49] [AddEdges] Successfully added edges for vertex : A {8,5}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (F, 9, {25, 4})
-[12:08:49] [AddEdges] Successfully added edges for vertex : F {25,4}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (F, 10, {21, 4})
-[12:08:49] [AddEdges] Successfully added edges for vertex : F {21,4}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (C, 11, {5, 4})
-[12:08:49] [AddEdges] Successfully added edges for vertex : C {5,4}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (F, 12, {23, 3})
-[12:08:49] [AddEdges] Successfully added edges for vertex : F {23,3}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:08:49] [MakeVertex] Successfully made a Vertex : (B, 13, {10, 3})
-[12:08:49] [AddEdges] Successfully added edges for vertex : B {10,3}
-[12:08:49] [InsertVertex] Successfully inserted vertex in list
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:11] [MakeElement] Successfully made a Element
-[12:09:24] [MakeElement] Successfully made a Element
-[12:09:24] [MakeElement] Successfully made a Element
-[12:09:24] [MakeElement] Successfully made a Element
-[12:09:24] [MakeElement] Successfully made a Element
-[12:09:24] [MakeElement] Successfully made a Element
+[15:54:33] Log initialized
+[15:54:33] Starting commandIO...
+[15:54:35] [MakeNode] Successfully made a Node : (B, {10, 3})
+[15:54:35] [MakeNode] Successfully made a Node : (F, {23, 3})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (C, {5, 4})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (F, {21, 4})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (F, {25, 4})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (A, {8, 5})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (F, {20, 6})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (F, {23, 6})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (A, {5, 7})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (C, {8, 7})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (O, {13, 7})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (O, {13, 9})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeNode] Successfully made a Node : (K, {23, 10})
+[15:54:35] [NoiseCheckAlt] Successfully calculated noise
+[15:54:35] [InsertNode] Successfully inserted node in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (K, 1, {23, 10})
+[15:54:35] [MakeVertex] Successfully made a Vertex : (O, 2, {13, 9})
+[15:54:35] [AddEdges] Successfully added edges for vertex : O {13,9}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (O, 3, {13, 7})
+[15:54:35] [AddEdges] Successfully added edges for vertex : O {13,7}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (C, 4, {8, 7})
+[15:54:35] [AddEdges] Successfully added edges for vertex : C {8,7}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (A, 5, {5, 7})
+[15:54:35] [AddEdges] Successfully added edges for vertex : A {5,7}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (F, 6, {23, 6})
+[15:54:35] [AddEdges] Successfully added edges for vertex : F {23,6}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (F, 7, {20, 6})
+[15:54:35] [AddEdges] Successfully added edges for vertex : F {20,6}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (A, 8, {8, 5})
+[15:54:35] [AddEdges] Successfully added edges for vertex : A {8,5}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (F, 9, {25, 4})
+[15:54:35] [AddEdges] Successfully added edges for vertex : F {25,4}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (F, 10, {21, 4})
+[15:54:35] [AddEdges] Successfully added edges for vertex : F {21,4}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (C, 11, {5, 4})
+[15:54:35] [AddEdges] Successfully added edges for vertex : C {5,4}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (F, 12, {23, 3})
+[15:54:35] [AddEdges] Successfully added edges for vertex : F {23,3}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:35] [MakeVertex] Successfully made a Vertex : (B, 13, {10, 3})
+[15:54:35] [AddEdges] Successfully added edges for vertex : B {10,3}
+[15:54:35] [InsertVertex] Successfully inserted vertex in list
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element
+[15:54:39] [MakeElement] Successfully made a Element

@@ -2,7 +2,7 @@
  * @file func.c
  * @author Vitor Rezende (a31521@alunos.ipca.pt)
  * @brief Implementação de funções para manipulação de uma lista de elementos representados em matriz.
- * @version 0.1
+ * @version 0.10
  * @date 2025-03-18
  *
  * @copyright Copyright (c) 2025
@@ -19,8 +19,8 @@
 
 #include <math.h>
 
-Vector2 sSize = { SWIDTH, SHEIGHT };
-int noiseRange = NOISERANGE;   
+Vector2 sSize = {SWIDTH, SHEIGHT};
+int noiseRange = NOISERANGE;
 
 #pragma region Node
 
@@ -55,7 +55,10 @@ Node *MakeNode(char value, Vector2 position)
     p->pos = position;
     p->next = NULL;
 
-    Log("[MakeNode] Successfully made a Node : (%c, {%d, %d})", value, position.x, position.y);
+    if (value != '#')
+    {
+        Log("[MakeNode] Successfully made a Node : (%c, {%d, %d})", value, position.x, position.y);
+    }
 
     return p;
 }
@@ -91,26 +94,13 @@ Node *InsertNode(Node *dnew, Node *st)
 
         if (dnew->value != '#')
         {
-            char choice = 'y';
-
-            if (tmp->value == '#')
-            {
-                printf("\n Position {%d,%d} have noise! Want to insert in noise? [y,n]", dnew->pos.x, dnew->pos.y);
-            }
-            else
-            {
-                printf("\n Position {%d,%d} occupied! Want to replace %c with new one? [y,n]", dnew->pos.x, dnew->pos.y, tmp->value);
-            }
-            scanf("%c", &choice);
-
-            if (choice != 'y')
+            if (AskReplace(tmp->value,dnew->pos))
             {
                 free(dnew);
                 return st;
             }
             else
             {
-
                 st = RemoveNode(tmp, st);
             }
         }
@@ -347,7 +337,7 @@ Node *FindNodePos(Node *st, Vector2 npos)
     return NULL;
 }
 
-Node* FreeNodes(Node *st)
+Node *FreeNodes(Node *st)
 {
     if (st == NULL)
         return st;
@@ -457,7 +447,7 @@ bool IsNewEdge(Vertex *from, Vertex *dest)
     return true;
 }
 
-Vertex *InsertVertex(Vertex *dnew, Vertex *st)
+Vertex *InsertVertex(Vertex *dnew, Vertex *st, bool edge)
 {
     if (st == NULL)
         return dnew;
@@ -469,18 +459,7 @@ Vertex *InsertVertex(Vertex *dnew, Vertex *st)
     {
         if (dnew->value != '#')
         {
-            char choice = 'y';
-            getchar();
-            if (tmp->value == '#')
-            {
-                printf("\n Position {%d,%d} have noise! Want to insert in noise? [y,n]", dnew->pos.x, dnew->pos.y);
-            }
-            else
-            {
-                printf("\n Position {%d,%d} occupied! Want to replace %c with new one? [y,n]", dnew->pos.x, dnew->pos.y, tmp->value);
-            }
-            scanf("%c", &choice);
-            if (choice != 'y')
+            if (AskReplace(tmp->value, dnew->pos ))
             {
                 free(dnew);
                 return st;
@@ -499,8 +478,8 @@ Vertex *InsertVertex(Vertex *dnew, Vertex *st)
 
     dnew->next = st;
     st = dnew;
-
-    AddEdges(dnew, st);
+    
+    if (edge) AddEdges(dnew, st);
 
     Log("[InsertVertex] Successfully inserted vertex in list");
     return st;
@@ -578,36 +557,36 @@ bool ClearEdges(Vertex *old)
     return 1;
 }
 
-bool RemoveEdge(Vertex *from, Vertex *dest){
- if (from == NULL || dest == NULL || IsNewEdge(from, dest))
+bool RemoveEdge(Vertex *from, Vertex *dest)
+{
+    if (from == NULL || dest == NULL || IsNewEdge(from, dest))
     {
         return false;
     }
 
-    Edge* current = from->edges;
-    Edge* previous = NULL;
+    Edge *current = from->edges;
+    Edge *previous = NULL;
     while (current)
     {
-        if (current->dest == dest) break;
-        
+        if (current->dest == dest)
+            break;
+
         previous = current;
         current = current->next;
     }
 
-    if (current == NULL) return false;
-    
+    if (current == NULL)
+        return false;
 
     if (previous == NULL)
         from->edges = current->next;
     else
-        previous->next = current->next; 
-    
+        previous->next = current->next;
 
     free(current);
     RemoveEdge(dest, from);
     return true;
 }
-
 
 bool EdgeFindDest(Edge **current, Edge **previous, Vertex *pick)
 {
@@ -665,11 +644,12 @@ Vertex *FindVertexAt(Vertex *st, Vector2 npos)
     return NULL;
 }
 
-Vertex* FindVertexById(Vertex *vertices, int id)
+Vertex *FindVertexById(Vertex *vertices, int id)
 {
-    while(vertices)
+    while (vertices)
     {
-        if(vertices->id == id) return vertices;
+        if (vertices->id == id)
+            return vertices;
         vertices = vertices->next;
     }
     return NULL;
@@ -677,8 +657,9 @@ Vertex* FindVertexById(Vertex *vertices, int id)
 
 bool FreeGraph(Graph *gr)
 {
-    if (gr->vertices == NULL)
-        return true;
+    if (gr == NULL) return false;
+
+    if (gr->vertices == NULL) return true;
 
     Vertex *current = gr->vertices;
     Vertex *next;
@@ -689,24 +670,32 @@ bool FreeGraph(Graph *gr)
         gr->vertices = RemoveVertex(current, gr->vertices);
         current = next;
     }
+
+    gr->count = 0;
+    gr->vertices = NULL;
     return true;
 }
+
 #pragma region Search
 
-bool ClearSeen(Vertex *st){
-    if (st == NULL) return false;
-    
-    Vertex* current = st;
+bool ClearSeen(Vertex *st)
+{
+    if (st == NULL)
+        return false;
+
+    Vertex *current = st;
     while (current)
     {
         current->seen = 0;
-        current= current->next;
+        current = current->next;
     }
     return true;
 }
 
-Element* GraphDFS(Graph* gr, Vertex* start) {
-    if (!gr || !start) return NULL;
+Element *GraphDFS(Graph *gr, Vertex *start)
+{
+    if (!gr || !start)
+        return NULL;
     ClearSeen(gr->vertices);
 
     int count = 1;
@@ -715,92 +704,73 @@ Element* GraphDFS(Graph* gr, Vertex* start) {
     return MakeSeenList(gr, count);
 }
 
-void DFSMark(Vertex* current, int* count) {
+void DFSMark(Vertex *current, int *count)
+{
     current->seen = (*count)++;
-    
-    Edge* e = current->edges;
-    while (e) {
-        if (!e->dest->seen) {
+
+    Edge *e = current->edges;
+    while (e)
+    {
+        if (!e->dest->seen)
+        {
             DFSMark(e->dest, count);
         }
         e = e->next;
     }
 }
 
-
-/*
-Element* GraphDFS(Graph* gr, Vertex* start) {
-    if (!gr || !start) return NULL;
+Element *GraphBFS(Graph *gr, Vertex *start)
+{
+    if (!gr || !start)
+        return NULL;
     ClearSeen(gr->vertices);
 
-    Path* path = (Path*)malloc(sizeof(Path));
-    path->first = NULL;
-    path->max = 1;
-
-    DFSVisit(start, path);
-    Element* first = path->first;
-    free(path);
-    return first;
-}
-
-void DFSVisit(Vertex* current, Path* path) {
-    current->seen = path->max;
-    path->max++;
-
-    path->first = InsertElementAtEnd(MakeElement(current), path->first);
-
-    Edge* e = current->edges;
-    while (e) {
-        if (!e->dest->seen) {
-            DFSVisit(e->dest, path);
-        }
-        e = e->next;
-    }
-}
-*/
-Element* GraphBFS(Graph* gr, Vertex* start) {
-    if (!gr || !start) return NULL;
-    ClearSeen(gr->vertices);
-
-    Path* queue = (Path*)malloc(sizeof(Path));
+    Path *queue = (Path *)malloc(sizeof(Path));
     queue->first = NULL;
     queue->max = 1;
-    queue->first = InsertElementAtEnd(MakeElement(start), queue->first);;
+    queue->first = InsertElementAtEnd(MakeElement(start), queue->first);
 
     start->seen = queue->max++;
-    
-    Element* c = queue->first;
-    while (c) {
-        Vertex* current = c->item;
 
-        Edge* cedge = current->edges;
-        while (cedge) {
+    Element *c = queue->first;
+    while (c)
+    {
+        Vertex *current = c->item;
 
-            if (cedge->dest->seen == 0) {
+        Edge *cedge = current->edges;
+        while (cedge)
+        {
+
+            if (cedge->dest->seen == 0)
+            {
                 cedge->dest->seen = queue->max++;
                 queue->first = InsertElementAtEnd(MakeElement(cedge->dest), queue->first);
             }
             cedge = cedge->next;
         }
 
-        queue->first = RemoveElement(c,queue->first);
+        queue->first = RemoveElement(c, queue->first);
         c = queue->first;
     }
-    
+
     int i = queue->max;
     FreeElements(queue->first);
     free(queue);
     return MakeSeenList(gr, i);
 }
 
-Element* MakeSeenList(Graph* gr, int max){
-    Element* seenst = NULL;
-    for (int i = 1; i < max; i++) {
-        Vertex* current = gr->vertices;
-        while (current) {
-            if (current->seen == i) {
+Element *MakeSeenList(Graph *gr, int max)
+{
+    Element *seenst = NULL;
+    for (int i = 1; i < max; i++)
+    {
+        Vertex *current = gr->vertices;
+        while (current)
+        {
+            if (current->seen == i)
+            {
                 seenst = InsertElementAtEnd(MakeElement(current), seenst);
-                break; 
+                break;
             }
             current = current->next;
         }
@@ -808,21 +778,23 @@ Element* MakeSeenList(Graph* gr, int max){
     return seenst;
 }
 
-Element* GraphPaths(Graph *gr, Vertex *start, Vertex *end){
-    if (!gr || !start || !end) return false;
+Element *GraphPaths(Graph *gr, Vertex *start, Vertex *end)
+{
+    if (!gr || !start || !end)
+        return false;
     ClearSeen(gr->vertices);
 
-    Path* path = (Path*)malloc(sizeof(Path));
+    Path *path = (Path *)malloc(sizeof(Path));
     path->first = NULL;
     path->max = 1;
 
     Pathing(start, end, path, gr);
-    Element* first = path->first;
+    Element *first = path->first;
     free(path);
     return first;
 }
 
-void Pathing(Vertex *current, Vertex *end, Path* path, Graph *gr)
+void Pathing(Vertex *current, Vertex *end, Path *path, Graph *gr)
 {
     current->seen = path->max;
     path->max++;
@@ -844,56 +816,62 @@ void Pathing(Vertex *current, Vertex *end, Path* path, Graph *gr)
     current->seen = 0;
 }
 
-void AddPath(Path* path, Graph *gr, int max) {
-    for (int i = 1; i < max; i++) {
-        Vertex* current = gr->vertices;
-        while (current) {
-            if (current->seen == i) {
+void AddPath(Path *path, Graph *gr, int max)
+{
+    for (int i = 1; i < max; i++)
+    {
+        Vertex *current = gr->vertices;
+        while (current)
+        {
+            if (current->seen == i)
+            {
                 path->first = InsertElementAtEnd(MakeElement(current), path->first);
-                break; 
+                break;
             }
             current = current->next;
         }
     }
 }
 
-void FindIntersections(Graph *gr)
+Element *FindPairs(Graph *gr, char a, char b)
 {
-    if (!gr) return;
+    if (!gr)
+        return NULL;
 
-    printf("Vertices with intersections (degree > 2):\n");
+    Element *result = NULL;
+    Vertex *v1 = gr->vertices;
 
-    Vertex *v = gr->vertices;
-    while (v)
+    while (v1)
     {
-        int edgeCount = 0;
-        Edge *e = v->edges;
-        while (e)
+        if (v1->value == a)
         {
-            edgeCount++;
-            e = e->next;
-        }
+            Vertex *v2 = gr->vertices;
+            while (v2)
+            {
+                if ((v1->value == a && v2->value == b))
+                {
 
-        if (edgeCount > 2)
-        {
-            printf("Vertex %c*%d at {%d,%d} with %d edges\n", v->value, v->id, v->pos.x, v->pos.y, edgeCount);
+                    result = InsertElementAtEnd(MakeElement(v1), result);
+                    result = InsertElementAtEnd(MakeElement(v2), result);
+                }
+                v2 = v2->next;
+            }
         }
-
-        v = v->next;
+        v1 = v1->next;
     }
+
+    return result;
 }
 
-
 #pragma endregion
-
 
 #pragma endregion
 
 #pragma region Element
 
-Element *MakeElement(Vertex* value)
+Element *MakeElement(Vertex *value)
 {
-    Element *e = (Element*)malloc(sizeof(Element));
+    Element *e = (Element *)malloc(sizeof(Element));
 
     if (e == NULL)
     {
@@ -906,7 +884,6 @@ Element *MakeElement(Vertex* value)
     Log("[MakeElement] Successfully made a Element");
     return e;
 }
-
 
 Element *InsertElement(Element *dnew, Element *st)
 {
@@ -929,11 +906,14 @@ Element *InsertElement(Element *dnew, Element *st)
     return st;
 }
 
-Element *InsertElementAtEnd(Element* new, Element* st) {
+Element *InsertElementAtEnd(Element *new, Element *st)
+{
 
-    Element* current = st;
-    if (current == NULL) return new;
-    while (current->next) current = current->next;
+    Element *current = st;
+    if (current == NULL)
+        return new;
+    while (current->next)
+        current = current->next;
     current->next = new;
 
     return st;
@@ -968,8 +948,7 @@ Element *RemoveElement(Element *rm, Element *st)
     return st;
 }
 
-
-Element *FindElement(void* item,Element *st)
+Element *FindElement(void *item, Element *st)
 {
     Element *current = st;
 
@@ -984,7 +963,7 @@ Element *FindElement(void* item,Element *st)
     return NULL;
 }
 
-Element* FreeElements(Element *path)
+Element *FreeElements(Element *path)
 {
     if (path == NULL)
         return path;
@@ -1056,21 +1035,51 @@ bool ReadGraphFile(const char *filename, Graph *gr)
     FILE *file = fopen(filename, "rb");
     if (!file)
     {
-        Log("[ReadGraphFile] Tried and failed to open file : %s", filename);
+        Log("[ReadGraphFile] Failed to open file: %s", filename);
         return false;
     }
 
     FreeGraph(gr);
-    gr->vertices = NULL;
 
     fread(&sSize, sizeof(Vector2), 1, file);
 
     char ch;
     Vector2 pos;
+    long lastPos = ftell(file);
 
-    while (fread(&ch, sizeof(char), 1, file) == 1 && fread(&pos, sizeof(Vector2), 1, file) == 1)
+    while (fread(&ch, sizeof(char), 1, file) == 1 &&
+           fread(&pos, sizeof(Vector2), 1, file) == 1)
     {
-        gr->vertices = InsertVertex(MakeVertex(ch, pos, &gr->count), gr->vertices);
+        if ((int)ch == -1)
+        {
+            break;
+        }
+
+        gr->vertices = InsertVertex(MakeVertex(ch, pos, &gr->count), gr->vertices, false);
+        lastPos = ftell(file);
+    }
+
+    fseek(file, lastPos, SEEK_SET);
+    int marker;
+    fread(&marker, sizeof(int), 1, file);
+    if (marker != -1)
+    {
+        fclose(file);
+        Log("[ReadGraphFile] Missing edge marker after vertices.");
+        return false;
+    }
+
+    Vector2 from_pos, to_pos;
+
+    while (fread(&from_pos, sizeof(Vector2), 1, file) == 1 &&
+           fread(&to_pos, sizeof(Vector2), 1, file) == 1)
+    {
+        Vertex *from = FindVertexAt(gr->vertices, from_pos);
+        Vertex *to = FindVertexAt(gr->vertices, to_pos);
+        if (from && to)
+        {
+            InsertEdge(from, to);
+        }
     }
 
     fclose(file);
@@ -1079,30 +1088,46 @@ bool ReadGraphFile(const char *filename, Graph *gr)
 
 bool SaveGraphFile(const char *filename, Graph *gr)
 {
-    if (gr == NULL || gr->vertices == NULL)
+    if (!gr || !gr->vertices)
         return false;
 
     FILE *file = fopen(filename, "wb");
     if (!file)
     {
-        Log("[SaveGraphFile] Tried and failed to open file : %s", filename);
+        Log("[SaveGraphFile] Failed to open file: %s", filename);
         return false;
     }
 
     fwrite(&sSize, sizeof(Vector2), 1, file);
 
-    Vertex *current = gr->vertices;
-
-    while (current != NULL)
+    Vertex *v = gr->vertices;
+    while (v)
     {
-        fwrite(&current->value, sizeof(char), 1, file);
-        fwrite(&current->pos, sizeof(Vector2), 1, file);
-        current = current->next;
+        fwrite(&v->value, sizeof(char), 1, file);
+        fwrite(&v->pos, sizeof(Vector2), 1, file);
+        v = v->next;
+    }
+
+    int marker = -1;
+    fwrite(&marker, sizeof(int), 1, file);
+
+    v = gr->vertices;
+    while (v)
+    {
+        Edge *e = v->edges;
+        while (e)
+        {
+            fwrite(&v->pos, sizeof(Vector2), 1, file);
+            fwrite(&e->dest->pos, sizeof(Vector2), 1, file);
+            e = e->next;
+        }
+        v = v->next;
     }
 
     fclose(file);
     return true;
 }
+
 
 /**
  * @brief Lê uma lista de elementos a partir de um ficheiro.
@@ -1133,7 +1158,7 @@ Node *ReadListFile(const char *filename, Node *st)
 
         if (ch != '.' && ch != ' ' && ch != '\n' && ch != '#')
         {
-            printf("\n (%d, %d), %c", x, y, ch);
+            //printf("\n (%d, %d), %c", x, y, ch);
             st = InsertNode(MakeNode(ch, (Vector2){x, y}), st);
             x++;
         }
@@ -1200,8 +1225,10 @@ bool SaveList(const char *filename, Node *st)
             }
         }
     }
-    return true;
     fclose(file);
+
+    Log("[SaveList] Saved List successfully : %s", filename);
+    return true;
 }
 
 bool CopyListToGraph(Node *st, Graph *gr)
@@ -1212,13 +1239,12 @@ bool CopyListToGraph(Node *st, Graph *gr)
         return false;
     }
     FreeGraph(gr);
-    gr->vertices = NULL;
     Node *current = st;
     while (current != NULL)
     {
         if (current->value != '#')
         {
-            gr->vertices = InsertVertex(MakeVertex(current->value, current->pos, &gr->count), gr->vertices);
+            gr->vertices = InsertVertex(MakeVertex(current->value, current->pos, &gr->count), gr->vertices, true);
             current = current->next;
             continue;
         }
@@ -1226,7 +1252,7 @@ bool CopyListToGraph(Node *st, Graph *gr)
     }
 }
 
-Node* CopyGraphToList(Graph *gr, Node *st)
+Node *CopyGraphToList(Graph *gr, Node *st)
 {
     if (gr->vertices == NULL)
     {
@@ -1246,4 +1272,3 @@ Node* CopyGraphToList(Graph *gr, Node *st)
 }
 
 #pragma endregion
-

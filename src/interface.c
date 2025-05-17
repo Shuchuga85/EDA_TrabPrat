@@ -1,8 +1,8 @@
 /**
  * @file interface.c
  * @author Vitor Rezende (a31521@alunos.ipca.pt)
- * @brief
- * @version 0.1
+ * @brief Interface do utilizador e visualização de estruturas.
+ * @version 0.10
  * @date 2025-05-15
  *
  * @copyright Copyright (c) 2025
@@ -93,7 +93,7 @@ void Menu(Node *st, Graph *gr)
             {
                 st = ReadListFile(SFILE, st);
                 if (st != NULL)
-                    printf("\nRead list successfuly!\n");
+                    printf("\nRead list successfully!\n");
                 else
                     printf("\nFailed to read list!\n");
 
@@ -103,7 +103,7 @@ void Menu(Node *st, Graph *gr)
             {
                 st = ReadListFile(filename, st);
                 if (st != NULL)
-                    printf("\nRead list successfuly!\n");
+                    printf("\nRead list successfully!\n");
                 else
                     printf("\nFailed to read list!\n");
                 CopyListToGraph(st, gr);
@@ -115,14 +115,14 @@ void Menu(Node *st, Graph *gr)
             if (strcmp(filename, " ") == 0)
             {
                 if (SaveList(SFILE, st))
-                    printf("\nSaved list successfuly!\n");
+                    printf("\nSaved list successfully!\n");
                 else
                     printf("\nFailed to save list!\n");
             }
             else
             {
                 if (SaveList(filename, st))
-                    printf("\nSaved list successfuly!\n");
+                    printf("\nSaved list successfully!\n");
                 else
                     printf("\nFailed to save list!\n");
             }
@@ -167,16 +167,17 @@ void Menu(Node *st, Graph *gr)
 void DrawCommands()
 {
     printf("\n\n ..... Commands .....");
-    printf("\n > add [char] [x,y]");
-    printf("\n > remove [x,y]");
+    printf("\n > add [char_freq] [int_x,int_y]");
+    printf("\n > remove [int_x,int_y]");
     printf("\n > show [matrix|list|noise|graph]");
     printf("\n > load [filename.txt/bin]");
     printf("\n > save [filename.txt/bin]");
     printf("\n > set scale [x,y]");
     printf("\n > set noiseRange [int]");
     printf("\n > edge [add|remove] [from_vertex_id] [to_vertex_id]");
-    printf("\n > graph [dfs|bfs|intersections] [start_vertex_id]");
+    printf("\n > graph [dfs|bfs] [start_vertex_id]");
     printf("\n > paths [start_vertex_id] [end_vertex_id]");
+    printf("\n > pair [char_a] [char_b]");
     printf("\n > clear");
     printf("\n > exit\n");
 }
@@ -222,7 +223,7 @@ void CommandIO(Node *st, Graph *gr)
                 pos.x = atoi(arg2);
                 pos.y = atoi(arg3);
                 st = InsertNode(MakeNode(value, (Vector2){pos.x, pos.y}), st);
-                gr->vertices = InsertVertex(MakeVertex(value, (Vector2){pos.x, pos.y}, &gr->count), gr->vertices);
+                gr->vertices = InsertVertex(MakeVertex(value, (Vector2){pos.x, pos.y}, &gr->count), gr->vertices, true);
             }
             else
             {
@@ -287,7 +288,7 @@ void CommandIO(Node *st, Graph *gr)
             if (HasBinExtension(arg1))
             {
                 if (ReadGraphFile(arg1, gr))
-                    printf("\nRead graph successfuly!\n");
+                    printf("\nRead graph successfully!\n");
                 else
                     printf("\nFailed to read graph!\n");
                 st = CopyGraphToList(gr, st);
@@ -295,7 +296,7 @@ void CommandIO(Node *st, Graph *gr)
             else
             {
                 if ((st = ReadListFile(arg1, st)) != NULL)
-                    printf("\nRead list successfuly!\n");
+                    printf("\nRead list successfully!\n");
                 else
                     printf("\nFailed to read list!\n");
                 CopyListToGraph(st, gr);
@@ -309,14 +310,14 @@ void CommandIO(Node *st, Graph *gr)
             if (HasBinExtension(arg1))
             {
                 if (SaveGraphFile(arg1, gr))
-                    printf("\nSaved graph successfuly!\n");
+                    printf("\nSaved graph successfully!\n");
                 else
                     printf("\nFailed to save graph!\n");
             }
             else
             {
                 if (SaveList(arg1, st))
-                    printf("\nSaved list successfuly!\n");
+                    printf("\nSaved list successfully!\n");
                 else
                     printf("\nFailed to save list!\n");
             }
@@ -387,11 +388,10 @@ void CommandIO(Node *st, Graph *gr)
                         continue;
                     }
 
-                    if (InsertEdge(from, to)) 
-                        printf("\nAdded edge successfuly!");
+                    if (InsertEdge(from, to))
+                        printf("\nAdded edge successfully!");
                     else
-                         printf("\nFailed to add edge!");
-                    
+                        printf("\nFailed to add edge!");
                 }
                 else if (strcmp(arg1, "remove") == 0)
                 {
@@ -413,17 +413,16 @@ void CommandIO(Node *st, Graph *gr)
                         continue;
                     }
 
-                    if (RemoveEdge(from, to)) 
-                        printf("\nRemoved edge successfuly!");
+                    if (RemoveEdge(from, to))
+                        printf("\nRemoved edge successfully!");
                     else
-                         printf("\nFailed to remove edge!");
+                        printf("\nFailed to remove edge!");
                 }
                 else
                 {
                     printf("\nInvalid parameter! (add, remove).");
                 }
                 Pause();
-
             }
         }
         else if (strcmp(command, "graph") == 0)
@@ -528,6 +527,23 @@ void CommandIO(Node *st, Graph *gr)
             ShowPath(GraphPaths(gr, start, end), start, end);
             Pause();
         }
+        else if (strcmp(ip, "pair") == 0)
+        {
+            char *freqA_str = strtok(NULL, " ");
+            char *freqB_str = strtok(NULL, " ");
+            if (!freqA_str || !freqB_str || strlen(freqA_str) != 1 || strlen(freqB_str) != 1)
+            {
+                printf("\nInvalid resonance: <char A> <char B>\n");
+                continue;
+            }
+
+            char freqA = freqA_str[0];
+            char freqB = freqB_str[0];
+
+            Element *abPairs = FindPairs(gr, freqA, freqB);
+            ShowResonancePairs(abPairs);
+            Pause();
+        }
         else if (strcmp(ip, "clear") == 0)
         {
 
@@ -549,6 +565,22 @@ bool HasBinExtension(const char *filename)
 
     const char *ext = strrchr(filename, '.'); // procura o último ponto
     return (ext != NULL && strcmp(ext, ".bin") == 0);
+}
+
+bool AskReplace(char v, Vector2 pos)
+{
+    getchar();
+    if (v == '#')
+    {
+        printf("\n Position {%d,%d} have noise! Want to insert in noise? [y,n]", pos.x, pos.y);
+    }
+    else
+    {
+        printf("\n Position {%d,%d} occupied! Want to replace %c with new one? [y,n]", pos.x, pos.y, v);
+    }
+    char choice;
+    scanf("%c", &choice);
+    return (choice != 'y' && choice != 'Y');
 }
 
 #pragma endregion
@@ -644,13 +676,21 @@ void ShowGraph(Graph *gr, char filter)
 
     Vertex *current = gr->vertices;
     Edge *cedge = NULL;
-    printf("\n| Val | id | Position | Edges");
+    if (current != NULL)
+    {
+        printf("\n| Val | id | Position | Edges");
+    }
+    else
+    {
+        printf("\nThe Graph is empty!");
+    }
+
     while (current != NULL)
     {
         if (filter == '.' || filter == ' ')
         {
-            printf("\n|  %c  | ", current->value );
-            printf("%-2d | ",  current->id);
+            printf("\n|  %c  | ", current->value);
+            printf("%-2d | ", current->id);
             printf("{%-2d,%-2d}  | ", current->pos.x, current->pos.y);
             cedge = current->edges;
             while (cedge != NULL)
@@ -703,7 +743,7 @@ bool ShowPath(Element *st, Vertex *start, Vertex *end)
         }
         else
         {
-            printf("%c*%d ->", current->item->value, current->item->id);
+            printf("%c*%d -> ", current->item->value, current->item->id);
         }
         current = current->next;
     }
@@ -736,6 +776,36 @@ bool ShowTraversal(Element *st, const char *label)
 
     FreeElements(st);
     return true;
+}
+
+void ShowResonancePairs(Element *list)
+{
+    if (!list)
+    {
+        printf("[ResonancePairs] Empty list.\n");
+        return;
+    }
+    bool once = true;
+    Element *current = list;
+    while (current && current->next)
+    {
+        Vertex *a = current->item;
+        Vertex *b = current->next->item;
+
+        if (once)
+        {
+            printf("\nPairs with frequency: %c - %c:\n", a->value, b->value);
+            once = false;
+        }
+
+        printf("Pair: %c*%d (%d,%d) <-> %c*%d (%d,%d)\n",
+               a->value, a->id, a->pos.x, a->pos.y,
+               b->value, b->id, b->pos.x, b->pos.y);
+
+        current = current->next->next;
+    }
+
+    FreeElements(list);
 }
 
 #pragma endregion
