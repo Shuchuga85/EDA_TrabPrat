@@ -1,0 +1,165 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {portuges}{}\relax 
+\contentsline {chapter}{\numberline {1}Índice das estruturas de dados}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Estruturas de dados}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Índice dos ficheiros}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Lista de ficheiros}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Documentação da estruturas de dados}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Referência à estrutura Edge}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Descrição detalhada}{5}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Referência à estrutura Element}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Descrição detalhada}{6}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Referência à estrutura Graph}{6}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Descrição detalhada}{6}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Referência à estrutura Node}{6}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Descrição detalhada}{7}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Referência à estrutura Path}{7}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Descrição detalhada}{7}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Referência à estrutura Vector2}{7}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Descrição detalhada}{8}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}Referência à estrutura Vertex}{8}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Descrição detalhada}{8}{subsection.3.7.1}%
+\contentsline {chapter}{\numberline {4}Documentação do ficheiro}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Referência ao ficheiro src/func.c}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Descrição detalhada}{11}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Documentação das funções}{12}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}AddEdges()}{12}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}AddPath()}{12}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}ClearEdges()}{12}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}ClearNoise()}{13}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}ClearSeen()}{13}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}CopyGraphToList()}{13}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}CopyListToGraph()}{14}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}DFSMark()}{14}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}EdgeFindDest()}{14}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}FindElement()}{15}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.11}FindNodePos()}{15}{subsubsection.4.1.2.11}%
+\contentsline {subsubsection}{\numberline {4.1.2.12}FindPairs()}{16}{subsubsection.4.1.2.12}%
+\contentsline {subsubsection}{\numberline {4.1.2.13}FindVertexAt()}{16}{subsubsection.4.1.2.13}%
+\contentsline {subsubsection}{\numberline {4.1.2.14}FindVertexById()}{16}{subsubsection.4.1.2.14}%
+\contentsline {subsubsection}{\numberline {4.1.2.15}FreeElements()}{17}{subsubsection.4.1.2.15}%
+\contentsline {subsubsection}{\numberline {4.1.2.16}FreeGraph()}{17}{subsubsection.4.1.2.16}%
+\contentsline {subsubsection}{\numberline {4.1.2.17}FreeNodes()}{17}{subsubsection.4.1.2.17}%
+\contentsline {subsubsection}{\numberline {4.1.2.18}GraphBFS()}{18}{subsubsection.4.1.2.18}%
+\contentsline {subsubsection}{\numberline {4.1.2.19}GraphDFS()}{18}{subsubsection.4.1.2.19}%
+\contentsline {subsubsection}{\numberline {4.1.2.20}GraphPaths()}{19}{subsubsection.4.1.2.20}%
+\contentsline {subsubsection}{\numberline {4.1.2.21}InitGraph()}{19}{subsubsection.4.1.2.21}%
+\contentsline {subsubsection}{\numberline {4.1.2.22}InsertEdge()}{19}{subsubsection.4.1.2.22}%
+\contentsline {subsubsection}{\numberline {4.1.2.23}InsertElement()}{20}{subsubsection.4.1.2.23}%
+\contentsline {subsubsection}{\numberline {4.1.2.24}InsertElementAtEnd()}{20}{subsubsection.4.1.2.24}%
+\contentsline {subsubsection}{\numberline {4.1.2.25}InsertNode()}{20}{subsubsection.4.1.2.25}%
+\contentsline {subsubsection}{\numberline {4.1.2.26}InsertVertex()}{21}{subsubsection.4.1.2.26}%
+\contentsline {subsubsection}{\numberline {4.1.2.27}IsNewEdge()}{21}{subsubsection.4.1.2.27}%
+\contentsline {subsubsection}{\numberline {4.1.2.28}MakeElement()}{22}{subsubsection.4.1.2.28}%
+\contentsline {subsubsection}{\numberline {4.1.2.29}MakeNode()}{22}{subsubsection.4.1.2.29}%
+\contentsline {subsubsection}{\numberline {4.1.2.30}MakeSeenList()}{22}{subsubsection.4.1.2.30}%
+\contentsline {subsubsection}{\numberline {4.1.2.31}MakeVertex()}{23}{subsubsection.4.1.2.31}%
+\contentsline {subsubsection}{\numberline {4.1.2.32}NodeInBounds()}{23}{subsubsection.4.1.2.32}%
+\contentsline {subsubsection}{\numberline {4.1.2.33}NoiseCheck()}{23}{subsubsection.4.1.2.33}%
+\contentsline {subsubsection}{\numberline {4.1.2.34}NoiseCheckAlt()}{24}{subsubsection.4.1.2.34}%
+\contentsline {subsubsection}{\numberline {4.1.2.35}Pathing()}{24}{subsubsection.4.1.2.35}%
+\contentsline {subsubsection}{\numberline {4.1.2.36}ReadGraphFile()}{24}{subsubsection.4.1.2.36}%
+\contentsline {subsubsection}{\numberline {4.1.2.37}ReadListFile()}{26}{subsubsection.4.1.2.37}%
+\contentsline {subsubsection}{\numberline {4.1.2.38}RemoveEdge()}{26}{subsubsection.4.1.2.38}%
+\contentsline {subsubsection}{\numberline {4.1.2.39}RemoveElement()}{26}{subsubsection.4.1.2.39}%
+\contentsline {subsubsection}{\numberline {4.1.2.40}RemoveNode()}{27}{subsubsection.4.1.2.40}%
+\contentsline {subsubsection}{\numberline {4.1.2.41}RemoveVertex()}{27}{subsubsection.4.1.2.41}%
+\contentsline {subsubsection}{\numberline {4.1.2.42}SaveGraphFile()}{27}{subsubsection.4.1.2.42}%
+\contentsline {subsubsection}{\numberline {4.1.2.43}SaveList()}{28}{subsubsection.4.1.2.43}%
+\contentsline {subsubsection}{\numberline {4.1.2.44}ValidNodePos()}{28}{subsubsection.4.1.2.44}%
+\contentsline {subsubsection}{\numberline {4.1.2.45}Vector2Add()}{29}{subsubsection.4.1.2.45}%
+\contentsline {subsubsection}{\numberline {4.1.2.46}Vector2Compare()}{29}{subsubsection.4.1.2.46}%
+\contentsline {subsubsection}{\numberline {4.1.2.47}Vector2Subtract()}{29}{subsubsection.4.1.2.47}%
+\contentsline {section}{\numberline {4.2}Referência ao ficheiro src/func.h}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Descrição detalhada}{33}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Documentação dos tipos}{33}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Edge}{33}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Element}{33}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}Graph}{33}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}Node}{34}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}Path}{34}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}Vector2}{34}{subsubsection.4.2.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.2.7}Vertex}{34}{subsubsection.4.2.2.7}%
+\contentsline {subsection}{\numberline {4.2.3}Documentação das funções}{34}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}AddEdges()}{34}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}AddPath()}{35}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}ClearEdges()}{35}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}ClearNoise()}{35}{subsubsection.4.2.3.4}%
+\contentsline {subsubsection}{\numberline {4.2.3.5}ClearSeen()}{36}{subsubsection.4.2.3.5}%
+\contentsline {subsubsection}{\numberline {4.2.3.6}CopyGraphToList()}{36}{subsubsection.4.2.3.6}%
+\contentsline {subsubsection}{\numberline {4.2.3.7}CopyListToGraph()}{36}{subsubsection.4.2.3.7}%
+\contentsline {subsubsection}{\numberline {4.2.3.8}DFSMark()}{37}{subsubsection.4.2.3.8}%
+\contentsline {subsubsection}{\numberline {4.2.3.9}EdgeFindDest()}{37}{subsubsection.4.2.3.9}%
+\contentsline {subsubsection}{\numberline {4.2.3.10}FindElement()}{38}{subsubsection.4.2.3.10}%
+\contentsline {subsubsection}{\numberline {4.2.3.11}FindNodePos()}{38}{subsubsection.4.2.3.11}%
+\contentsline {subsubsection}{\numberline {4.2.3.12}FindPairs()}{39}{subsubsection.4.2.3.12}%
+\contentsline {subsubsection}{\numberline {4.2.3.13}FindVertexAt()}{39}{subsubsection.4.2.3.13}%
+\contentsline {subsubsection}{\numberline {4.2.3.14}FindVertexById()}{39}{subsubsection.4.2.3.14}%
+\contentsline {subsubsection}{\numberline {4.2.3.15}FreeElements()}{40}{subsubsection.4.2.3.15}%
+\contentsline {subsubsection}{\numberline {4.2.3.16}FreeGraph()}{40}{subsubsection.4.2.3.16}%
+\contentsline {subsubsection}{\numberline {4.2.3.17}FreeNodes()}{40}{subsubsection.4.2.3.17}%
+\contentsline {subsubsection}{\numberline {4.2.3.18}GraphBFS()}{41}{subsubsection.4.2.3.18}%
+\contentsline {subsubsection}{\numberline {4.2.3.19}GraphDFS()}{41}{subsubsection.4.2.3.19}%
+\contentsline {subsubsection}{\numberline {4.2.3.20}GraphPaths()}{42}{subsubsection.4.2.3.20}%
+\contentsline {subsubsection}{\numberline {4.2.3.21}InitGraph()}{42}{subsubsection.4.2.3.21}%
+\contentsline {subsubsection}{\numberline {4.2.3.22}InsertEdge()}{42}{subsubsection.4.2.3.22}%
+\contentsline {subsubsection}{\numberline {4.2.3.23}InsertElement()}{43}{subsubsection.4.2.3.23}%
+\contentsline {subsubsection}{\numberline {4.2.3.24}InsertElementAtEnd()}{43}{subsubsection.4.2.3.24}%
+\contentsline {subsubsection}{\numberline {4.2.3.25}InsertNode()}{43}{subsubsection.4.2.3.25}%
+\contentsline {subsubsection}{\numberline {4.2.3.26}InsertVertex()}{44}{subsubsection.4.2.3.26}%
+\contentsline {subsubsection}{\numberline {4.2.3.27}IsNewEdge()}{44}{subsubsection.4.2.3.27}%
+\contentsline {subsubsection}{\numberline {4.2.3.28}MakeElement()}{45}{subsubsection.4.2.3.28}%
+\contentsline {subsubsection}{\numberline {4.2.3.29}MakeNode()}{45}{subsubsection.4.2.3.29}%
+\contentsline {subsubsection}{\numberline {4.2.3.30}MakeSeenList()}{45}{subsubsection.4.2.3.30}%
+\contentsline {subsubsection}{\numberline {4.2.3.31}MakeVertex()}{46}{subsubsection.4.2.3.31}%
+\contentsline {subsubsection}{\numberline {4.2.3.32}NodeInBounds()}{46}{subsubsection.4.2.3.32}%
+\contentsline {subsubsection}{\numberline {4.2.3.33}NoiseCheck()}{46}{subsubsection.4.2.3.33}%
+\contentsline {subsubsection}{\numberline {4.2.3.34}NoiseCheckAlt()}{47}{subsubsection.4.2.3.34}%
+\contentsline {subsubsection}{\numberline {4.2.3.35}Pathing()}{47}{subsubsection.4.2.3.35}%
+\contentsline {subsubsection}{\numberline {4.2.3.36}ReadGraphFile()}{47}{subsubsection.4.2.3.36}%
+\contentsline {subsubsection}{\numberline {4.2.3.37}ReadListFile()}{49}{subsubsection.4.2.3.37}%
+\contentsline {subsubsection}{\numberline {4.2.3.38}RemoveEdge()}{49}{subsubsection.4.2.3.38}%
+\contentsline {subsubsection}{\numberline {4.2.3.39}RemoveElement()}{49}{subsubsection.4.2.3.39}%
+\contentsline {subsubsection}{\numberline {4.2.3.40}RemoveNode()}{50}{subsubsection.4.2.3.40}%
+\contentsline {subsubsection}{\numberline {4.2.3.41}RemoveVertex()}{50}{subsubsection.4.2.3.41}%
+\contentsline {subsubsection}{\numberline {4.2.3.42}SaveGraphFile()}{50}{subsubsection.4.2.3.42}%
+\contentsline {subsubsection}{\numberline {4.2.3.43}SaveList()}{51}{subsubsection.4.2.3.43}%
+\contentsline {subsubsection}{\numberline {4.2.3.44}ValidNodePos()}{51}{subsubsection.4.2.3.44}%
+\contentsline {subsubsection}{\numberline {4.2.3.45}Vector2Add()}{52}{subsubsection.4.2.3.45}%
+\contentsline {subsubsection}{\numberline {4.2.3.46}Vector2Compare()}{52}{subsubsection.4.2.3.46}%
+\contentsline {subsubsection}{\numberline {4.2.3.47}Vector2Subtract()}{52}{subsubsection.4.2.3.47}%
+\contentsline {section}{\numberline {4.3}func.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{53}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Referência ao ficheiro src/interface.c}{55}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Descrição detalhada}{56}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Documentação das funções}{56}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}AskReplace()}{56}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}CommandIO()}{56}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}DrawMatrix()}{57}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}HasBinExtension()}{57}{subsubsection.4.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.4.2.5}Log()}{57}{subsubsection.4.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.4.2.6}Menu()}{58}{subsubsection.4.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.4.2.7}Pause()}{58}{subsubsection.4.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.4.2.8}ShowGraph()}{58}{subsubsection.4.4.2.8}%
+\contentsline {subsubsection}{\numberline {4.4.2.9}ShowList()}{58}{subsubsection.4.4.2.9}%
+\contentsline {subsubsection}{\numberline {4.4.2.10}ShowPath()}{59}{subsubsection.4.4.2.10}%
+\contentsline {subsubsection}{\numberline {4.4.2.11}ShowResonancePairs()}{59}{subsubsection.4.4.2.11}%
+\contentsline {subsubsection}{\numberline {4.4.2.12}ShowTraversal()}{59}{subsubsection.4.4.2.12}%
+\contentsline {section}{\numberline {4.5}Referência ao ficheiro src/interface.h}{60}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Descrição detalhada}{61}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Documentação das funções}{61}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}AskReplace()}{61}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}CommandIO()}{61}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.3}DrawMatrix()}{62}{subsubsection.4.5.2.3}%
+\contentsline {subsubsection}{\numberline {4.5.2.4}HasBinExtension()}{62}{subsubsection.4.5.2.4}%
+\contentsline {subsubsection}{\numberline {4.5.2.5}Log()}{62}{subsubsection.4.5.2.5}%
+\contentsline {subsubsection}{\numberline {4.5.2.6}Menu()}{63}{subsubsection.4.5.2.6}%
+\contentsline {subsubsection}{\numberline {4.5.2.7}Pause()}{63}{subsubsection.4.5.2.7}%
+\contentsline {subsubsection}{\numberline {4.5.2.8}ShowGraph()}{63}{subsubsection.4.5.2.8}%
+\contentsline {subsubsection}{\numberline {4.5.2.9}ShowList()}{64}{subsubsection.4.5.2.9}%
+\contentsline {subsubsection}{\numberline {4.5.2.10}ShowPath()}{64}{subsubsection.4.5.2.10}%
+\contentsline {subsubsection}{\numberline {4.5.2.11}ShowResonancePairs()}{64}{subsubsection.4.5.2.11}%
+\contentsline {subsubsection}{\numberline {4.5.2.12}ShowTraversal()}{64}{subsubsection.4.5.2.12}%
+\contentsline {section}{\numberline {4.6}interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{65}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Referência ao ficheiro src/main.c}{65}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Descrição detalhada}{66}{subsection.4.7.1}%
+\contentsline {chapter}{\'Indice}{67}{section*.19}%

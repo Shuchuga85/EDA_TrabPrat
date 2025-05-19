@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho-Pratico_EDA: Código-Fonte de src/interface.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho-Pratico_EDA
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">interface.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interface_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef INTERFACE_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define INTERFACE_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define LOG &quot;log.txt&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define LOG_OLD &quot;log_old.txt&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define SFILE &quot;file.txt&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a1483313e0618043fde85fc7a5abe9d4d">DrawMenu</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a763d87cf5ab5e197126e27d8c6b0c966">Menu</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st, <a class="code hl_struct" href="struct_graph.html">Graph</a>* gr);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#abd85956a0342471aea47c1fbebe72531">DrawCommands</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#abe1254d93871dd15d6b1bcd228687d52">CommandIO</a>(<a class="code hl_struct" href="struct_node.html">Node</a>* st, <a class="code hl_struct" href="struct_graph.html">Graph</a>* gr);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">bool</span> <a class="code hl_function" href="interface_8h.html#a9f965c7d85fee3ba0d19ee2eb79dc99e">HasBinExtension</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">bool</span> <a class="code hl_function" href="interface_8h.html#ac71b15fefe4ffb16b12284ce45c7b9c0">AskReplace</a>(<span class="keywordtype">char</span> v, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> pos);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a7be92bf9b511af4d5466b4b9f637099b">DrawMatrix</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *st);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a2640af73bd39be7651f501c56562b8db">ShowList</a>(<a class="code hl_struct" href="struct_node.html">Node</a> *st, <span class="keywordtype">char</span> filter);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#af777998bce07458b39ba0b92c50f7d86">ShowGraph</a>(<a class="code hl_struct" href="struct_graph.html">Graph</a> * gr, <span class="keywordtype">char</span> filter);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">bool</span> <a class="code hl_function" href="interface_8h.html#a24ea76ff830e369dca9cad89a01cfc74">ShowPath</a>(<a class="code hl_struct" href="struct_element.html">Element</a> *st, <a class="code hl_struct" href="struct_vertex.html">Vertex</a>* start, <a class="code hl_struct" href="struct_vertex.html">Vertex</a>* end);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">bool</span> <a class="code hl_function" href="interface_8h.html#a731bfe777a4f9b6f11ec906aaf3e4766">ShowTraversal</a>(<a class="code hl_struct" href="struct_element.html">Element</a> *st, <span class="keyword">const</span> <span class="keywordtype">char</span>* label);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a5b97b762c3297445d4e359f32b621e09">ShowResonancePairs</a>(<a class="code hl_struct" href="struct_element.html">Element</a>* list);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a70babc5227ddd16ca31dccc6cec0bb22">Pause</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#ad8fd8ef5b84e0831f9d5dc1a7398aff3">InitLog</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keywordtype">void</span> <a class="code hl_function" href="interface_8h.html#a6ae657d3cf7271a0d3ac938cb6985b8b">Log</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="ainterface_8h_html_a1483313e0618043fde85fc7a5abe9d4d"><div class="ttname"><a href="interface_8h.html#a1483313e0618043fde85fc7a5abe9d4d">DrawMenu</a></div><div class="ttdeci">void DrawMenu()</div><div class="ttdoc">Desenha o menu de opções no terminal.</div><div class="ttdef"><b>Definição</b> interface.c:26</div></div>
+<div class="ttc" id="ainterface_8h_html_a24ea76ff830e369dca9cad89a01cfc74"><div class="ttname"><a href="interface_8h.html#a24ea76ff830e369dca9cad89a01cfc74">ShowPath</a></div><div class="ttdeci">bool ShowPath(Element *st, Vertex *start, Vertex *end)</div><div class="ttdoc">Exibe um percurso (caminho) entre dois vértices, se existir.</div><div class="ttdef"><b>Definição</b> interface.c:720</div></div>
+<div class="ttc" id="ainterface_8h_html_a2640af73bd39be7651f501c56562b8db"><div class="ttname"><a href="interface_8h.html#a2640af73bd39be7651f501c56562b8db">ShowList</a></div><div class="ttdeci">void ShowList(Node *st, char filter)</div><div class="ttdoc">Exibe a lista de nós, com um filtro opcional.</div><div class="ttdef"><b>Definição</b> interface.c:636</div></div>
+<div class="ttc" id="ainterface_8h_html_a5b97b762c3297445d4e359f32b621e09"><div class="ttname"><a href="interface_8h.html#a5b97b762c3297445d4e359f32b621e09">ShowResonancePairs</a></div><div class="ttdeci">void ShowResonancePairs(Element *list)</div><div class="ttdoc">Exibe os pares de antenas com ressonância A-B ou B-A encontrados na travessia.</div><div class="ttdef"><b>Definição</b> interface.c:781</div></div>
+<div class="ttc" id="ainterface_8h_html_a6ae657d3cf7271a0d3ac938cb6985b8b"><div class="ttname"><a href="interface_8h.html#a6ae657d3cf7271a0d3ac938cb6985b8b">Log</a></div><div class="ttdeci">void Log(const char *format,...)</div><div class="ttdoc">Regista mensagens formatadas no ficheiro de log.</div><div class="ttdef"><b>Definição</b> interface.c:842</div></div>
+<div class="ttc" id="ainterface_8h_html_a70babc5227ddd16ca31dccc6cec0bb22"><div class="ttname"><a href="interface_8h.html#a70babc5227ddd16ca31dccc6cec0bb22">Pause</a></div><div class="ttdeci">void Pause()</div><div class="ttdoc">Pausa a execução do programa até que o utilizador pressione ENTER.</div><div class="ttdef"><b>Definição</b> interface.c:818</div></div>
+<div class="ttc" id="ainterface_8h_html_a731bfe777a4f9b6f11ec906aaf3e4766"><div class="ttname"><a href="interface_8h.html#a731bfe777a4f9b6f11ec906aaf3e4766">ShowTraversal</a></div><div class="ttdeci">bool ShowTraversal(Element *st, const char *label)</div><div class="ttdoc">Exibe uma travessia (BFS ou DFS) completa a partir de um vértice.</div><div class="ttdef"><b>Definição</b> interface.c:754</div></div>
+<div class="ttc" id="ainterface_8h_html_a763d87cf5ab5e197126e27d8c6b0c966"><div class="ttname"><a href="interface_8h.html#a763d87cf5ab5e197126e27d8c6b0c966">Menu</a></div><div class="ttdeci">void Menu(Node *st, Graph *gr)</div><div class="ttdoc">Gerencia o menu interativo de manipulação da lista de nós e do grafo.</div><div class="ttdef"><b>Definição</b> interface.c:45</div></div>
+<div class="ttc" id="ainterface_8h_html_a7be92bf9b511af4d5466b4b9f637099b"><div class="ttname"><a href="interface_8h.html#a7be92bf9b511af4d5466b4b9f637099b">DrawMatrix</a></div><div class="ttdeci">void DrawMatrix(Node *st)</div><div class="ttdoc">Desenha a matriz com os elementos presentes na lista.</div><div class="ttdef"><b>Definição</b> interface.c:595</div></div>
+<div class="ttc" id="ainterface_8h_html_a9f965c7d85fee3ba0d19ee2eb79dc99e"><div class="ttname"><a href="interface_8h.html#a9f965c7d85fee3ba0d19ee2eb79dc99e">HasBinExtension</a></div><div class="ttdeci">bool HasBinExtension(const char *filename)</div><div class="ttdoc">Verifica se o nome de ficheiro termina com a extensão '.bin'.</div><div class="ttdef"><b>Definição</b> interface.c:561</div></div>
+<div class="ttc" id="ainterface_8h_html_abd85956a0342471aea47c1fbebe72531"><div class="ttname"><a href="interface_8h.html#abd85956a0342471aea47c1fbebe72531">DrawCommands</a></div><div class="ttdeci">void DrawCommands()</div><div class="ttdoc">Exibe os comandos disponíveis para manipulação da lista.</div><div class="ttdef"><b>Definição</b> interface.c:167</div></div>
+<div class="ttc" id="ainterface_8h_html_abe1254d93871dd15d6b1bcd228687d52"><div class="ttname"><a href="interface_8h.html#abe1254d93871dd15d6b1bcd228687d52">CommandIO</a></div><div class="ttdeci">void CommandIO(Node *st, Graph *gr)</div><div class="ttdoc">Interface de comandos para o utilizador controlar as operações da lista e do grafo.</div><div class="ttdef"><b>Definição</b> interface.c:190</div></div>
+<div class="ttc" id="ainterface_8h_html_ac71b15fefe4ffb16b12284ce45c7b9c0"><div class="ttname"><a href="interface_8h.html#ac71b15fefe4ffb16b12284ce45c7b9c0">AskReplace</a></div><div class="ttdeci">bool AskReplace(char v, Vector2 pos)</div><div class="ttdoc">Solicita ao utilizador confirmação para substituir um elemento existente na mesma posição.</div><div class="ttdef"><b>Definição</b> interface.c:570</div></div>
+<div class="ttc" id="ainterface_8h_html_ad8fd8ef5b84e0831f9d5dc1a7398aff3"><div class="ttname"><a href="interface_8h.html#ad8fd8ef5b84e0831f9d5dc1a7398aff3">InitLog</a></div><div class="ttdeci">void InitLog()</div><div class="ttdoc">Inicializa o sistema de registo (log), criando ou recriando o ficheiro de log.</div><div class="ttdef"><b>Definição</b> interface.c:825</div></div>
+<div class="ttc" id="ainterface_8h_html_af777998bce07458b39ba0b92c50f7d86"><div class="ttname"><a href="interface_8h.html#af777998bce07458b39ba0b92c50f7d86">ShowGraph</a></div><div class="ttdeci">void ShowGraph(Graph *gr, char filter)</div><div class="ttdoc">Exibe todos os vértices do grafo no terminal, com filtro por tipo de antena.</div><div class="ttdef"><b>Definição</b> interface.c:668</div></div>
+<div class="ttc" id="astruct_element_html"><div class="ttname"><a href="struct_element.html">Element</a></div><div class="ttdoc">Representa um elemento de uma lista auxiliar que contém vértices.</div><div class="ttdef"><b>Definição</b> func.h:96</div></div>
+<div class="ttc" id="astruct_graph_html"><div class="ttname"><a href="struct_graph.html">Graph</a></div><div class="ttdoc">Representa a estrutura principal de um grafo.</div><div class="ttdef"><b>Definição</b> func.h:85</div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdoc">Representa um nó de uma lista ligada de elementos na matriz.</div><div class="ttdef"><b>Definição</b> func.h:43</div></div>
+<div class="ttc" id="astruct_vector2_html"><div class="ttname"><a href="struct_vector2.html">Vector2</a></div><div class="ttdoc">Representa um vetor bidimensional com coordenadas inteiras.</div><div class="ttdef"><b>Definição</b> func.h:28</div></div>
+<div class="ttc" id="astruct_vertex_html"><div class="ttname"><a href="struct_vertex.html">Vertex</a></div><div class="ttdoc">Representa um vértice (nó) no grafo.</div><div class="ttdef"><b>Definição</b> func.h:70</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

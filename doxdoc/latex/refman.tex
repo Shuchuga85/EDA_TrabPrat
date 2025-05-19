@@ -1,16 +1,7 @@
   % Handle batch mode
   % to overcome problems with too many open files
   \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
-  \RequirePackage{iftex}
-  \ifLuaTeX
-    \directlua{pdf.setminorversion(7)}
-  \fi
-  \ifXeTeX
-    \special{pdf:minorversion 7}
-  \fi
-  \ifPDFTeX
-    \pdfminorversion=7
-  \fi
+  \pdfminorversion=7
   % Set document class depending on configuration
   \documentclass[twoside]{book}
   %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
@@ -31,18 +22,10 @@
   \let\protected@wlog\@@protected@wlog
   \makeatother
   \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
-  \ifPDFTeX
-    \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
-  \fi
+  \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
   \usepackage{doxygen}
   \usepackage{graphicx}
-  \iftutex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Ligatures={TeX}}
-    \usepackage{unicode-math}
-  \else
-    \usepackage[utf8]{inputenc}
-  \fi
+  \usepackage[utf8]{inputenc}
   \usepackage{makeidx}
   \PassOptionsToPackage{warn}{textcomp}
   \usepackage{textcomp}
@@ -52,10 +35,7 @@
   \usepackage[portuges]{babel}
   % Define default fonts
   % Font selection
-  \iftutex
-  \else
-    \usepackage[T1]{fontenc}
-  \fi
+  \usepackage[T1]{fontenc}
   % set main and monospaced font
   \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
@@ -142,8 +122,7 @@
   \setcounter{secnumdepth}{5}
   % creating indexes
   \makeindex
-  \ifPDFTeX
-\usepackage{newunicodechar}
+  \usepackage{newunicodechar}
   \makeatletter
     \def\doxynewunicodechar#1#2{%
     \@tempswafalse
@@ -162,20 +141,15 @@
   \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
   \doxynewunicodechar{²}{${}^{2}$}% Superscript two
   \doxynewunicodechar{³}{${}^{3}$}% Superscript three
-\fi
   % Hyperlinks
     % Hyperlinks (required, but should be loaded last)
-    \ifPDFTeX
+    \ifpdf
       \usepackage[pdftex,pagebackref=true]{hyperref}
     \else
-      \ifXeTeX
-        \usepackage[xetex,pagebackref=true]{hyperref}
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
       \else
-        \ifLuaTeX
-          \usepackage[luatex,pagebackref=true]{hyperref}
-        \else
-          \usepackage[ps2pdf,pagebackref=true]{hyperref}
-        \fi
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
       \fi
     \fi
     \hypersetup{%
@@ -222,7 +196,7 @@
   \begin{center}%
   {\Large Trabalho-\/\+Pratico\+\_\+\+EDA}\\
   \vspace*{1cm}
-  {\large Gerado por Doxygen 1.12.0}\\
+  {\large Gerado por Doxygen 1.10.0}\\
   \end{center}
   \end{titlepage}
   \clearemptydoublepage
@@ -238,12 +212,20 @@
 \chapter{Índice dos ficheiros}
 \input{files}
 \chapter{Documentação da estruturas de dados}
+\input{struct_edge}
+\input{struct_element}
+\input{struct_graph}
 \input{struct_node}
+\input{struct_path}
 \input{struct_vector2}
+\input{struct_vertex}
 \chapter{Documentação do ficheiro}
 \input{func_8c}
 \input{func_8h}
 \input{func_8h_source}
+\input{interface_8c}
+\input{interface_8h}
+\input{interface_8h_source}
 \input{main_8c}
 %--- End generated contents ---
 % Index

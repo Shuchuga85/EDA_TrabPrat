@@ -1,0 +1,302 @@
+\doxysection{Referência ao ficheiro src/interface.h}
+\hypertarget{interface_8h}{}\label{interface_8h}\index{src/interface.h@{src/interface.h}}
+
+
+Interface do utilizador e visualização de estruturas.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interface_8h_a159ca84d25a5487d8e81e4438725df19}\label{interface_8h_a159ca84d25a5487d8e81e4438725df19} 
+\#define {\bfseries LOG}~"{}log.\+txt"{}
+\item 
+\Hypertarget{interface_8h_a09275e5e481ae076ad446831ced9a022}\label{interface_8h_a09275e5e481ae076ad446831ced9a022} 
+\#define {\bfseries LOG\+\_\+\+OLD}~"{}log\+\_\+old.\+txt"{}
+\item 
+\Hypertarget{interface_8h_ac1141a1661e8a653eaac97a78a6da1b8}\label{interface_8h_ac1141a1661e8a653eaac97a78a6da1b8} 
+\#define {\bfseries SFILE}~"{}file.\+txt"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interface_8h_a1483313e0618043fde85fc7a5abe9d4d}\label{interface_8h_a1483313e0618043fde85fc7a5abe9d4d} 
+void {\bfseries Draw\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Desenha o menu de opções no terminal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_a763d87cf5ab5e197126e27d8c6b0c966}{Menu}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Gerencia o menu interativo de manipulação da lista de nós e do grafo. \end{DoxyCompactList}\item 
+\Hypertarget{interface_8h_abd85956a0342471aea47c1fbebe72531}\label{interface_8h_abd85956a0342471aea47c1fbebe72531} 
+void {\bfseries Draw\+Commands} ()
+\begin{DoxyCompactList}\small\item\em Exibe os comandos disponíveis para manipulação da lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_abe1254d93871dd15d6b1bcd228687d52}{Command\+IO}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Interface de comandos para o utilizador controlar as operações da lista e do grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_8h_a9f965c7d85fee3ba0d19ee2eb79dc99e}{Has\+Bin\+Extension}} (const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Verifica se o nome de ficheiro termina com a extensão \textquotesingle{}.bin\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_8h_ac71b15fefe4ffb16b12284ce45c7b9c0}{Ask\+Replace}} (char v, \mbox{\hyperlink{struct_vector2}{Vector2}} pos)
+\begin{DoxyCompactList}\small\item\em Solicita ao utilizador confirmação para substituir um elemento existente na mesma posição. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_a7be92bf9b511af4d5466b4b9f637099b}{Draw\+Matrix}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Desenha a matriz com os elementos presentes na lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_a2640af73bd39be7651f501c56562b8db}{Show\+List}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, char filter)
+\begin{DoxyCompactList}\small\item\em Exibe a lista de nós, com um filtro opcional. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_af777998bce07458b39ba0b92c50f7d86}{Show\+Graph}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, char filter)
+\begin{DoxyCompactList}\small\item\em Exibe todos os vértices do grafo no terminal, com filtro por tipo de antena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_8h_a24ea76ff830e369dca9cad89a01cfc74}{Show\+Path}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}end)
+\begin{DoxyCompactList}\small\item\em Exibe um percurso (caminho) entre dois vértices, se existir. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_8h_a731bfe777a4f9b6f11ec906aaf3e4766}{Show\+Traversal}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}st, const char \texorpdfstring{$\ast$}{*}label)
+\begin{DoxyCompactList}\small\item\em Exibe uma travessia (BFS ou DFS) completa a partir de um vértice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_a5b97b762c3297445d4e359f32b621e09}{Show\+Resonance\+Pairs}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}list)
+\begin{DoxyCompactList}\small\item\em Exibe os pares de antenas com ressonância A-\/B ou B-\/A encontrados na travessia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_a70babc5227ddd16ca31dccc6cec0bb22}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em Pausa a execução do programa até que o utilizador pressione ENTER. \end{DoxyCompactList}\item 
+\Hypertarget{interface_8h_ad8fd8ef5b84e0831f9d5dc1a7398aff3}\label{interface_8h_ad8fd8ef5b84e0831f9d5dc1a7398aff3} 
+void {\bfseries Init\+Log} ()
+\begin{DoxyCompactList}\small\item\em Inicializa o sistema de registo (log), criando ou recriando o ficheiro de log. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_a6ae657d3cf7271a0d3ac938cb6985b8b}{Log}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\begin{DoxyCompactList}\small\item\em Regista mensagens formatadas no ficheiro de log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Interface do utilizador e visualização de estruturas. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Rezende (\href{mailto:a31521@alunos.ipca.pt}{\texttt{ a31521@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versão}
+0.\+10 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2025-\/05-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{interface_8h_ac71b15fefe4ffb16b12284ce45c7b9c0}\label{interface_8h_ac71b15fefe4ffb16b12284ce45c7b9c0} 
+\index{interface.h@{interface.h}!AskReplace@{AskReplace}}
+\index{AskReplace@{AskReplace}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{AskReplace()}{AskReplace()}}
+{\footnotesize\ttfamily bool Ask\+Replace (\begin{DoxyParamCaption}\item[{char}]{v,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Solicita ao utilizador confirmação para substituir um elemento existente na mesma posição. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em v} & Valor do novo elemento. \\
+\hline
+{\em pos} & Posição onde o novo elemento será inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se o utilizador confirmar a substituição. 
+
+false Caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{interface_8h_abe1254d93871dd15d6b1bcd228687d52}\label{interface_8h_abe1254d93871dd15d6b1bcd228687d52} 
+\index{interface.h@{interface.h}!CommandIO@{CommandIO}}
+\index{CommandIO@{CommandIO}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{CommandIO()}{CommandIO()}}
+{\footnotesize\ttfamily void Command\+IO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Interface de comandos para o utilizador controlar as operações da lista e do grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós. \\
+\hline
+{\em gr} & Estrutura de grafo.\\
+\hline
+\end{DoxyParams}
+Interface de comandos para o utilizador controlar as operações da lista e do grafo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a7be92bf9b511af4d5466b4b9f637099b}\label{interface_8h_a7be92bf9b511af4d5466b4b9f637099b} 
+\index{interface.h@{interface.h}!DrawMatrix@{DrawMatrix}}
+\index{DrawMatrix@{DrawMatrix}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{DrawMatrix()}{DrawMatrix()}}
+{\footnotesize\ttfamily void Draw\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Desenha a matriz com os elementos presentes na lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a9f965c7d85fee3ba0d19ee2eb79dc99e}\label{interface_8h_a9f965c7d85fee3ba0d19ee2eb79dc99e} 
+\index{interface.h@{interface.h}!HasBinExtension@{HasBinExtension}}
+\index{HasBinExtension@{HasBinExtension}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{HasBinExtension()}{HasBinExtension()}}
+{\footnotesize\ttfamily bool Has\+Bin\+Extension (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Verifica se o nome de ficheiro termina com a extensão \textquotesingle{}.bin\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em filename} & Nome do ficheiro. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a extensão for \textquotesingle{}.bin\textquotesingle{}. 
+
+false Caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{interface_8h_a6ae657d3cf7271a0d3ac938cb6985b8b}\label{interface_8h_a6ae657d3cf7271a0d3ac938cb6985b8b} 
+\index{interface.h@{interface.h}!Log@{Log}}
+\index{Log@{Log}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily void Log (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Regista mensagens formatadas no ficheiro de log. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em format} & Texto formatado (igual ao printf). \\
+\hline
+{\em ...} & Argumentos adicionais. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a763d87cf5ab5e197126e27d8c6b0c966}\label{interface_8h_a763d87cf5ab5e197126e27d8c6b0c966} 
+\index{interface.h@{interface.h}!Menu@{Menu}}
+\index{Menu@{Menu}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily void Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Gerencia o menu interativo de manipulação da lista de nós e do grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós. \\
+\hline
+{\em gr} & Estrutura de grafo.\\
+\hline
+\end{DoxyParams}
+Gerencia o menu interativo de manipulação da lista de nós e do grafo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a70babc5227ddd16ca31dccc6cec0bb22}\label{interface_8h_a70babc5227ddd16ca31dccc6cec0bb22} 
+\index{interface.h@{interface.h}!Pause@{Pause}}
+\index{Pause@{Pause}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily void Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pausa a execução do programa até que o utilizador pressione ENTER. 
+
+Pausa a execução do programa até que o utilizador pressione ENTER. \Hypertarget{interface_8h_af777998bce07458b39ba0b92c50f7d86}\label{interface_8h_af777998bce07458b39ba0b92c50f7d86} 
+\index{interface.h@{interface.h}!ShowGraph@{ShowGraph}}
+\index{ShowGraph@{ShowGraph}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ShowGraph()}{ShowGraph()}}
+{\footnotesize\ttfamily void Show\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{char}]{filter }\end{DoxyParamCaption})}
+
+
+
+Exibe todos os vértices do grafo no terminal, com filtro por tipo de antena. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em gr} & Grafo contendo os vértices. \\
+\hline
+{\em filter} & Carácter para filtrar (ex\+: \textquotesingle{}A\textquotesingle{}, \textquotesingle{}B\textquotesingle{}). Use \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} para mostrar todos. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a2640af73bd39be7651f501c56562b8db}\label{interface_8h_a2640af73bd39be7651f501c56562b8db} 
+\index{interface.h@{interface.h}!ShowList@{ShowList}}
+\index{ShowList@{ShowList}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ShowList()}{ShowList()}}
+{\footnotesize\ttfamily void Show\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{char}]{filter }\end{DoxyParamCaption})}
+
+
+
+Exibe a lista de nós, com um filtro opcional. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós. \\
+\hline
+{\em filter} & Caracter usado para filtrar os elementos exibidos. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a24ea76ff830e369dca9cad89a01cfc74}\label{interface_8h_a24ea76ff830e369dca9cad89a01cfc74} 
+\index{interface.h@{interface.h}!ShowPath@{ShowPath}}
+\index{ShowPath@{ShowPath}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ShowPath()}{ShowPath()}}
+{\footnotesize\ttfamily bool Show\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{end }\end{DoxyParamCaption})}
+
+
+
+Exibe um percurso (caminho) entre dois vértices, se existir. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de elementos contendo o percurso. \\
+\hline
+{\em start} & Vértice de início. \\
+\hline
+{\em end} & Vértice de fim. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se o percurso for exibido com sucesso. 
+
+false Se o percurso for inválido ou vazio. 
+\end{DoxyReturn}
+\Hypertarget{interface_8h_a5b97b762c3297445d4e359f32b621e09}\label{interface_8h_a5b97b762c3297445d4e359f32b621e09} 
+\index{interface.h@{interface.h}!ShowResonancePairs@{ShowResonancePairs}}
+\index{ShowResonancePairs@{ShowResonancePairs}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ShowResonancePairs()}{ShowResonancePairs()}}
+{\footnotesize\ttfamily void Show\+Resonance\+Pairs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{list }\end{DoxyParamCaption})}
+
+
+
+Exibe os pares de antenas com ressonância A-\/B ou B-\/A encontrados na travessia. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & Lista de elementos resultante de uma travessia. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8h_a731bfe777a4f9b6f11ec906aaf3e4766}\label{interface_8h_a731bfe777a4f9b6f11ec906aaf3e4766} 
+\index{interface.h@{interface.h}!ShowTraversal@{ShowTraversal}}
+\index{ShowTraversal@{ShowTraversal}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{ShowTraversal()}{ShowTraversal()}}
+{\footnotesize\ttfamily bool Show\+Traversal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{label }\end{DoxyParamCaption})}
+
+
+
+Exibe uma travessia (BFS ou DFS) completa a partir de um vértice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de elementos visitados. \\
+\hline
+{\em label} & Título da travessia (ex\+: "{}\+DFS"{}, "{}\+BFS"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a travessia for válida e exibida. 
+
+false Se a travessia estiver vazia. 
+\end{DoxyReturn}

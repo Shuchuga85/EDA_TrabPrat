@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insertnode_0',['InsertNode',['../func_8c.html#a67f757f48825475c14f135eb41eeee24',1,'InsertNode(Node *dnew, Node *st):&#160;func.c'],['../func_8h.html#a70bbb1c93db2333346b26e22ec3bda09',1,'InsertNode(Node *st, Node *dnew):&#160;func.c']]]
+  ['edgefinddest_0',['EdgeFindDest',['../func_8c.html#a575c2238b1dff5254f7263d9b3e166a3',1,'EdgeFindDest(Edge **current, Edge **previous, Vertex *pick):&#160;func.c'],['../func_8h.html#a575c2238b1dff5254f7263d9b3e166a3',1,'EdgeFindDest(Edge **current, Edge **previous, Vertex *pick):&#160;func.c']]]
 ];

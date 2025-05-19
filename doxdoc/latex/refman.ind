@@ -1,0 +1,371 @@
+\begin{theindex}
+
+  \item {AddEdges}
+    \subitem {func.c}, \hyperpage{12}
+    \subitem {func.h}, \hyperpage{34}
+  \item {AddPath}
+    \subitem {func.c}, \hyperpage{12}
+    \subitem {func.h}, \hyperpage{35}
+  \item {AskReplace}
+    \subitem {interface.c}, \hyperpage{56}
+    \subitem {interface.h}, \hyperpage{61}
+
+  \indexspace
+
+  \item {ClearEdges}
+    \subitem {func.c}, \hyperpage{12}
+    \subitem {func.h}, \hyperpage{35}
+  \item {ClearNoise}
+    \subitem {func.c}, \hyperpage{13}
+    \subitem {func.h}, \hyperpage{35}
+  \item {ClearSeen}
+    \subitem {func.c}, \hyperpage{13}
+    \subitem {func.h}, \hyperpage{36}
+  \item {CommandIO}
+    \subitem {interface.c}, \hyperpage{56}
+    \subitem {interface.h}, \hyperpage{61}
+  \item {CopyGraphToList}
+    \subitem {func.c}, \hyperpage{13}
+    \subitem {func.h}, \hyperpage{36}
+  \item {CopyListToGraph}
+    \subitem {func.c}, \hyperpage{14}
+    \subitem {func.h}, \hyperpage{36}
+
+  \indexspace
+
+  \item {DFSMark}
+    \subitem {func.c}, \hyperpage{14}
+    \subitem {func.h}, \hyperpage{37}
+  \item {DrawMatrix}
+    \subitem {interface.c}, \hyperpage{57}
+    \subitem {interface.h}, \hyperpage{62}
+
+  \indexspace
+
+  \item {Edge}, \hyperpage{5}
+    \subitem {func.h}, \hyperpage{33}
+  \item {EdgeFindDest}
+    \subitem {func.c}, \hyperpage{14}
+    \subitem {func.h}, \hyperpage{37}
+  \item {Element}, \hyperpage{5}
+    \subitem {func.h}, \hyperpage{33}
+
+  \indexspace
+
+  \item {FindElement}
+    \subitem {func.c}, \hyperpage{15}
+    \subitem {func.h}, \hyperpage{38}
+  \item {FindNodePos}
+    \subitem {func.c}, \hyperpage{15}
+    \subitem {func.h}, \hyperpage{38}
+  \item {FindPairs}
+    \subitem {func.c}, \hyperpage{16}
+    \subitem {func.h}, \hyperpage{39}
+  \item {FindVertexAt}
+    \subitem {func.c}, \hyperpage{16}
+    \subitem {func.h}, \hyperpage{39}
+  \item {FindVertexById}
+    \subitem {func.c}, \hyperpage{16}
+    \subitem {func.h}, \hyperpage{39}
+  \item {FreeElements}
+    \subitem {func.c}, \hyperpage{17}
+    \subitem {func.h}, \hyperpage{40}
+  \item {FreeGraph}
+    \subitem {func.c}, \hyperpage{17}
+    \subitem {func.h}, \hyperpage{40}
+  \item {FreeNodes}
+    \subitem {func.c}, \hyperpage{17}
+    \subitem {func.h}, \hyperpage{40}
+  \item {func.c}
+    \subitem {AddEdges}, \hyperpage{12}
+    \subitem {AddPath}, \hyperpage{12}
+    \subitem {ClearEdges}, \hyperpage{12}
+    \subitem {ClearNoise}, \hyperpage{13}
+    \subitem {ClearSeen}, \hyperpage{13}
+    \subitem {CopyGraphToList}, \hyperpage{13}
+    \subitem {CopyListToGraph}, \hyperpage{14}
+    \subitem {DFSMark}, \hyperpage{14}
+    \subitem {EdgeFindDest}, \hyperpage{14}
+    \subitem {FindElement}, \hyperpage{15}
+    \subitem {FindNodePos}, \hyperpage{15}
+    \subitem {FindPairs}, \hyperpage{16}
+    \subitem {FindVertexAt}, \hyperpage{16}
+    \subitem {FindVertexById}, \hyperpage{16}
+    \subitem {FreeElements}, \hyperpage{17}
+    \subitem {FreeGraph}, \hyperpage{17}
+    \subitem {FreeNodes}, \hyperpage{17}
+    \subitem {GraphBFS}, \hyperpage{18}
+    \subitem {GraphDFS}, \hyperpage{18}
+    \subitem {GraphPaths}, \hyperpage{19}
+    \subitem {InitGraph}, \hyperpage{19}
+    \subitem {InsertEdge}, \hyperpage{19}
+    \subitem {InsertElement}, \hyperpage{20}
+    \subitem {InsertElementAtEnd}, \hyperpage{20}
+    \subitem {InsertNode}, \hyperpage{20}
+    \subitem {InsertVertex}, \hyperpage{21}
+    \subitem {IsNewEdge}, \hyperpage{21}
+    \subitem {MakeElement}, \hyperpage{22}
+    \subitem {MakeNode}, \hyperpage{22}
+    \subitem {MakeSeenList}, \hyperpage{22}
+    \subitem {MakeVertex}, \hyperpage{23}
+    \subitem {NodeInBounds}, \hyperpage{23}
+    \subitem {NoiseCheck}, \hyperpage{23}
+    \subitem {NoiseCheckAlt}, \hyperpage{24}
+    \subitem {Pathing}, \hyperpage{24}
+    \subitem {ReadGraphFile}, \hyperpage{24}
+    \subitem {ReadListFile}, \hyperpage{26}
+    \subitem {RemoveEdge}, \hyperpage{26}
+    \subitem {RemoveElement}, \hyperpage{26}
+    \subitem {RemoveNode}, \hyperpage{27}
+    \subitem {RemoveVertex}, \hyperpage{27}
+    \subitem {SaveGraphFile}, \hyperpage{27}
+    \subitem {SaveList}, \hyperpage{28}
+    \subitem {ValidNodePos}, \hyperpage{28}
+    \subitem {Vector2Add}, \hyperpage{28}
+    \subitem {Vector2Compare}, \hyperpage{29}
+    \subitem {Vector2Subtract}, \hyperpage{29}
+  \item {func.h}
+    \subitem {AddEdges}, \hyperpage{34}
+    \subitem {AddPath}, \hyperpage{35}
+    \subitem {ClearEdges}, \hyperpage{35}
+    \subitem {ClearNoise}, \hyperpage{35}
+    \subitem {ClearSeen}, \hyperpage{36}
+    \subitem {CopyGraphToList}, \hyperpage{36}
+    \subitem {CopyListToGraph}, \hyperpage{36}
+    \subitem {DFSMark}, \hyperpage{37}
+    \subitem {Edge}, \hyperpage{33}
+    \subitem {EdgeFindDest}, \hyperpage{37}
+    \subitem {Element}, \hyperpage{33}
+    \subitem {FindElement}, \hyperpage{38}
+    \subitem {FindNodePos}, \hyperpage{38}
+    \subitem {FindPairs}, \hyperpage{39}
+    \subitem {FindVertexAt}, \hyperpage{39}
+    \subitem {FindVertexById}, \hyperpage{39}
+    \subitem {FreeElements}, \hyperpage{40}
+    \subitem {FreeGraph}, \hyperpage{40}
+    \subitem {FreeNodes}, \hyperpage{40}
+    \subitem {Graph}, \hyperpage{33}
+    \subitem {GraphBFS}, \hyperpage{41}
+    \subitem {GraphDFS}, \hyperpage{41}
+    \subitem {GraphPaths}, \hyperpage{42}
+    \subitem {InitGraph}, \hyperpage{42}
+    \subitem {InsertEdge}, \hyperpage{42}
+    \subitem {InsertElement}, \hyperpage{43}
+    \subitem {InsertElementAtEnd}, \hyperpage{43}
+    \subitem {InsertNode}, \hyperpage{43}
+    \subitem {InsertVertex}, \hyperpage{44}
+    \subitem {IsNewEdge}, \hyperpage{44}
+    \subitem {MakeElement}, \hyperpage{45}
+    \subitem {MakeNode}, \hyperpage{45}
+    \subitem {MakeSeenList}, \hyperpage{45}
+    \subitem {MakeVertex}, \hyperpage{46}
+    \subitem {Node}, \hyperpage{33}
+    \subitem {NodeInBounds}, \hyperpage{46}
+    \subitem {NoiseCheck}, \hyperpage{46}
+    \subitem {NoiseCheckAlt}, \hyperpage{47}
+    \subitem {Path}, \hyperpage{34}
+    \subitem {Pathing}, \hyperpage{47}
+    \subitem {ReadGraphFile}, \hyperpage{47}
+    \subitem {ReadListFile}, \hyperpage{49}
+    \subitem {RemoveEdge}, \hyperpage{49}
+    \subitem {RemoveElement}, \hyperpage{49}
+    \subitem {RemoveNode}, \hyperpage{50}
+    \subitem {RemoveVertex}, \hyperpage{50}
+    \subitem {SaveGraphFile}, \hyperpage{50}
+    \subitem {SaveList}, \hyperpage{51}
+    \subitem {ValidNodePos}, \hyperpage{51}
+    \subitem {Vector2}, \hyperpage{34}
+    \subitem {Vector2Add}, \hyperpage{51}
+    \subitem {Vector2Compare}, \hyperpage{52}
+    \subitem {Vector2Subtract}, \hyperpage{52}
+    \subitem {Vertex}, \hyperpage{34}
+
+  \indexspace
+
+  \item {Graph}, \hyperpage{6}
+    \subitem {func.h}, \hyperpage{33}
+  \item {GraphBFS}
+    \subitem {func.c}, \hyperpage{18}
+    \subitem {func.h}, \hyperpage{41}
+  \item {GraphDFS}
+    \subitem {func.c}, \hyperpage{18}
+    \subitem {func.h}, \hyperpage{41}
+  \item {GraphPaths}
+    \subitem {func.c}, \hyperpage{19}
+    \subitem {func.h}, \hyperpage{42}
+
+  \indexspace
+
+  \item {HasBinExtension}
+    \subitem {interface.c}, \hyperpage{57}
+    \subitem {interface.h}, \hyperpage{62}
+
+  \indexspace
+
+  \item {InitGraph}
+    \subitem {func.c}, \hyperpage{19}
+    \subitem {func.h}, \hyperpage{42}
+  \item {InsertEdge}
+    \subitem {func.c}, \hyperpage{19}
+    \subitem {func.h}, \hyperpage{42}
+  \item {InsertElement}
+    \subitem {func.c}, \hyperpage{20}
+    \subitem {func.h}, \hyperpage{43}
+  \item {InsertElementAtEnd}
+    \subitem {func.c}, \hyperpage{20}
+    \subitem {func.h}, \hyperpage{43}
+  \item {InsertNode}
+    \subitem {func.c}, \hyperpage{20}
+    \subitem {func.h}, \hyperpage{43}
+  \item {InsertVertex}
+    \subitem {func.c}, \hyperpage{21}
+    \subitem {func.h}, \hyperpage{44}
+  \item {interface.c}
+    \subitem {AskReplace}, \hyperpage{56}
+    \subitem {CommandIO}, \hyperpage{56}
+    \subitem {DrawMatrix}, \hyperpage{57}
+    \subitem {HasBinExtension}, \hyperpage{57}
+    \subitem {Log}, \hyperpage{57}
+    \subitem {Menu}, \hyperpage{57}
+    \subitem {Pause}, \hyperpage{58}
+    \subitem {ShowGraph}, \hyperpage{58}
+    \subitem {ShowList}, \hyperpage{58}
+    \subitem {ShowPath}, \hyperpage{58}
+    \subitem {ShowResonancePairs}, \hyperpage{59}
+    \subitem {ShowTraversal}, \hyperpage{59}
+  \item {interface.h}
+    \subitem {AskReplace}, \hyperpage{61}
+    \subitem {CommandIO}, \hyperpage{61}
+    \subitem {DrawMatrix}, \hyperpage{62}
+    \subitem {HasBinExtension}, \hyperpage{62}
+    \subitem {Log}, \hyperpage{62}
+    \subitem {Menu}, \hyperpage{63}
+    \subitem {Pause}, \hyperpage{63}
+    \subitem {ShowGraph}, \hyperpage{63}
+    \subitem {ShowList}, \hyperpage{63}
+    \subitem {ShowPath}, \hyperpage{64}
+    \subitem {ShowResonancePairs}, \hyperpage{64}
+    \subitem {ShowTraversal}, \hyperpage{64}
+  \item {IsNewEdge}
+    \subitem {func.c}, \hyperpage{21}
+    \subitem {func.h}, \hyperpage{44}
+
+  \indexspace
+
+  \item {Log}
+    \subitem {interface.c}, \hyperpage{57}
+    \subitem {interface.h}, \hyperpage{62}
+
+  \indexspace
+
+  \item {MakeElement}
+    \subitem {func.c}, \hyperpage{22}
+    \subitem {func.h}, \hyperpage{45}
+  \item {MakeNode}
+    \subitem {func.c}, \hyperpage{22}
+    \subitem {func.h}, \hyperpage{45}
+  \item {MakeSeenList}
+    \subitem {func.c}, \hyperpage{22}
+    \subitem {func.h}, \hyperpage{45}
+  \item {MakeVertex}
+    \subitem {func.c}, \hyperpage{23}
+    \subitem {func.h}, \hyperpage{46}
+  \item {Menu}
+    \subitem {interface.c}, \hyperpage{57}
+    \subitem {interface.h}, \hyperpage{63}
+
+  \indexspace
+
+  \item {Node}, \hyperpage{6}
+    \subitem {func.h}, \hyperpage{33}
+  \item {NodeInBounds}
+    \subitem {func.c}, \hyperpage{23}
+    \subitem {func.h}, \hyperpage{46}
+  \item {NoiseCheck}
+    \subitem {func.c}, \hyperpage{23}
+    \subitem {func.h}, \hyperpage{46}
+  \item {NoiseCheckAlt}
+    \subitem {func.c}, \hyperpage{24}
+    \subitem {func.h}, \hyperpage{47}
+
+  \indexspace
+
+  \item {Path}, \hyperpage{7}
+    \subitem {func.h}, \hyperpage{34}
+  \item {Pathing}
+    \subitem {func.c}, \hyperpage{24}
+    \subitem {func.h}, \hyperpage{47}
+  \item {Pause}
+    \subitem {interface.c}, \hyperpage{58}
+    \subitem {interface.h}, \hyperpage{63}
+
+  \indexspace
+
+  \item {ReadGraphFile}
+    \subitem {func.c}, \hyperpage{24}
+    \subitem {func.h}, \hyperpage{47}
+  \item {ReadListFile}
+    \subitem {func.c}, \hyperpage{26}
+    \subitem {func.h}, \hyperpage{49}
+  \item {RemoveEdge}
+    \subitem {func.c}, \hyperpage{26}
+    \subitem {func.h}, \hyperpage{49}
+  \item {RemoveElement}
+    \subitem {func.c}, \hyperpage{26}
+    \subitem {func.h}, \hyperpage{49}
+  \item {RemoveNode}
+    \subitem {func.c}, \hyperpage{27}
+    \subitem {func.h}, \hyperpage{50}
+  \item {RemoveVertex}
+    \subitem {func.c}, \hyperpage{27}
+    \subitem {func.h}, \hyperpage{50}
+
+  \indexspace
+
+  \item {SaveGraphFile}
+    \subitem {func.c}, \hyperpage{27}
+    \subitem {func.h}, \hyperpage{50}
+  \item {SaveList}
+    \subitem {func.c}, \hyperpage{28}
+    \subitem {func.h}, \hyperpage{51}
+  \item {ShowGraph}
+    \subitem {interface.c}, \hyperpage{58}
+    \subitem {interface.h}, \hyperpage{63}
+  \item {ShowList}
+    \subitem {interface.c}, \hyperpage{58}
+    \subitem {interface.h}, \hyperpage{63}
+  \item {ShowPath}
+    \subitem {interface.c}, \hyperpage{58}
+    \subitem {interface.h}, \hyperpage{64}
+  \item {ShowResonancePairs}
+    \subitem {interface.c}, \hyperpage{59}
+    \subitem {interface.h}, \hyperpage{64}
+  \item {ShowTraversal}
+    \subitem {interface.c}, \hyperpage{59}
+    \subitem {interface.h}, \hyperpage{64}
+  \item {src/func.c}, \hyperpage{9}
+  \item {src/func.h}, \hyperpage{30}, \hyperpage{53}
+  \item {src/interface.c}, \hyperpage{55}
+  \item {src/interface.h}, \hyperpage{60}, \hyperpage{65}
+  \item {src/main.c}, \hyperpage{65}
+
+  \indexspace
+
+  \item {ValidNodePos}
+    \subitem {func.c}, \hyperpage{28}
+    \subitem {func.h}, \hyperpage{51}
+  \item {Vector2}, \hyperpage{7}
+    \subitem {func.h}, \hyperpage{34}
+  \item {Vector2Add}
+    \subitem {func.c}, \hyperpage{28}
+    \subitem {func.h}, \hyperpage{51}
+  \item {Vector2Compare}
+    \subitem {func.c}, \hyperpage{29}
+    \subitem {func.h}, \hyperpage{52}
+  \item {Vector2Subtract}
+    \subitem {func.c}, \hyperpage{29}
+    \subitem {func.h}, \hyperpage{52}
+  \item {Vertex}, \hyperpage{8}
+    \subitem {func.h}, \hyperpage{34}
+
+\end{theindex}

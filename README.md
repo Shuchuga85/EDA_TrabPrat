@@ -15,7 +15,7 @@ Estrutura de Dados Avançados
 ## Organização
 
 [src/](./src/)  Código da solução desenvolvida <br>
-[doxdoc/](./doxdoc/)  Documentação com o relatórioi gerado pela ferramenta Doxygen <br>
+[doxdoc/](./doxdoc/)  Documentação com o relatório gerado pela ferramenta Doxygen <br>
 [doc/](./doc/)  Documentação com o relatório
 
 ## Executar

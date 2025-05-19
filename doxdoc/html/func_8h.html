@@ -3,15 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Trabalho-Pratico_EDA: Referência ao ficheiro src/func.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -33,15 +31,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.12.0 -->
+<!-- Gerado por Doxygen 1.10.0 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
-</script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -49,17 +42,12 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Localizar',false);
+  initMenu('',true,false,'search.php','Localizar');
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
-/* @license-end */
-</script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -86,16 +74,19 @@ $(function(){ initResizable(false); });
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Estruturas de Dados</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Definições de tipos</a> &#124;
-<a href="#func-members">Funções</a>  </div>
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
   <div class="headertitle"><div class="title">Referência ao ficheiro func.h</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementação de funções para manipulação de uma lista de elementos representados em matriz.  
+<a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="func_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
@@ -107,6 +98,21 @@ Estruturas de Dados</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_node.html">Node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um nó de uma lista ligada de elementos na matriz.  <a href="struct_node.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_edge.html">Edge</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa uma aresta (ligação) entre dois vértices no grafo.  <a href="struct_edge.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_vertex.html">Vertex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um vértice (nó) no grafo.  <a href="struct_vertex.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_graph.html">Graph</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa a estrutura principal de um grafo.  <a href="struct_graph.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_element.html">Element</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um elemento de uma lista auxiliar que contém vértices.  <a href="struct_element.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_path.html">Path</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura auxiliar utilizada para armazenar percursos ou listas ordenadas de vértices.  <a href="struct_path.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -123,9 +129,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a66b32ab28b717d39138f1dab1f944991" id="r_a66b32ab28b717d39138f1dab1f944991"><td class="memItemLeft" align="right" valign="top"><a id="a66b32ab28b717d39138f1dab1f944991" name="a66b32ab28b717d39138f1dab1f944991"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAXINPUT</b>&#160;&#160;&#160;100</td></tr>
 <tr class="separator:a66b32ab28b717d39138f1dab1f944991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1141a1661e8a653eaac97a78a6da1b8" id="r_ac1141a1661e8a653eaac97a78a6da1b8"><td class="memItemLeft" align="right" valign="top"><a id="ac1141a1661e8a653eaac97a78a6da1b8" name="ac1141a1661e8a653eaac97a78a6da1b8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SFILE</b>&#160;&#160;&#160;&quot;file.txt&quot;</td></tr>
-<tr class="separator:ac1141a1661e8a653eaac97a78a6da1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Definições de tipos</h2></td></tr>
@@ -135,6 +138,21 @@ Definições de tipos</h2></td></tr>
 <tr class="memitem:a3b09f37e675bcd48a01bf22155996872" id="r_a3b09f37e675bcd48a01bf22155996872"><td class="memItemLeft" align="right" valign="top">typedef struct Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b09f37e675bcd48a01bf22155996872">Node</a></td></tr>
 <tr class="memdesc:a3b09f37e675bcd48a01bf22155996872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um nó de uma lista ligada de elementos na matriz.  <br /></td></tr>
 <tr class="separator:a3b09f37e675bcd48a01bf22155996872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b91ff6921535d9c8215110f215c2c7" id="r_a89b91ff6921535d9c8215110f215c2c7"><td class="memItemLeft" align="right" valign="top">typedef struct Edge&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89b91ff6921535d9c8215110f215c2c7">Edge</a></td></tr>
+<tr class="memdesc:a89b91ff6921535d9c8215110f215c2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa uma aresta (ligação) entre dois vértices no grafo.  <br /></td></tr>
+<tr class="separator:a89b91ff6921535d9c8215110f215c2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1662af5233d0fe6a6f061445d2ff25" id="r_a2e1662af5233d0fe6a6f061445d2ff25"><td class="memItemLeft" align="right" valign="top">typedef struct Vertex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e1662af5233d0fe6a6f061445d2ff25">Vertex</a></td></tr>
+<tr class="memdesc:a2e1662af5233d0fe6a6f061445d2ff25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um vértice (nó) no grafo.  <br /></td></tr>
+<tr class="separator:a2e1662af5233d0fe6a6f061445d2ff25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c94bbeb31bba748d2897a168f62e9bc" id="r_a0c94bbeb31bba748d2897a168f62e9bc"><td class="memItemLeft" align="right" valign="top">typedef struct Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c94bbeb31bba748d2897a168f62e9bc">Graph</a></td></tr>
+<tr class="memdesc:a0c94bbeb31bba748d2897a168f62e9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa a estrutura principal de um grafo.  <br /></td></tr>
+<tr class="separator:a0c94bbeb31bba748d2897a168f62e9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9e4171e0ee83fe777219f894992340" id="r_a4d9e4171e0ee83fe777219f894992340"><td class="memItemLeft" align="right" valign="top">typedef struct Element&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d9e4171e0ee83fe777219f894992340">Element</a></td></tr>
+<tr class="memdesc:a4d9e4171e0ee83fe777219f894992340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um elemento de uma lista auxiliar que contém vértices.  <br /></td></tr>
+<tr class="separator:a4d9e4171e0ee83fe777219f894992340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3994f4c43574026e5c4662dc6ada2f28" id="r_a3994f4c43574026e5c4662dc6ada2f28"><td class="memItemLeft" align="right" valign="top">typedef struct Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3994f4c43574026e5c4662dc6ada2f28">Path</a></td></tr>
+<tr class="memdesc:a3994f4c43574026e5c4662dc6ada2f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura auxiliar utilizada para armazenar percursos ou listas ordenadas de vértices.  <br /></td></tr>
+<tr class="separator:a3994f4c43574026e5c4662dc6ada2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
@@ -162,9 +180,96 @@ Funções</h2></td></tr>
 <tr class="memitem:a160664f3d263e4e13020cb93ad1b943c" id="r_a160664f3d263e4e13020cb93ad1b943c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a160664f3d263e4e13020cb93ad1b943c">NoiseCheckAlt</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
 <tr class="memdesc:a160664f3d263e4e13020cb93ad1b943c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Versão alternativa da verificação de ruído que compara todos os elementos entre si.  <br /></td></tr>
 <tr class="separator:a160664f3d263e4e13020cb93ad1b943c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a2388721f31fe4aae37f92397c3b30" id="r_a56a2388721f31fe4aae37f92397c3b30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56a2388721f31fe4aae37f92397c3b30">FreeNodes</a> (<a class="el" href="struct_node.html">Node</a> *head)</td></tr>
+<tr class="memdesc:a56a2388721f31fe4aae37f92397c3b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um nó em uma posição específica.  <br /></td></tr>
+<tr class="separator:a56a2388721f31fe4aae37f92397c3b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d47b76a7910f0ad9895087baa394b4" id="r_aa1d47b76a7910f0ad9895087baa394b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1d47b76a7910f0ad9895087baa394b4">FindNodePos</a> (<a class="el" href="struct_node.html">Node</a> *st, <a class="el" href="struct_vector2.html">Vector2</a> npos)</td></tr>
-<tr class="memdesc:aa1d47b76a7910f0ad9895087baa394b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um nó em uma posição específica.  <br /></td></tr>
+<tr class="memdesc:aa1d47b76a7910f0ad9895087baa394b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um nó numa posição específica da matriz.  <br /></td></tr>
 <tr class="separator:aa1d47b76a7910f0ad9895087baa394b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ada9486afaee443fd070b7bdabaf00" id="r_a74ada9486afaee443fd070b7bdabaf00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_graph.html">Graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ada9486afaee443fd070b7bdabaf00">InitGraph</a> ()</td></tr>
+<tr class="memdesc:a74ada9486afaee443fd070b7bdabaf00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa uma estrutura de grafo vazia.  <br /></td></tr>
+<tr class="separator:a74ada9486afaee443fd070b7bdabaf00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e6a3bf5f22061b375740e3a8de2f8c" id="r_a40e6a3bf5f22061b375740e3a8de2f8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40e6a3bf5f22061b375740e3a8de2f8c">MakeVertex</a> (char value, <a class="el" href="struct_vector2.html">Vector2</a> position, int *id)</td></tr>
+<tr class="memdesc:a40e6a3bf5f22061b375740e3a8de2f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo vértice com valor e posição especificados.  <br /></td></tr>
+<tr class="separator:a40e6a3bf5f22061b375740e3a8de2f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e52d380a6df9d0a46130bb8baf9efa2" id="r_a2e52d380a6df9d0a46130bb8baf9efa2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e52d380a6df9d0a46130bb8baf9efa2">InsertEdge</a> (<a class="el" href="struct_vertex.html">Vertex</a> *from, <a class="el" href="struct_vertex.html">Vertex</a> *dest)</td></tr>
+<tr class="memdesc:a2e52d380a6df9d0a46130bb8baf9efa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma nova aresta entre dois vértices.  <br /></td></tr>
+<tr class="separator:a2e52d380a6df9d0a46130bb8baf9efa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2a64d31dc8237e6560d9a19bdf46a8" id="r_aee2a64d31dc8237e6560d9a19bdf46a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee2a64d31dc8237e6560d9a19bdf46a8">IsNewEdge</a> (<a class="el" href="struct_vertex.html">Vertex</a> *from, <a class="el" href="struct_vertex.html">Vertex</a> *dest)</td></tr>
+<tr class="memdesc:aee2a64d31dc8237e6560d9a19bdf46a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se uma ligação entre dois vértices já existe.  <br /></td></tr>
+<tr class="separator:aee2a64d31dc8237e6560d9a19bdf46a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94090f467dbc51177ef1646905ef9f27" id="r_a94090f467dbc51177ef1646905ef9f27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94090f467dbc51177ef1646905ef9f27">InsertVertex</a> (<a class="el" href="struct_vertex.html">Vertex</a> *dnew, <a class="el" href="struct_vertex.html">Vertex</a> *st, bool edge)</td></tr>
+<tr class="memdesc:a94090f467dbc51177ef1646905ef9f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere um vértice na lista de vértices.  <br /></td></tr>
+<tr class="separator:a94090f467dbc51177ef1646905ef9f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0244b4a066989671600e7b879747b209" id="r_a0244b4a066989671600e7b879747b209"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0244b4a066989671600e7b879747b209">RemoveVertex</a> (<a class="el" href="struct_vertex.html">Vertex</a> *rm, <a class="el" href="struct_vertex.html">Vertex</a> *st)</td></tr>
+<tr class="memdesc:a0244b4a066989671600e7b879747b209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um vértice e as suas arestas da lista.  <br /></td></tr>
+<tr class="separator:a0244b4a066989671600e7b879747b209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4bc280cb76b3b975cdb281339253d2a" id="r_aa4bc280cb76b3b975cdb281339253d2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4bc280cb76b3b975cdb281339253d2a">ClearEdges</a> (<a class="el" href="struct_vertex.html">Vertex</a> *old)</td></tr>
+<tr class="memdesc:aa4bc280cb76b3b975cdb281339253d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta todas as arestas de um vértice.  <br /></td></tr>
+<tr class="separator:aa4bc280cb76b3b975cdb281339253d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b830450f7ec70344bb6554e6e6b4d6c" id="r_a2b830450f7ec70344bb6554e6e6b4d6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b830450f7ec70344bb6554e6e6b4d6c">RemoveEdge</a> (<a class="el" href="struct_vertex.html">Vertex</a> *from, <a class="el" href="struct_vertex.html">Vertex</a> *dest)</td></tr>
+<tr class="memdesc:a2b830450f7ec70344bb6554e6e6b4d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove uma aresta entre dois vértices.  <br /></td></tr>
+<tr class="separator:a2b830450f7ec70344bb6554e6e6b4d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575c2238b1dff5254f7263d9b3e166a3" id="r_a575c2238b1dff5254f7263d9b3e166a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a575c2238b1dff5254f7263d9b3e166a3">EdgeFindDest</a> (<a class="el" href="struct_edge.html">Edge</a> **current, <a class="el" href="struct_edge.html">Edge</a> **previous, <a class="el" href="struct_vertex.html">Vertex</a> *pick)</td></tr>
+<tr class="memdesc:a575c2238b1dff5254f7263d9b3e166a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra uma aresta de destino e os ponteiros anteriores na lista.  <br /></td></tr>
+<tr class="separator:a575c2238b1dff5254f7263d9b3e166a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f9881d092b979ce7948ec0db7e8b05" id="r_af7f9881d092b979ce7948ec0db7e8b05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7f9881d092b979ce7948ec0db7e8b05">AddEdges</a> (<a class="el" href="struct_vertex.html">Vertex</a> *new, <a class="el" href="struct_vertex.html">Vertex</a> *st)</td></tr>
+<tr class="memdesc:af7f9881d092b979ce7948ec0db7e8b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona arestas entre um novo vértice e outros na lista, se forem compatíveis.  <br /></td></tr>
+<tr class="separator:af7f9881d092b979ce7948ec0db7e8b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55dc194dbba334657293c0303027a9be" id="r_a55dc194dbba334657293c0303027a9be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55dc194dbba334657293c0303027a9be">FindVertexAt</a> (<a class="el" href="struct_vertex.html">Vertex</a> *st, <a class="el" href="struct_vector2.html">Vector2</a> npos)</td></tr>
+<tr class="memdesc:a55dc194dbba334657293c0303027a9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um vértice no grafo a partir de uma posição.  <br /></td></tr>
+<tr class="separator:a55dc194dbba334657293c0303027a9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17f8b2fb0de64ec33f11ba7036aaf75" id="r_ae17f8b2fb0de64ec33f11ba7036aaf75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vertex.html">Vertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae17f8b2fb0de64ec33f11ba7036aaf75">FindVertexById</a> (<a class="el" href="struct_vertex.html">Vertex</a> *vertices, int id)</td></tr>
+<tr class="memdesc:ae17f8b2fb0de64ec33f11ba7036aaf75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um vértice no grafo com base no seu identificador (ID).  <br /></td></tr>
+<tr class="separator:ae17f8b2fb0de64ec33f11ba7036aaf75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d80ad0b4078443dab2ec8062fee861" id="r_a12d80ad0b4078443dab2ec8062fee861"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12d80ad0b4078443dab2ec8062fee861">FreeGraph</a> (<a class="el" href="struct_graph.html">Graph</a> *gr)</td></tr>
+<tr class="memdesc:a12d80ad0b4078443dab2ec8062fee861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta todos os vértices e arestas de um grafo.  <br /></td></tr>
+<tr class="separator:a12d80ad0b4078443dab2ec8062fee861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92428ff2af278af6168b74f9f814273b" id="r_a92428ff2af278af6168b74f9f814273b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92428ff2af278af6168b74f9f814273b">ClearSeen</a> (<a class="el" href="struct_vertex.html">Vertex</a> *st)</td></tr>
+<tr class="memdesc:a92428ff2af278af6168b74f9f814273b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa o estado de "visitado" (seen) de todos os vértices.  <br /></td></tr>
+<tr class="separator:a92428ff2af278af6168b74f9f814273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af913187cef479d5cf7b5dff41ae01fcc" id="r_af913187cef479d5cf7b5dff41ae01fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af913187cef479d5cf7b5dff41ae01fcc">GraphDFS</a> (<a class="el" href="struct_graph.html">Graph</a> *gr, <a class="el" href="struct_vertex.html">Vertex</a> *start)</td></tr>
+<tr class="memdesc:af913187cef479d5cf7b5dff41ae01fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza uma pesquisa em profundidade (DFS) a partir de um vértice inicial.  <br /></td></tr>
+<tr class="separator:af913187cef479d5cf7b5dff41ae01fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5682ddf9d26aaf8b19732524dc847fee" id="r_a5682ddf9d26aaf8b19732524dc847fee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5682ddf9d26aaf8b19732524dc847fee">DFSMark</a> (<a class="el" href="struct_vertex.html">Vertex</a> *current, int *count)</td></tr>
+<tr class="memdesc:a5682ddf9d26aaf8b19732524dc847fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca recursivamente os vértices visitados em profundidade (DFS).  <br /></td></tr>
+<tr class="separator:a5682ddf9d26aaf8b19732524dc847fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3224976abfc277f28fd98c0771d8b33c" id="r_a3224976abfc277f28fd98c0771d8b33c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3224976abfc277f28fd98c0771d8b33c">GraphBFS</a> (<a class="el" href="struct_graph.html">Graph</a> *gr, <a class="el" href="struct_vertex.html">Vertex</a> *start)</td></tr>
+<tr class="memdesc:a3224976abfc277f28fd98c0771d8b33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza uma pesquisa em largura (BFS) a partir de um vértice inicial.  <br /></td></tr>
+<tr class="separator:a3224976abfc277f28fd98c0771d8b33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504ba92aa7e2990ee1e1c653b6ec7a01" id="r_a504ba92aa7e2990ee1e1c653b6ec7a01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a504ba92aa7e2990ee1e1c653b6ec7a01">MakeSeenList</a> (<a class="el" href="struct_graph.html">Graph</a> *gr, int max)</td></tr>
+<tr class="memdesc:a504ba92aa7e2990ee1e1c653b6ec7a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma lista ordenada de elementos com base na ordem de visita (seen).  <br /></td></tr>
+<tr class="separator:a504ba92aa7e2990ee1e1c653b6ec7a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f50e47269b22ca5bb1b24360be106d" id="r_af6f50e47269b22ca5bb1b24360be106d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6f50e47269b22ca5bb1b24360be106d">GraphPaths</a> (<a class="el" href="struct_graph.html">Graph</a> *gr, <a class="el" href="struct_vertex.html">Vertex</a> *start, <a class="el" href="struct_vertex.html">Vertex</a> *end)</td></tr>
+<tr class="memdesc:af6f50e47269b22ca5bb1b24360be106d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula todos os caminhos possíveis entre dois vértices.  <br /></td></tr>
+<tr class="separator:af6f50e47269b22ca5bb1b24360be106d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b1ddfc21c02118e413191c03d07c3e2" id="r_a6b1ddfc21c02118e413191c03d07c3e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b1ddfc21c02118e413191c03d07c3e2">Pathing</a> (<a class="el" href="struct_vertex.html">Vertex</a> *current, <a class="el" href="struct_vertex.html">Vertex</a> *end, <a class="el" href="struct_path.html">Path</a> *head, <a class="el" href="struct_graph.html">Graph</a> *gr)</td></tr>
+<tr class="memdesc:a6b1ddfc21c02118e413191c03d07c3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caminha recursivamente no grafo entre dois vértices, acumulando o caminho atual.  <br /></td></tr>
+<tr class="separator:a6b1ddfc21c02118e413191c03d07c3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5628f93cfecf3bf3d5575996bb7e2fed" id="r_a5628f93cfecf3bf3d5575996bb7e2fed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5628f93cfecf3bf3d5575996bb7e2fed">AddPath</a> (<a class="el" href="struct_path.html">Path</a> *head, <a class="el" href="struct_graph.html">Graph</a> *gr, int max)</td></tr>
+<tr class="memdesc:a5628f93cfecf3bf3d5575996bb7e2fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um caminho encontrado à lista principal.  <br /></td></tr>
+<tr class="separator:a5628f93cfecf3bf3d5575996bb7e2fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb3a0bdce29c0e561f623478f98fe7e9" id="r_afb3a0bdce29c0e561f623478f98fe7e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb3a0bdce29c0e561f623478f98fe7e9">FindPairs</a> (<a class="el" href="struct_graph.html">Graph</a> *gr, char a, char b)</td></tr>
+<tr class="memdesc:afb3a0bdce29c0e561f623478f98fe7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra e retorna uma lista de intersecções entre pares de antenas com ressonância A e B.  <br /></td></tr>
+<tr class="separator:afb3a0bdce29c0e561f623478f98fe7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8301da0be4486019c375058acd1bc9bb" id="r_a8301da0be4486019c375058acd1bc9bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8301da0be4486019c375058acd1bc9bb">MakeElement</a> (<a class="el" href="struct_vertex.html">Vertex</a> *value)</td></tr>
+<tr class="memdesc:a8301da0be4486019c375058acd1bc9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo elemento com base num vértice.  <br /></td></tr>
+<tr class="separator:a8301da0be4486019c375058acd1bc9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77a6ba0dd9e861cbdb6893db991036f" id="r_ad77a6ba0dd9e861cbdb6893db991036f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad77a6ba0dd9e861cbdb6893db991036f">InsertElement</a> (<a class="el" href="struct_element.html">Element</a> *dnew, <a class="el" href="struct_element.html">Element</a> *st)</td></tr>
+<tr class="memdesc:ad77a6ba0dd9e861cbdb6893db991036f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere um elemento no início de uma lista.  <br /></td></tr>
+<tr class="separator:ad77a6ba0dd9e861cbdb6893db991036f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add176be3c1a438403d69b4b2f3d28e87" id="r_add176be3c1a438403d69b4b2f3d28e87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add176be3c1a438403d69b4b2f3d28e87">InsertElementAtEnd</a> (<a class="el" href="struct_element.html">Element</a> *new, <a class="el" href="struct_element.html">Element</a> *st)</td></tr>
+<tr class="memdesc:add176be3c1a438403d69b4b2f3d28e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere um elemento no final da lista.  <br /></td></tr>
+<tr class="separator:add176be3c1a438403d69b4b2f3d28e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfe54f4b79f9492be86aaef99af59c9" id="r_a0dfe54f4b79f9492be86aaef99af59c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dfe54f4b79f9492be86aaef99af59c9">RemoveElement</a> (<a class="el" href="struct_element.html">Element</a> *rm, <a class="el" href="struct_element.html">Element</a> *st)</td></tr>
+<tr class="memdesc:a0dfe54f4b79f9492be86aaef99af59c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um elemento específico da lista.  <br /></td></tr>
+<tr class="separator:a0dfe54f4b79f9492be86aaef99af59c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f589dba662cca72a9156e1094d89e7" id="r_ae1f589dba662cca72a9156e1094d89e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1f589dba662cca72a9156e1094d89e7">FindElement</a> (void *item, <a class="el" href="struct_element.html">Element</a> *st)</td></tr>
+<tr class="memdesc:ae1f589dba662cca72a9156e1094d89e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura um elemento na lista.  <br /></td></tr>
+<tr class="separator:ae1f589dba662cca72a9156e1094d89e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe085f943912ab146df17d90bd5c0de" id="r_aafe085f943912ab146df17d90bd5c0de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_element.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafe085f943912ab146df17d90bd5c0de">FreeElements</a> (<a class="el" href="struct_element.html">Element</a> *head)</td></tr>
+<tr class="memdesc:aafe085f943912ab146df17d90bd5c0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta toda a memória alocada por uma lista de elementos.  <br /></td></tr>
+<tr class="separator:aafe085f943912ab146df17d90bd5c0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab165979aa96500904b0b234640b80d53" id="r_ab165979aa96500904b0b234640b80d53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab165979aa96500904b0b234640b80d53">Vector2Compare</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
 <tr class="memdesc:ab165979aa96500904b0b234640b80d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compara se dois vetores possuem as mesmas coordenadas.  <br /></td></tr>
 <tr class="separator:ab165979aa96500904b0b234640b80d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,43 +279,92 @@ Funções</h2></td></tr>
 <tr class="memitem:a38193ad14e49953c1c6038eec5ec0ff1" id="r_a38193ad14e49953c1c6038eec5ec0ff1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38193ad14e49953c1c6038eec5ec0ff1">Vector2Add</a> (<a class="el" href="struct_vector2.html">Vector2</a> a, <a class="el" href="struct_vector2.html">Vector2</a> b)</td></tr>
 <tr class="memdesc:a38193ad14e49953c1c6038eec5ec0ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soma dois vetores.  <br /></td></tr>
 <tr class="separator:a38193ad14e49953c1c6038eec5ec0ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7be92bf9b511af4d5466b4b9f637099b" id="r_a7be92bf9b511af4d5466b4b9f637099b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7be92bf9b511af4d5466b4b9f637099b">DrawMatrix</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
-<tr class="memdesc:a7be92bf9b511af4d5466b4b9f637099b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha a matriz com os elementos presentes na lista.  <br /></td></tr>
-<tr class="separator:a7be92bf9b511af4d5466b4b9f637099b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2640af73bd39be7651f501c56562b8db" id="r_a2640af73bd39be7651f501c56562b8db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2640af73bd39be7651f501c56562b8db">ShowList</a> (<a class="el" href="struct_node.html">Node</a> *st, char filter)</td></tr>
-<tr class="memdesc:a2640af73bd39be7651f501c56562b8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe a lista de nós, com um filtro opcional.  <br /></td></tr>
-<tr class="separator:a2640af73bd39be7651f501c56562b8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb620d127f79c45f6bc5317ff1fd7471" id="r_acb620d127f79c45f6bc5317ff1fd7471"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb620d127f79c45f6bc5317ff1fd7471">ReadListFile</a> (const char *filename)</td></tr>
-<tr class="memdesc:acb620d127f79c45f6bc5317ff1fd7471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê uma lista de elementos a partir de um ficheiro.  <br /></td></tr>
-<tr class="separator:acb620d127f79c45f6bc5317ff1fd7471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa32dc0e8d65723f683a1d254e30ef108" id="r_aa32dc0e8d65723f683a1d254e30ef108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32dc0e8d65723f683a1d254e30ef108">SaveList</a> (const char *filename, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
-<tr class="memdesc:aa32dc0e8d65723f683a1d254e30ef108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda a lista de elementos num ficheiro.  <br /></td></tr>
-<tr class="separator:aa32dc0e8d65723f683a1d254e30ef108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1483313e0618043fde85fc7a5abe9d4d" id="r_a1483313e0618043fde85fc7a5abe9d4d"><td class="memItemLeft" align="right" valign="top"><a id="a1483313e0618043fde85fc7a5abe9d4d" name="a1483313e0618043fde85fc7a5abe9d4d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawMenu</b> ()</td></tr>
-<tr class="memdesc:a1483313e0618043fde85fc7a5abe9d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha o menu de opções no terminal. <br /></td></tr>
-<tr class="separator:a1483313e0618043fde85fc7a5abe9d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add83fc1f29fff30765786c6deaf5fd8d" id="r_add83fc1f29fff30765786c6deaf5fd8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add83fc1f29fff30765786c6deaf5fd8d">Menu</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
-<tr class="memdesc:add83fc1f29fff30765786c6deaf5fd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerencia a interface do utilizador e manipulação da lista de nós.  <br /></td></tr>
-<tr class="separator:add83fc1f29fff30765786c6deaf5fd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd85956a0342471aea47c1fbebe72531" id="r_abd85956a0342471aea47c1fbebe72531"><td class="memItemLeft" align="right" valign="top"><a id="abd85956a0342471aea47c1fbebe72531" name="abd85956a0342471aea47c1fbebe72531"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawCommands</b> ()</td></tr>
-<tr class="memdesc:abd85956a0342471aea47c1fbebe72531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exibe os comandos disponíveis para manipulação da lista. <br /></td></tr>
-<tr class="separator:abd85956a0342471aea47c1fbebe72531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab34e5ea3b4b5e91383136179e6b66c02" id="r_ab34e5ea3b4b5e91383136179e6b66c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab34e5ea3b4b5e91383136179e6b66c02">CommandIO</a> (<a class="el" href="struct_node.html">Node</a> *st)</td></tr>
-<tr class="memdesc:ab34e5ea3b4b5e91383136179e6b66c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface baseada em comandos para manipulação da lista de elementos.  <br /></td></tr>
-<tr class="separator:ab34e5ea3b4b5e91383136179e6b66c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70babc5227ddd16ca31dccc6cec0bb22" id="r_a70babc5227ddd16ca31dccc6cec0bb22"><td class="memItemLeft" align="right" valign="top"><a id="a70babc5227ddd16ca31dccc6cec0bb22" name="a70babc5227ddd16ca31dccc6cec0bb22"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr>
-<tr class="memdesc:a70babc5227ddd16ca31dccc6cec0bb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausa a execução do programa até que o usuário pressione uma tecla. <br /></td></tr>
-<tr class="separator:a70babc5227ddd16ca31dccc6cec0bb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69e6941fed30256b8da14ca7677b2cd" id="r_ac69e6941fed30256b8da14ca7677b2cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac69e6941fed30256b8da14ca7677b2cd">ReadGraphFile</a> (const char *filename, <a class="el" href="struct_graph.html">Graph</a> *gr)</td></tr>
+<tr class="memdesc:ac69e6941fed30256b8da14ca7677b2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um grafo a partir de um ficheiro binário, incluindo os vértices e as arestas com base nas posições.  <br /></td></tr>
+<tr class="separator:ac69e6941fed30256b8da14ca7677b2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b30de69e80892f4e771e20f669f78b5" id="r_a8b30de69e80892f4e771e20f669f78b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b30de69e80892f4e771e20f669f78b5">SaveGraphFile</a> (const char *filename, <a class="el" href="struct_graph.html">Graph</a> *gr)</td></tr>
+<tr class="memdesc:a8b30de69e80892f4e771e20f669f78b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda um grafo num ficheiro binário, incluindo vértices e arestas por posição (<a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a>).  <br /></td></tr>
+<tr class="separator:a8b30de69e80892f4e771e20f669f78b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901157c0b4a27ee88c500facff10a106" id="r_a901157c0b4a27ee88c500facff10a106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a901157c0b4a27ee88c500facff10a106">ReadListFile</a> (const char *filename, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a901157c0b4a27ee88c500facff10a106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê uma lista de elementos a partir de um ficheiro.  <br /></td></tr>
+<tr class="separator:a901157c0b4a27ee88c500facff10a106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e7fff2cc20c13a61e720cdcd23d3155" id="r_a2e7fff2cc20c13a61e720cdcd23d3155"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e7fff2cc20c13a61e720cdcd23d3155">SaveList</a> (const char *filename, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a2e7fff2cc20c13a61e720cdcd23d3155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda a lista de elementos num ficheiro.  <br /></td></tr>
+<tr class="separator:a2e7fff2cc20c13a61e720cdcd23d3155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce3c2cb8b61c39547e43c5da88a442f" id="r_a7ce3c2cb8b61c39547e43c5da88a442f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ce3c2cb8b61c39547e43c5da88a442f">CopyListToGraph</a> (<a class="el" href="struct_node.html">Node</a> *st, <a class="el" href="struct_graph.html">Graph</a> *gr)</td></tr>
+<tr class="memdesc:a7ce3c2cb8b61c39547e43c5da88a442f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia os nós de uma lista para um grafo.  <br /></td></tr>
+<tr class="separator:a7ce3c2cb8b61c39547e43c5da88a442f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b296bff29803ac8e1f509bf85a2e810" id="r_a3b296bff29803ac8e1f509bf85a2e810"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b296bff29803ac8e1f509bf85a2e810">CopyGraphToList</a> (<a class="el" href="struct_graph.html">Graph</a> *gr, <a class="el" href="struct_node.html">Node</a> *st)</td></tr>
+<tr class="memdesc:a3b296bff29803ac8e1f509bf85a2e810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia os vértices de um grafo para uma lista de nós.  <br /></td></tr>
+<tr class="separator:a3b296bff29803ac8e1f509bf85a2e810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:ac82c57dbdc66c72053d5936eaf2ce047" id="r_ac82c57dbdc66c72053d5936eaf2ce047"><td class="memItemLeft" align="right" valign="top"><a id="ac82c57dbdc66c72053d5936eaf2ce047" name="ac82c57dbdc66c72053d5936eaf2ce047"></a>
+<a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sSize</b></td></tr>
+<tr class="separator:ac82c57dbdc66c72053d5936eaf2ce047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537bc895eb2248dfd72d987c66140754" id="r_a537bc895eb2248dfd72d987c66140754"><td class="memItemLeft" align="right" valign="top"><a id="a537bc895eb2248dfd72d987c66140754" name="a537bc895eb2248dfd72d987c66140754"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>noiseRange</b></td></tr>
+<tr class="separator:a537bc895eb2248dfd72d987c66140754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><dl class="section author"><dt>Autor</dt><dd>Vitor Rezende (<a href="#" onclick="location.href='mai'+'lto:'+'a31'+'52'+'1@a'+'lu'+'nos'+'.i'+'pca'+'.p'+'t'; return false;">a3152<span class="obfuscator">.nosp@m.</span>1@al<span class="obfuscator">.nosp@m.</span>unos.<span class="obfuscator">.nosp@m.</span>ipca<span class="obfuscator">.nosp@m.</span>.pt</a>) </dd></dl>
-<dl class="section version"><dt>Versão</dt><dd>0.1 </dd></dl>
+<div class="textblock"><p>Implementação de funções para manipulação de uma lista de elementos representados em matriz. </p>
+<dl class="section author"><dt>Autor</dt><dd>Vitor Rezende (<a href="#" onclick="location.href='mai'+'lto:'+'a31'+'52'+'1@a'+'lu'+'nos'+'.i'+'pca'+'.p'+'t'; return false;">a3152<span class="obfuscator">.nosp@m.</span>1@al<span class="obfuscator">.nosp@m.</span>unos.<span class="obfuscator">.nosp@m.</span>ipca<span class="obfuscator">.nosp@m.</span>.pt</a>) </dd></dl>
+<dl class="section version"><dt>Versão</dt><dd>0.10 </dd></dl>
 <dl class="section date"><dt>Data</dt><dd>2025-03-18</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a89b91ff6921535d9c8215110f215c2c7" name="a89b91ff6921535d9c8215110f215c2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b91ff6921535d9c8215110f215c2c7">&#9670;&#160;</a></span>Edge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Edge Edge</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Representa uma aresta (ligação) entre dois vértices no grafo. </p>
+<p>Cada aresta possui um peso (distância ou custo), um ponteiro para o vértice de destino e um ponteiro para a próxima aresta na lista de adjacência. </p>
+
+</div>
+</div>
+<a id="a4d9e4171e0ee83fe777219f894992340" name="a4d9e4171e0ee83fe777219f894992340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9e4171e0ee83fe777219f894992340">&#9670;&#160;</a></span>Element</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Element Element</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Representa um elemento de uma lista auxiliar que contém vértices. </p>
+<p>Utilizado para armazenar e organizar vértices durante percursos ou agrupamentos. </p>
+
+</div>
+</div>
+<a id="a0c94bbeb31bba748d2897a168f62e9bc" name="a0c94bbeb31bba748d2897a168f62e9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c94bbeb31bba748d2897a168f62e9bc">&#9670;&#160;</a></span>Graph</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Graph Graph</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Representa a estrutura principal de um grafo. </p>
+<p>Contém o número total de vértices e um ponteiro para a lista de vértices. </p>
+
+</div>
+</div>
 <a id="a3b09f37e675bcd48a01bf22155996872" name="a3b09f37e675bcd48a01bf22155996872"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b09f37e675bcd48a01bf22155996872">&#9670;&#160;</a></span>Node</h2>
 
@@ -225,6 +379,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 <p>Representa um nó de uma lista ligada de elementos na matriz. </p>
 <p>Cada nó contém um valor (por exemplo, um tipo de antena ou um efeito nefasto), uma posição na matriz representada por um <a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a>, e um ponteiro para o próximo nó da lista. </p>
+
+</div>
+</div>
+<a id="a3994f4c43574026e5c4662dc6ada2f28" name="a3994f4c43574026e5c4662dc6ada2f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3994f4c43574026e5c4662dc6ada2f28">&#9670;&#160;</a></span>Path</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Path Path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estrutura auxiliar utilizada para armazenar percursos ou listas ordenadas de vértices. </p>
+<p>Guarda a lista de elementos visitados e um contador máximo de visitas, utilizado para BFS/DFS. </p>
 
 </div>
 </div>
@@ -245,7 +416,118 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
+<a id="a2e1662af5233d0fe6a6f061445d2ff25" name="a2e1662af5233d0fe6a6f061445d2ff25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e1662af5233d0fe6a6f061445d2ff25">&#9670;&#160;</a></span>Vertex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct Vertex Vertex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Representa um vértice (nó) no grafo. </p>
+<p>Cada vértice possui um identificador único, uma posição na matriz (<a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a>), um valor (carácter representando o tipo, como 'A' ou 'B'), uma lista de arestas (ligações), uma flag de controlo de visitação (seen) e um ponteiro para o próximo vértice. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Documentação das funções</h2>
+<a id="af7f9881d092b979ce7948ec0db7e8b05" name="af7f9881d092b979ce7948ec0db7e8b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f9881d092b979ce7948ec0db7e8b05">&#9670;&#160;</a></span>AddEdges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AddEdges </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>new</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona arestas entre um novo vértice e outros na lista, se forem compatíveis. </p>
+<p>Compatibilidade geralmente depende do valor/resonância da antena.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new</td><td>Novo vértice. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista de vértices existentes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se pelo menos uma aresta foi adicionada. </dd></dl>
+
+</div>
+</div>
+<a id="a5628f93cfecf3bf3d5575996bb7e2fed" name="a5628f93cfecf3bf3d5575996bb7e2fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5628f93cfecf3bf3d5575996bb7e2fed">&#9670;&#160;</a></span>AddPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AddPath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_path.html">Path</a> *</td>          <td class="paramname"><span class="paramname"><em>head</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um caminho encontrado à lista principal. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Lista principal de caminhos. </td></tr>
+    <tr><td class="paramname">gr</td><td>Grafo de onde os caminhos provêm. </td></tr>
+    <tr><td class="paramname">max</td><td>Número máximo de visitas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa4bc280cb76b3b975cdb281339253d2a" name="aa4bc280cb76b3b975cdb281339253d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4bc280cb76b3b975cdb281339253d2a">&#9670;&#160;</a></span>ClearEdges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ClearEdges </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>old</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liberta todas as arestas de um vértice. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">old</td><td>Vértice cujas arestas devem ser removidas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se as arestas foram removidas com sucesso. </dd></dl>
+
+</div>
+</div>
 <a id="a1c0148015e29414921d92ac23554f9a8" name="a1c0148015e29414921d92ac23554f9a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c0148015e29414921d92ac23554f9a8">&#9670;&#160;</a></span>ClearNoise()</h2>
 
@@ -272,53 +554,194 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
-<a id="ab34e5ea3b4b5e91383136179e6b66c02" name="ab34e5ea3b4b5e91383136179e6b66c02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab34e5ea3b4b5e91383136179e6b66c02">&#9670;&#160;</a></span>CommandIO()</h2>
+<a id="a92428ff2af278af6168b74f9f814273b" name="a92428ff2af278af6168b74f9f814273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92428ff2af278af6168b74f9f814273b">&#9670;&#160;</a></span>ClearSeen()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CommandIO </td>
+          <td class="memname">bool ClearSeen </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Interface baseada em comandos para manipulação da lista de elementos. </p>
+<p>Limpa o estado de "visitado" (seen) de todos os vértices. </p>
+<p>Define seen = 0 para todos os vértices, preparando para uma nova pesquisa.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista de vértices. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se os valores foram reiniciados com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a3b296bff29803ac8e1f509bf85a2e810" name="a3b296bff29803ac8e1f509bf85a2e810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b296bff29803ac8e1f509bf85a2e810">&#9670;&#160;</a></span>CopyGraphToList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * CopyGraphToList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia os vértices de um grafo para uma lista de nós. </p>
+<p>Cria uma nova lista de elementos baseada na posição e tipo dos vértices do grafo.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gr</td><td>Grafo de origem. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista de destino, será atualizada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Node* Ponteiro para a nova lista resultante. </dd></dl>
+
+</div>
+</div>
+<a id="a7ce3c2cb8b61c39547e43c5da88a442f" name="a7ce3c2cb8b61c39547e43c5da88a442f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce3c2cb8b61c39547e43c5da88a442f">&#9670;&#160;</a></span>CopyListToGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CopyListToGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia os nós de uma lista para um grafo. </p>
+<p>Converte cada nó da lista de elementos (<a class="el" href="struct_node.html" title="Representa um nó de uma lista ligada de elementos na matriz.">Node</a>) para um vértice no grafo, mantendo as posições e valores. Atribui automaticamente arestas entre os vértices conforme necessário.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós a converter. </td></tr>
+    <tr><td class="paramname">gr</td><td>Grafo onde os vértices serão inseridos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a operação foi concluída com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a5682ddf9d26aaf8b19732524dc847fee" name="a5682ddf9d26aaf8b19732524dc847fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5682ddf9d26aaf8b19732524dc847fee">&#9670;&#160;</a></span>DFSMark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DFSMark </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>current</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca recursivamente os vértices visitados em profundidade (DFS). </p>
+<p>Utilizado para contagem ou verificação de conectividade.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current</td><td>Vértice atual. </td></tr>
+    <tr><td class="paramname">count</td><td>Ponteiro para o contador de visitas. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a7be92bf9b511af4d5466b4b9f637099b" name="a7be92bf9b511af4d5466b4b9f637099b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7be92bf9b511af4d5466b4b9f637099b">&#9670;&#160;</a></span>DrawMatrix()</h2>
+<a id="a575c2238b1dff5254f7263d9b3e166a3" name="a575c2238b1dff5254f7263d9b3e166a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575c2238b1dff5254f7263d9b3e166a3">&#9670;&#160;</a></span>EdgeFindDest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DrawMatrix </td>
+          <td class="memname">bool EdgeFindDest </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_edge.html">Edge</a> **</td>          <td class="paramname"><span class="paramname"><em>current</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct_edge.html">Edge</a> **</td>          <td class="paramname"><span class="paramname"><em>previous</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>pick</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Desenha a matriz com os elementos presentes na lista. </p>
+<p>Encontra uma aresta de destino e os ponteiros anteriores na lista. </p>
+<p>Auxiliar para remoção de arestas.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+    <tr><td class="paramname">current</td><td>Ponteiro para a aresta atual. </td></tr>
+    <tr><td class="paramname">previous</td><td>Ponteiro para a aresta anterior. </td></tr>
+    <tr><td class="paramname">pick</td><td>Vértice de destino a encontrar. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a aresta foi encontrada. </dd></dl>
+
+</div>
+</div>
+<a id="ae1f589dba662cca72a9156e1094d89e7" name="ae1f589dba662cca72a9156e1094d89e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f589dba662cca72a9156e1094d89e7">&#9670;&#160;</a></span>FindElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * FindElement </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>item</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Procura um elemento na lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>Ponteiro para o item a procurar. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista onde será feita a procura. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Ponteiro para o elemento encontrado ou NULL. </dd></dl>
 
 </div>
 </div>
@@ -331,12 +754,203 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname"><a class="el" href="struct_node.html">Node</a> * FindNodePos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>npos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Procura um nó numa posição específica da matriz. </p>
+<p>Percorre a lista de nós para encontrar um nó cuja posição coincida com a posição fornecida.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de nós a pesquisar. </td></tr>
+    <tr><td class="paramname">npos</td><td>Posição (<a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a>) a procurar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Node* Ponteiro para o nó encontrado ou NULL se não existir nenhum nó nessa posição.</dd></dl>
+<p>Procura um nó numa posição específica da matriz.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
+    <tr><td class="paramname">npos</td><td>Posição do nó a ser encontrado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o nó encontrado, ou NULL se não existir. </dd></dl>
+
+</div>
+</div>
+<a id="afb3a0bdce29c0e561f623478f98fe7e9" name="afb3a0bdce29c0e561f623478f98fe7e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb3a0bdce29c0e561f623478f98fe7e9">&#9670;&#160;</a></span>FindPairs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * FindPairs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encontra e retorna uma lista de intersecções entre pares de antenas com ressonância A e B. </p>
+<p>Percorre o grafo e encontra todos os pares de antenas (vértices) em que uma possui valor/resonância A e a outra B. Apenas regista intersecções diretas (arestas existentes). A lista resultante contém os pares encontrados.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gr</td><td>Ponteiro para o grafo. </td></tr>
+    <tr><td class="paramname">a</td><td>Carácter correspondente à primeira frequência (ex: 'A'). </td></tr>
+    <tr><td class="paramname">b</td><td>Carácter correspondente à segunda frequência (ex: 'B'). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista de elementos contendo os pares encontrados. </dd></dl>
+
+</div>
+</div>
+<a id="a55dc194dbba334657293c0303027a9be" name="a55dc194dbba334657293c0303027a9be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55dc194dbba334657293c0303027a9be">&#9670;&#160;</a></span>FindVertexAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vertex.html">Vertex</a> * FindVertexAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>npos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Procura um vértice no grafo a partir de uma posição. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>Lista de vértices do grafo. </td></tr>
+    <tr><td class="paramname">npos</td><td>Posição procurada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Vertex* Ponteiro para o vértice encontrado, ou NULL se não existir. </dd></dl>
+
+</div>
+</div>
+<a id="ae17f8b2fb0de64ec33f11ba7036aaf75" name="ae17f8b2fb0de64ec33f11ba7036aaf75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17f8b2fb0de64ec33f11ba7036aaf75">&#9670;&#160;</a></span>FindVertexById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vertex.html">Vertex</a> * FindVertexById </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>vertices</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Procura um vértice no grafo com base no seu identificador (ID). </p>
+<p>Percorre a lista de vértices e retorna o ponteiro correspondente ao ID.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>Lista de vértices do grafo. </td></tr>
+    <tr><td class="paramname">id</td><td>Identificador único do vértice a encontrar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Vertex* Ponteiro para o vértice correspondente, ou NULL se não encontrado. </dd></dl>
+
+</div>
+</div>
+<a id="aafe085f943912ab146df17d90bd5c0de" name="aafe085f943912ab146df17d90bd5c0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe085f943912ab146df17d90bd5c0de">&#9670;&#160;</a></span>FreeElements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * FreeElements </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>head</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liberta toda a memória alocada por uma lista de elementos. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Início da lista. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* NULL, lista vazia. </dd></dl>
+
+</div>
+</div>
+<a id="a12d80ad0b4078443dab2ec8062fee861" name="a12d80ad0b4078443dab2ec8062fee861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d80ad0b4078443dab2ec8062fee861">&#9670;&#160;</a></span>FreeGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FreeGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liberta todos os vértices e arestas de um grafo. </p>
+<p>Remove completamente todos os dados da estrutura de grafo e reinicia os contadores.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gr</td><td>Ponteiro para o grafo a ser limpo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a operação foi concluída com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a56a2388721f31fe4aae37f92397c3b30" name="a56a2388721f31fe4aae37f92397c3b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a2388721f31fe4aae37f92397c3b30">&#9670;&#160;</a></span>FreeNodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node.html">Node</a> * FreeNodes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>head</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -349,16 +963,226 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>Node* Ponteiro para o nó encontrado ou NULL se não existir.</dd></dl>
-<p>Procura um nó em uma posição específica.</p>
+<dl class="section return"><dt>Retorna</dt><dd>Node* Ponteiro para o nó encontrado ou NULL se não existir. </dd></dl>
+
+</div>
+</div>
+<a id="a3224976abfc277f28fd98c0771d8b33c" name="a3224976abfc277f28fd98c0771d8b33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3224976abfc277f28fd98c0771d8b33c">&#9670;&#160;</a></span>GraphBFS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * GraphBFS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>start</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza uma pesquisa em largura (BFS) a partir de um vértice inicial. </p>
+<p>Visita todos os vértices acessíveis por níveis, e armazena os visitados numa lista.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">st</td><td>Ponteiro para a lista. </td></tr>
-    <tr><td class="paramname">npos</td><td>Posição do nó a ser encontrado. </td></tr>
+    <tr><td class="paramname">gr</td><td>Grafo onde a pesquisa será realizada. </td></tr>
+    <tr><td class="paramname">start</td><td>Vértice inicial da pesquisa. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o nó encontrado, ou NULL se não existir. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista de elementos visitados pela BFS. </dd></dl>
+
+</div>
+</div>
+<a id="af913187cef479d5cf7b5dff41ae01fcc" name="af913187cef479d5cf7b5dff41ae01fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af913187cef479d5cf7b5dff41ae01fcc">&#9670;&#160;</a></span>GraphDFS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * GraphDFS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>start</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza uma pesquisa em profundidade (DFS) a partir de um vértice inicial. </p>
+<p>Visita todos os vértices conectados recursivamente e guarda a ordem numa lista.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gr</td><td>Grafo onde a pesquisa será realizada. </td></tr>
+    <tr><td class="paramname">start</td><td>Vértice inicial da pesquisa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista de elementos visitados pela DFS. </dd></dl>
+
+</div>
+</div>
+<a id="af6f50e47269b22ca5bb1b24360be106d" name="af6f50e47269b22ca5bb1b24360be106d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f50e47269b22ca5bb1b24360be106d">&#9670;&#160;</a></span>GraphPaths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * GraphPaths </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>start</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula todos os caminhos possíveis entre dois vértices. </p>
+<p>Usa backtracking para encontrar todas as combinações possíveis.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gr</td><td>Ponteiro para o grafo. </td></tr>
+    <tr><td class="paramname">start</td><td>Vértice de início. </td></tr>
+    <tr><td class="paramname">end</td><td>Vértice de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista de caminhos encontrados. </dd></dl>
+
+</div>
+</div>
+<a id="a74ada9486afaee443fd070b7bdabaf00" name="a74ada9486afaee443fd070b7bdabaf00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ada9486afaee443fd070b7bdabaf00">&#9670;&#160;</a></span>InitGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_graph.html">Graph</a> * InitGraph </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa uma estrutura de grafo vazia. </p>
+<p>Reserva memória para um novo grafo e inicializa o contador e a lista de vértices.</p>
+<dl class="section return"><dt>Retorna</dt><dd>Graph* Ponteiro para o novo grafo. </dd></dl>
+
+</div>
+</div>
+<a id="a2e52d380a6df9d0a46130bb8baf9efa2" name="a2e52d380a6df9d0a46130bb8baf9efa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e52d380a6df9d0a46130bb8baf9efa2">&#9670;&#160;</a></span>InsertEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InsertEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>from</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria uma nova aresta entre dois vértices. </p>
+<p>Apenas adiciona se a ligação ainda não existir.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>Vértice de origem. </td></tr>
+    <tr><td class="paramname">dest</td><td>Vértice de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a aresta foi criada com sucesso. </dd>
+<dd>
+false Se a ligação já existia. </dd></dl>
+
+</div>
+</div>
+<a id="ad77a6ba0dd9e861cbdb6893db991036f" name="ad77a6ba0dd9e861cbdb6893db991036f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77a6ba0dd9e861cbdb6893db991036f">&#9670;&#160;</a></span>InsertElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * InsertElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere um elemento no início de uma lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dnew</td><td>Novo elemento. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista existente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista atualizada. </dd></dl>
+
+</div>
+</div>
+<a id="add176be3c1a438403d69b4b2f3d28e87" name="add176be3c1a438403d69b4b2f3d28e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add176be3c1a438403d69b4b2f3d28e87">&#9670;&#160;</a></span>InsertElementAtEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * InsertElementAtEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>new</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere um elemento no final da lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new</td><td>Novo elemento. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista atual. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista atualizada. </dd></dl>
 
 </div>
 </div>
@@ -371,7 +1195,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname"><a class="el" href="struct_node.html">Node</a> * InsertNode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -393,6 +1217,102 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
+<a id="a94090f467dbc51177ef1646905ef9f27" name="a94090f467dbc51177ef1646905ef9f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94090f467dbc51177ef1646905ef9f27">&#9670;&#160;</a></span>InsertVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vertex.html">Vertex</a> * InsertVertex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>edge</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere um vértice na lista de vértices. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dnew</td><td>Novo vértice. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista existente de vértices. </td></tr>
+    <tr><td class="paramname">edge</td><td>Define se deve adicionar arestas automaticamente para vértices compatíveis. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Vertex* Lista atualizada. </dd></dl>
+
+</div>
+</div>
+<a id="aee2a64d31dc8237e6560d9a19bdf46a8" name="aee2a64d31dc8237e6560d9a19bdf46a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2a64d31dc8237e6560d9a19bdf46a8">&#9670;&#160;</a></span>IsNewEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool IsNewEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>from</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se uma ligação entre dois vértices já existe. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>Vértice de origem. </td></tr>
+    <tr><td class="paramname">dest</td><td>Vértice de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se já existe uma aresta entre os vértices. </dd>
+<dd>
+false Caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a8301da0be4486019c375058acd1bc9bb" name="a8301da0be4486019c375058acd1bc9bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8301da0be4486019c375058acd1bc9bb">&#9670;&#160;</a></span>MakeElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * MakeElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo elemento com base num vértice. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ponteiro para o vértice. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Novo elemento criado. </dd></dl>
+
+</div>
+</div>
 <a id="a67a3b2f72e59f620bbc56dffd61715f5" name="a67a3b2f72e59f620bbc56dffd61715f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67a3b2f72e59f620bbc56dffd61715f5">&#9670;&#160;</a></span>MakeNode()</h2>
 
@@ -402,7 +1322,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname"><a class="el" href="struct_node.html">Node</a> * MakeNode </td>
           <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>value</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -424,28 +1344,72 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
-<a id="add83fc1f29fff30765786c6deaf5fd8d" name="add83fc1f29fff30765786c6deaf5fd8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add83fc1f29fff30765786c6deaf5fd8d">&#9670;&#160;</a></span>Menu()</h2>
+<a id="a504ba92aa7e2990ee1e1c653b6ec7a01" name="a504ba92aa7e2990ee1e1c653b6ec7a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504ba92aa7e2990ee1e1c653b6ec7a01">&#9670;&#160;</a></span>MakeSeenList()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Menu </td>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * MakeSeenList </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gerencia a interface do utilizador e manipulação da lista de nós. </p>
+<p>Cria uma lista ordenada de elementos com base na ordem de visita (seen). </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
+    <tr><td class="paramname">gr</td><td>Grafo com os vértices já marcados. </td></tr>
+    <tr><td class="paramname">max</td><td>Valor máximo da marcação seen. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista ordenada de vértices pela ordem de visita. </dd></dl>
+
+</div>
+</div>
+<a id="a40e6a3bf5f22061b375740e3a8de2f8c" name="a40e6a3bf5f22061b375740e3a8de2f8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e6a3bf5f22061b375740e3a8de2f8c">&#9670;&#160;</a></span>MakeVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_vertex.html">Vertex</a> * MakeVertex </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>value</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>position</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo vértice com valor e posição especificados. </p>
+<p>Gera um identificador único com base no ponteiro de contador fornecido.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Valor (tipo) do vértice (ex: 'A', 'B', '#'). </td></tr>
+    <tr><td class="paramname">position</td><td>Posição no espaço bidimensional. </td></tr>
+    <tr><td class="paramname">id</td><td>Ponteiro para o contador global de identificadores. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Vertex* Novo vértice criado. </dd></dl>
 
 </div>
 </div>
@@ -527,8 +1491,84 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
-<a id="acb620d127f79c45f6bc5317ff1fd7471" name="acb620d127f79c45f6bc5317ff1fd7471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb620d127f79c45f6bc5317ff1fd7471">&#9670;&#160;</a></span>ReadListFile()</h2>
+<a id="a6b1ddfc21c02118e413191c03d07c3e2" name="a6b1ddfc21c02118e413191c03d07c3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b1ddfc21c02118e413191c03d07c3e2">&#9670;&#160;</a></span>Pathing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pathing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>current</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>end</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_path.html">Path</a> *</td>          <td class="paramname"><span class="paramname"><em>head</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Caminha recursivamente no grafo entre dois vértices, acumulando o caminho atual. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current</td><td>Vértice atual. </td></tr>
+    <tr><td class="paramname">end</td><td>Vértice de destino. </td></tr>
+    <tr><td class="paramname">head</td><td>Caminho acumulado. </td></tr>
+    <tr><td class="paramname">gr</td><td>Ponteiro para o grafo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac69e6941fed30256b8da14ca7677b2cd" name="ac69e6941fed30256b8da14ca7677b2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69e6941fed30256b8da14ca7677b2cd">&#9670;&#160;</a></span>ReadGraphFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ReadGraphFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê um grafo a partir de um ficheiro binário, incluindo os vértices e as arestas com base nas posições. </p>
+<p>Os vértices são lidos primeiro, seguidos de um marcador (-1), e depois as arestas que ligam posições (<a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a>).</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nome do ficheiro a ler. </td></tr>
+    <tr><td class="paramname">gr</td><td>Ponteiro para o grafo a ser preenchido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a leitura for bem-sucedida. </dd>
+<dd>
+false Em caso de erro na leitura do ficheiro. </dd></dl>
+
+</div>
+</div>
+<a id="a901157c0b4a27ee88c500facff10a106" name="a901157c0b4a27ee88c500facff10a106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a901157c0b4a27ee88c500facff10a106">&#9670;&#160;</a></span>ReadListFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,8 +1576,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname"><a class="el" href="struct_node.html">Node</a> * ReadListFile </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -553,6 +1597,68 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
+<a id="a2b830450f7ec70344bb6554e6e6b4d6c" name="a2b830450f7ec70344bb6554e6e6b4d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b830450f7ec70344bb6554e6e6b4d6c">&#9670;&#160;</a></span>RemoveEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RemoveEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>from</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove uma aresta entre dois vértices. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>Vértice de origem. </td></tr>
+    <tr><td class="paramname">dest</td><td>Vértice de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a aresta foi removida com sucesso. </dd></dl>
+
+</div>
+</div>
+<a id="a0dfe54f4b79f9492be86aaef99af59c9" name="a0dfe54f4b79f9492be86aaef99af59c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfe54f4b79f9492be86aaef99af59c9">&#9670;&#160;</a></span>RemoveElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_element.html">Element</a> * RemoveElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>rm</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_element.html">Element</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um elemento específico da lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rm</td><td>Elemento a remover. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista original. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Element* Lista atualizada. </dd></dl>
+
+</div>
+</div>
 <a id="ad9b9f58ca8ab0113298378d8238354ac" name="ad9b9f58ca8ab0113298378d8238354ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9b9f58ca8ab0113298378d8238354ac">&#9670;&#160;</a></span>RemoveNode()</h2>
 
@@ -562,7 +1668,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname"><a class="el" href="struct_node.html">Node</a> * RemoveNode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>rm</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>rm</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -584,16 +1690,81 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
-<a id="aa32dc0e8d65723f683a1d254e30ef108" name="aa32dc0e8d65723f683a1d254e30ef108"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa32dc0e8d65723f683a1d254e30ef108">&#9670;&#160;</a></span>SaveList()</h2>
+<a id="a0244b4a066989671600e7b879747b209" name="a0244b4a066989671600e7b879747b209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0244b4a066989671600e7b879747b209">&#9670;&#160;</a></span>RemoveVertex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SaveList </td>
+          <td class="memname"><a class="el" href="struct_vertex.html">Vertex</a> * RemoveVertex </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>rm</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vertex.html">Vertex</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um vértice e as suas arestas da lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rm</td><td>Vértice a remover. </td></tr>
+    <tr><td class="paramname">st</td><td>Lista de vértices. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Vertex* Lista atualizada. </dd></dl>
+
+</div>
+</div>
+<a id="a8b30de69e80892f4e771e20f669f78b5" name="a8b30de69e80892f4e771e20f669f78b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b30de69e80892f4e771e20f669f78b5">&#9670;&#160;</a></span>SaveGraphFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveGraphFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>gr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda um grafo num ficheiro binário, incluindo vértices e arestas por posição (<a class="el" href="struct_vector2.html" title="Representa um vetor bidimensional com coordenadas inteiras.">Vector2</a>). </p>
+<p>Os vértices são escritos primeiro, seguidos de um marcador (-1), e depois as arestas como pares de posições com peso.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nome do ficheiro onde será guardado. </td></tr>
+    <tr><td class="paramname">gr</td><td>Ponteiro para o grafo a ser guardado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a gravação for bem-sucedida. </dd>
+<dd>
+false Em caso de erro ao abrir ou escrever no ficheiro. </dd></dl>
+
+</div>
+</div>
+<a id="a2e7fff2cc20c13a61e720cdcd23d3155" name="a2e7fff2cc20c13a61e720cdcd23d3155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e7fff2cc20c13a61e720cdcd23d3155">&#9670;&#160;</a></span>SaveList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveList </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -614,36 +1785,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
 
 </div>
 </div>
-<a id="a2640af73bd39be7651f501c56562b8db" name="a2640af73bd39be7651f501c56562b8db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2640af73bd39be7651f501c56562b8db">&#9670;&#160;</a></span>ShowList()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ShowList </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>st</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Exibe a lista de nós, com um filtro opcional. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">st</td><td>Lista de nós. </td></tr>
-    <tr><td class="paramname">filter</td><td>Caracter usado para filtrar os elementos exibidos. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="af993d0fdd95ecfeb7ebafec3bc80b74a" name="af993d0fdd95ecfeb7ebafec3bc80b74a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af993d0fdd95ecfeb7ebafec3bc80b74a">&#9670;&#160;</a></span>ValidNodePos()</h2>
 
@@ -653,7 +1794,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname">bool ValidNodePos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>dnew</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -684,7 +1825,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname"><a class="el" href="struct_vector2.html">Vector2</a> Vector2Add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -715,7 +1856,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr
         <tr>
           <td class="memname">bool Vector2Compare </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -748,7 +1889,7 @@ false Se forem diferentes. </dd></dl>
         <tr>
           <td class="memname"><a class="el" href="struct_vector2.html">Vector2</a> Vector2Subtract </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>a</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -773,8 +1914,7 @@ false Se forem diferentes. </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
-</div><!-- doc-content -->
 </body>
 </html>

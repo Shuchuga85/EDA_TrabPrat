@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['next_0',['next',['../struct_node.html#aa162dd1e0693188a22b1f13b9a2a0ef0',1,'Node']]],
-  ['node_1',['Node',['../struct_node.html',1,'Node'],['../func_8h.html#a3b09f37e675bcd48a01bf22155996872',1,'Node:&#160;func.h']]],
-  ['nodeinbounds_2',['NodeInBounds',['../func_8c.html#ad0bddc06c2720a7ee20a85ddb4c5666a',1,'NodeInBounds(Vector2 pos):&#160;func.c'],['../func_8h.html#ad0bddc06c2720a7ee20a85ddb4c5666a',1,'NodeInBounds(Vector2 pos):&#160;func.c']]],
-  ['noisecheck_3',['NoiseCheck',['../func_8c.html#a674ee4c1a8c8226b6f069608db3c63b3',1,'NoiseCheck(Node *st):&#160;func.c'],['../func_8h.html#a674ee4c1a8c8226b6f069608db3c63b3',1,'NoiseCheck(Node *st):&#160;func.c']]],
-  ['noisecheckalt_4',['NoiseCheckAlt',['../func_8c.html#a160664f3d263e4e13020cb93ad1b943c',1,'NoiseCheckAlt(Node *st):&#160;func.c'],['../func_8h.html#a160664f3d263e4e13020cb93ad1b943c',1,'NoiseCheckAlt(Node *st):&#160;func.c']]]
+  ['graph_0',['Graph',['../struct_graph.html',1,'Graph'],['../func_8h.html#a0c94bbeb31bba748d2897a168f62e9bc',1,'Graph:&#160;func.h']]],
+  ['graphbfs_1',['GraphBFS',['../func_8c.html#a3224976abfc277f28fd98c0771d8b33c',1,'GraphBFS(Graph *gr, Vertex *start):&#160;func.c'],['../func_8h.html#a3224976abfc277f28fd98c0771d8b33c',1,'GraphBFS(Graph *gr, Vertex *start):&#160;func.c']]],
+  ['graphdfs_2',['GraphDFS',['../func_8c.html#af913187cef479d5cf7b5dff41ae01fcc',1,'GraphDFS(Graph *gr, Vertex *start):&#160;func.c'],['../func_8h.html#af913187cef479d5cf7b5dff41ae01fcc',1,'GraphDFS(Graph *gr, Vertex *start):&#160;func.c']]],
+  ['graphpaths_3',['GraphPaths',['../func_8c.html#af6f50e47269b22ca5bb1b24360be106d',1,'GraphPaths(Graph *gr, Vertex *start, Vertex *end):&#160;func.c'],['../func_8h.html#af6f50e47269b22ca5bb1b24360be106d',1,'GraphPaths(Graph *gr, Vertex *start, Vertex *end):&#160;func.c']]]
 ];

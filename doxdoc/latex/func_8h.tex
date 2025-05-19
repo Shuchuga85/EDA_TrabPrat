@@ -1,5 +1,10 @@
 \doxysection{Referência ao ficheiro src/func.h}
 \hypertarget{func_8h}{}\label{func_8h}\index{src/func.h@{src/func.h}}
+
+
+Implementação de funções para manipulação de uma lista de elementos representados em matriz.  
+
+
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 \doxysubsubsection*{Estruturas de Dados}
 \begin{DoxyCompactItemize}
@@ -7,7 +12,17 @@
 struct \mbox{\hyperlink{struct_vector2}{Vector2}}
 \begin{DoxyCompactList}\small\item\em Representa um vetor bidimensional com coordenadas inteiras. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_node}{Node}}
-\begin{DoxyCompactList}\small\item\em Representa um nó de uma lista ligada de elementos na matriz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Representa um nó de uma lista ligada de elementos na matriz. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_edge}{Edge}}
+\begin{DoxyCompactList}\small\item\em Representa uma aresta (ligação) entre dois vértices no grafo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}}
+\begin{DoxyCompactList}\small\item\em Representa um vértice (nó) no grafo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_graph}{Graph}}
+\begin{DoxyCompactList}\small\item\em Representa a estrutura principal de um grafo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_element}{Element}}
+\begin{DoxyCompactList}\small\item\em Representa um elemento de uma lista auxiliar que contém vértices. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_path}{Path}}
+\begin{DoxyCompactList}\small\item\em Estrutura auxiliar utilizada para armazenar percursos ou listas ordenadas de vértices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,9 +37,6 @@ struct \mbox{\hyperlink{struct_node}{Node}}
 \item 
 \Hypertarget{func_8h_a66b32ab28b717d39138f1dab1f944991}\label{func_8h_a66b32ab28b717d39138f1dab1f944991} 
 \#define {\bfseries MAXINPUT}~100
-\item 
-\Hypertarget{func_8h_ac1141a1661e8a653eaac97a78a6da1b8}\label{func_8h_ac1141a1661e8a653eaac97a78a6da1b8} 
-\#define {\bfseries SFILE}~"{}file.\+txt"{}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Definições de tipos}
 \begin{DoxyCompactItemize}
@@ -32,7 +44,17 @@ struct \mbox{\hyperlink{struct_node}{Node}}
 typedef struct Vector2 \mbox{\hyperlink{func_8h_a682e0907769244e5f75f92e91460878f}{Vector2}}
 \begin{DoxyCompactList}\small\item\em Representa um vetor bidimensional com coordenadas inteiras. \end{DoxyCompactList}\item 
 typedef struct Node \mbox{\hyperlink{func_8h_a3b09f37e675bcd48a01bf22155996872}{Node}}
-\begin{DoxyCompactList}\small\item\em Representa um nó de uma lista ligada de elementos na matriz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Representa um nó de uma lista ligada de elementos na matriz. \end{DoxyCompactList}\item 
+typedef struct Edge \mbox{\hyperlink{func_8h_a89b91ff6921535d9c8215110f215c2c7}{Edge}}
+\begin{DoxyCompactList}\small\item\em Representa uma aresta (ligação) entre dois vértices no grafo. \end{DoxyCompactList}\item 
+typedef struct Vertex \mbox{\hyperlink{func_8h_a2e1662af5233d0fe6a6f061445d2ff25}{Vertex}}
+\begin{DoxyCompactList}\small\item\em Representa um vértice (nó) no grafo. \end{DoxyCompactList}\item 
+typedef struct Graph \mbox{\hyperlink{func_8h_a0c94bbeb31bba748d2897a168f62e9bc}{Graph}}
+\begin{DoxyCompactList}\small\item\em Representa a estrutura principal de um grafo. \end{DoxyCompactList}\item 
+typedef struct Element \mbox{\hyperlink{func_8h_a4d9e4171e0ee83fe777219f894992340}{Element}}
+\begin{DoxyCompactList}\small\item\em Representa um elemento de uma lista auxiliar que contém vértices. \end{DoxyCompactList}\item 
+typedef struct Path \mbox{\hyperlink{func_8h_a3994f4c43574026e5c4662dc6ada2f28}{Path}}
+\begin{DoxyCompactList}\small\item\em Estrutura auxiliar utilizada para armazenar percursos ou listas ordenadas de vértices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,43 +74,103 @@ bool \mbox{\hyperlink{func_8h_af993d0fdd95ecfeb7ebafec3bc80b74a}{Valid\+Node\+Po
 \begin{DoxyCompactList}\small\item\em Verifica e aplica a regra de efeito nefasto aos elementos na lista. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a160664f3d263e4e13020cb93ad1b943c}{Noise\+Check\+Alt}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
 \begin{DoxyCompactList}\small\item\em Versão alternativa da verificação de ruído que compara todos os elementos entre si. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_aa1d47b76a7910f0ad9895087baa394b4}{Find\+Node\+Pos}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_vector2}{Vector2}} npos)
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a56a2388721f31fe4aae37f92397c3b30}{Free\+Nodes}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}head)
 \begin{DoxyCompactList}\small\item\em Procura um nó em uma posição específica. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_aa1d47b76a7910f0ad9895087baa394b4}{Find\+Node\+Pos}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_vector2}{Vector2}} npos)
+\begin{DoxyCompactList}\small\item\em Procura um nó numa posição específica da matriz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a74ada9486afaee443fd070b7bdabaf00}{Init\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa uma estrutura de grafo vazia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a40e6a3bf5f22061b375740e3a8de2f8c}{Make\+Vertex}} (char value, \mbox{\hyperlink{struct_vector2}{Vector2}} position, int \texorpdfstring{$\ast$}{*}id)
+\begin{DoxyCompactList}\small\item\em Cria um novo vértice com valor e posição especificados. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_a2e52d380a6df9d0a46130bb8baf9efa2}{Insert\+Edge}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}from, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Cria uma nova aresta entre dois vértices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_aee2a64d31dc8237e6560d9a19bdf46a8}{Is\+New\+Edge}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}from, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Verifica se uma ligação entre dois vértices já existe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a94090f467dbc51177ef1646905ef9f27}{Insert\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}dnew, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}st, bool edge)
+\begin{DoxyCompactList}\small\item\em Insere um vértice na lista de vértices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a0244b4a066989671600e7b879747b209}{Remove\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}rm, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Remove um vértice e as suas arestas da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_aa4bc280cb76b3b975cdb281339253d2a}{Clear\+Edges}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}old)
+\begin{DoxyCompactList}\small\item\em Liberta todas as arestas de um vértice. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_a2b830450f7ec70344bb6554e6e6b4d6c}{Remove\+Edge}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}from, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Remove uma aresta entre dois vértices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_a575c2238b1dff5254f7263d9b3e166a3}{Edge\+Find\+Dest}} (\mbox{\hyperlink{struct_edge}{Edge}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}current, \mbox{\hyperlink{struct_edge}{Edge}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}previous, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}pick)
+\begin{DoxyCompactList}\small\item\em Encontra uma aresta de destino e os ponteiros anteriores na lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_af7f9881d092b979ce7948ec0db7e8b05}{Add\+Edges}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}new, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Adiciona arestas entre um novo vértice e outros na lista, se forem compatíveis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a55dc194dbba334657293c0303027a9be}{Find\+Vertex\+At}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_vector2}{Vector2}} npos)
+\begin{DoxyCompactList}\small\item\em Procura um vértice no grafo a partir de uma posição. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_ae17f8b2fb0de64ec33f11ba7036aaf75}{Find\+Vertex\+By\+Id}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}vertices, int id)
+\begin{DoxyCompactList}\small\item\em Procura um vértice no grafo com base no seu identificador (ID). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_a12d80ad0b4078443dab2ec8062fee861}{Free\+Graph}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Liberta todos os vértices e arestas de um grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_a92428ff2af278af6168b74f9f814273b}{Clear\+Seen}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Limpa o estado de "{}visitado"{} (seen) de todos os vértices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_af913187cef479d5cf7b5dff41ae01fcc}{Graph\+DFS}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Realiza uma pesquisa em profundidade (DFS) a partir de um vértice inicial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{func_8h_a5682ddf9d26aaf8b19732524dc847fee}{DFSMark}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}current, int \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Marca recursivamente os vértices visitados em profundidade (DFS). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a3224976abfc277f28fd98c0771d8b33c}{Graph\+BFS}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Realiza uma pesquisa em largura (BFS) a partir de um vértice inicial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a504ba92aa7e2990ee1e1c653b6ec7a01}{Make\+Seen\+List}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, int max)
+\begin{DoxyCompactList}\small\item\em Cria uma lista ordenada de elementos com base na ordem de visita (seen). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_af6f50e47269b22ca5bb1b24360be106d}{Graph\+Paths}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}end)
+\begin{DoxyCompactList}\small\item\em Calcula todos os caminhos possíveis entre dois vértices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{func_8h_a6b1ddfc21c02118e413191c03d07c3e2}{Pathing}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}current, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}end, \mbox{\hyperlink{struct_path}{Path}} \texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Caminha recursivamente no grafo entre dois vértices, acumulando o caminho atual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{func_8h_a5628f93cfecf3bf3d5575996bb7e2fed}{Add\+Path}} (\mbox{\hyperlink{struct_path}{Path}} \texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, int max)
+\begin{DoxyCompactList}\small\item\em Adiciona um caminho encontrado à lista principal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_afb3a0bdce29c0e561f623478f98fe7e9}{Find\+Pairs}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, char a, char b)
+\begin{DoxyCompactList}\small\item\em Encontra e retorna uma lista de intersecções entre pares de antenas com ressonância A e B. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a8301da0be4486019c375058acd1bc9bb}{Make\+Element}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Cria um novo elemento com base num vértice. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_ad77a6ba0dd9e861cbdb6893db991036f}{Insert\+Element}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}dnew, \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Insere um elemento no início de uma lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_add176be3c1a438403d69b4b2f3d28e87}{Insert\+Element\+At\+End}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}new, \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Insere um elemento no final da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a0dfe54f4b79f9492be86aaef99af59c9}{Remove\+Element}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}rm, \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Remove um elemento específico da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_ae1f589dba662cca72a9156e1094d89e7}{Find\+Element}} (void \texorpdfstring{$\ast$}{*}item, \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Procura um elemento na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_aafe085f943912ab146df17d90bd5c0de}{Free\+Elements}} (\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Liberta toda a memória alocada por uma lista de elementos. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{func_8h_ab165979aa96500904b0b234640b80d53}{Vector2\+Compare}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
 \begin{DoxyCompactList}\small\item\em Compara se dois vetores possuem as mesmas coordenadas. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{func_8h_ac813f12efe4bfd7bd2dbec18f58f2bba}{Vector2\+Subtract}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
 \begin{DoxyCompactList}\small\item\em Subtrai um vetor do outro. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{func_8h_a38193ad14e49953c1c6038eec5ec0ff1}{Vector2\+Add}} (\mbox{\hyperlink{struct_vector2}{Vector2}} a, \mbox{\hyperlink{struct_vector2}{Vector2}} b)
 \begin{DoxyCompactList}\small\item\em Soma dois vetores. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{func_8h_a7be92bf9b511af4d5466b4b9f637099b}{Draw\+Matrix}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
-\begin{DoxyCompactList}\small\item\em Desenha a matriz com os elementos presentes na lista. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{func_8h_a2640af73bd39be7651f501c56562b8db}{Show\+List}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, char filter)
-\begin{DoxyCompactList}\small\item\em Exibe a lista de nós, com um filtro opcional. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_acb620d127f79c45f6bc5317ff1fd7471}{Read\+List\+File}} (const char \texorpdfstring{$\ast$}{*}filename)
+bool \mbox{\hyperlink{func_8h_ac69e6941fed30256b8da14ca7677b2cd}{Read\+Graph\+File}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Lê um grafo a partir de um ficheiro binário, incluindo os vértices e as arestas com base nas posições. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8h_a8b30de69e80892f4e771e20f669f78b5}{Save\+Graph\+File}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Guarda um grafo num ficheiro binário, incluindo vértices e arestas por posição (\doxylink{struct_vector2}{Vector2}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a901157c0b4a27ee88c500facff10a106}{Read\+List\+File}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
 \begin{DoxyCompactList}\small\item\em Lê uma lista de elementos a partir de um ficheiro. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{func_8h_aa32dc0e8d65723f683a1d254e30ef108}{Save\+List}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
+bool \mbox{\hyperlink{func_8h_a2e7fff2cc20c13a61e720cdcd23d3155}{Save\+List}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
 \begin{DoxyCompactList}\small\item\em Guarda a lista de elementos num ficheiro. \end{DoxyCompactList}\item 
-\Hypertarget{func_8h_a1483313e0618043fde85fc7a5abe9d4d}\label{func_8h_a1483313e0618043fde85fc7a5abe9d4d} 
-void {\bfseries Draw\+Menu} ()
-\begin{DoxyCompactList}\small\item\em Desenha o menu de opções no terminal. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{func_8h_add83fc1f29fff30765786c6deaf5fd8d}{Menu}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
-\begin{DoxyCompactList}\small\item\em Gerencia a interface do utilizador e manipulação da lista de nós. \end{DoxyCompactList}\item 
-\Hypertarget{func_8h_abd85956a0342471aea47c1fbebe72531}\label{func_8h_abd85956a0342471aea47c1fbebe72531} 
-void {\bfseries Draw\+Commands} ()
-\begin{DoxyCompactList}\small\item\em Exibe os comandos disponíveis para manipulação da lista. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{func_8h_ab34e5ea3b4b5e91383136179e6b66c02}{Command\+IO}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
-\begin{DoxyCompactList}\small\item\em Interface baseada em comandos para manipulação da lista de elementos. \end{DoxyCompactList}\item 
-\Hypertarget{func_8h_a70babc5227ddd16ca31dccc6cec0bb22}\label{func_8h_a70babc5227ddd16ca31dccc6cec0bb22} 
-void {\bfseries Pause} ()
-\begin{DoxyCompactList}\small\item\em Pausa a execução do programa até que o usuário pressione uma tecla. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{func_8h_a7ce3c2cb8b61c39547e43c5da88a442f}{Copy\+List\+To\+Graph}} (\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr)
+\begin{DoxyCompactList}\small\item\em Copia os nós de uma lista para um grafo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{func_8h_a3b296bff29803ac8e1f509bf85a2e810}{Copy\+Graph\+To\+List}} (\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}gr, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Copia os vértices de um grafo para uma lista de nós. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{func_8h_ac82c57dbdc66c72053d5936eaf2ce047}\label{func_8h_ac82c57dbdc66c72053d5936eaf2ce047} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} {\bfseries s\+Size}
+\item 
+\Hypertarget{func_8h_a537bc895eb2248dfd72d987c66140754}\label{func_8h_a537bc895eb2248dfd72d987c66140754} 
+int {\bfseries noise\+Range}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descrição detalhada}
+Implementação de funções para manipulação de uma lista de elementos representados em matriz. 
+
 \begin{DoxyAuthor}{Autor}
 Vitor Rezende (\href{mailto:a31521@alunos.ipca.pt}{\texttt{ a31521@alunos.\+ipca.\+pt}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Versão}
-0.\+1 
+0.\+10 
 \end{DoxyVersion}
 \begin{DoxyDate}{Data}
 2025-\/03-\/18
@@ -99,34 +181,143 @@ Copyright (c) 2025
 
 
 \doxysubsection{Documentação dos tipos}
-\Hypertarget{func_8h_a3b09f37e675bcd48a01bf22155996872}\index{func.h@{func.h}!Node@{Node}}
+\Hypertarget{func_8h_a89b91ff6921535d9c8215110f215c2c7}\label{func_8h_a89b91ff6921535d9c8215110f215c2c7} 
+\index{func.h@{func.h}!Edge@{Edge}}
+\index{Edge@{Edge}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{Edge}{Edge}}
+{\footnotesize\ttfamily typedef struct Edge Edge}
+
+
+
+Representa uma aresta (ligação) entre dois vértices no grafo. 
+
+Cada aresta possui um peso (distância ou custo), um ponteiro para o vértice de destino e um ponteiro para a próxima aresta na lista de adjacência. \Hypertarget{func_8h_a4d9e4171e0ee83fe777219f894992340}\label{func_8h_a4d9e4171e0ee83fe777219f894992340} 
+\index{func.h@{func.h}!Element@{Element}}
+\index{Element@{Element}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{Element}{Element}}
+{\footnotesize\ttfamily typedef struct Element Element}
+
+
+
+Representa um elemento de uma lista auxiliar que contém vértices. 
+
+Utilizado para armazenar e organizar vértices durante percursos ou agrupamentos. \Hypertarget{func_8h_a0c94bbeb31bba748d2897a168f62e9bc}\label{func_8h_a0c94bbeb31bba748d2897a168f62e9bc} 
+\index{func.h@{func.h}!Graph@{Graph}}
+\index{Graph@{Graph}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{Graph}{Graph}}
+{\footnotesize\ttfamily typedef struct Graph Graph}
+
+
+
+Representa a estrutura principal de um grafo. 
+
+Contém o número total de vértices e um ponteiro para a lista de vértices. \Hypertarget{func_8h_a3b09f37e675bcd48a01bf22155996872}\label{func_8h_a3b09f37e675bcd48a01bf22155996872} 
+\index{func.h@{func.h}!Node@{Node}}
 \index{Node@{Node}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{Node}{Node}}
-{\footnotesize\ttfamily \label{func_8h_a3b09f37e675bcd48a01bf22155996872} 
-typedef struct Node Node}
+{\footnotesize\ttfamily typedef struct Node Node}
 
 
 
 Representa um nó de uma lista ligada de elementos na matriz. 
 
-Cada nó contém um valor (por exemplo, um tipo de antena ou um efeito nefasto), uma posição na matriz representada por um \doxylink{struct_vector2}{Vector2}, e um ponteiro para o próximo nó da lista. \Hypertarget{func_8h_a682e0907769244e5f75f92e91460878f}\index{func.h@{func.h}!Vector2@{Vector2}}
+Cada nó contém um valor (por exemplo, um tipo de antena ou um efeito nefasto), uma posição na matriz representada por um \doxylink{struct_vector2}{Vector2}, e um ponteiro para o próximo nó da lista. \Hypertarget{func_8h_a3994f4c43574026e5c4662dc6ada2f28}\label{func_8h_a3994f4c43574026e5c4662dc6ada2f28} 
+\index{func.h@{func.h}!Path@{Path}}
+\index{Path@{Path}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{Path}{Path}}
+{\footnotesize\ttfamily typedef struct Path Path}
+
+
+
+Estrutura auxiliar utilizada para armazenar percursos ou listas ordenadas de vértices. 
+
+Guarda a lista de elementos visitados e um contador máximo de visitas, utilizado para BFS/\+DFS. \Hypertarget{func_8h_a682e0907769244e5f75f92e91460878f}\label{func_8h_a682e0907769244e5f75f92e91460878f} 
+\index{func.h@{func.h}!Vector2@{Vector2}}
 \index{Vector2@{Vector2}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{Vector2}{Vector2}}
-{\footnotesize\ttfamily \label{func_8h_a682e0907769244e5f75f92e91460878f} 
-typedef struct Vector2 Vector2}
+{\footnotesize\ttfamily typedef struct Vector2 Vector2}
 
 
 
 Representa um vetor bidimensional com coordenadas inteiras. 
 
-A estrutura \doxylink{struct_vector2}{Vector2} é usada para armazenar posições em uma matriz, com valores inteiros para coordenadas X e Y. 
+A estrutura \doxylink{struct_vector2}{Vector2} é usada para armazenar posições em uma matriz, com valores inteiros para coordenadas X e Y. \Hypertarget{func_8h_a2e1662af5233d0fe6a6f061445d2ff25}\label{func_8h_a2e1662af5233d0fe6a6f061445d2ff25} 
+\index{func.h@{func.h}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily typedef struct Vertex Vertex}
+
+
+
+Representa um vértice (nó) no grafo. 
+
+Cada vértice possui um identificador único, uma posição na matriz (\doxylink{struct_vector2}{Vector2}), um valor (carácter representando o tipo, como \textquotesingle{}A\textquotesingle{} ou \textquotesingle{}B\textquotesingle{}), uma lista de arestas (ligações), uma flag de controlo de visitação (seen) e um ponteiro para o próximo vértice. 
 
 \doxysubsection{Documentação das funções}
-\Hypertarget{func_8h_a1c0148015e29414921d92ac23554f9a8}\index{func.h@{func.h}!ClearNoise@{ClearNoise}}
+\Hypertarget{func_8h_af7f9881d092b979ce7948ec0db7e8b05}\label{func_8h_af7f9881d092b979ce7948ec0db7e8b05} 
+\index{func.h@{func.h}!AddEdges@{AddEdges}}
+\index{AddEdges@{AddEdges}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{AddEdges()}{AddEdges()}}
+{\footnotesize\ttfamily bool Add\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{new,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Adiciona arestas entre um novo vértice e outros na lista, se forem compatíveis. 
+
+Compatibilidade geralmente depende do valor/resonância da antena.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em new} & Novo vértice. \\
+\hline
+{\em st} & Lista de vértices existentes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se pelo menos uma aresta foi adicionada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a5628f93cfecf3bf3d5575996bb7e2fed}\label{func_8h_a5628f93cfecf3bf3d5575996bb7e2fed} 
+\index{func.h@{func.h}!AddPath@{AddPath}}
+\index{AddPath@{AddPath}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{AddPath()}{AddPath()}}
+{\footnotesize\ttfamily void Add\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_path}{Path}} \texorpdfstring{$\ast$}{*}}]{head,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Adiciona um caminho encontrado à lista principal. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em head} & Lista principal de caminhos. \\
+\hline
+{\em gr} & Grafo de onde os caminhos provêm. \\
+\hline
+{\em max} & Número máximo de visitas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{func_8h_aa4bc280cb76b3b975cdb281339253d2a}\label{func_8h_aa4bc280cb76b3b975cdb281339253d2a} 
+\index{func.h@{func.h}!ClearEdges@{ClearEdges}}
+\index{ClearEdges@{ClearEdges}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{ClearEdges()}{ClearEdges()}}
+{\footnotesize\ttfamily bool Clear\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{old }\end{DoxyParamCaption})}
+
+
+
+Liberta todas as arestas de um vértice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em old} & Vértice cujas arestas devem ser removidas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se as arestas foram removidas com sucesso. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a1c0148015e29414921d92ac23554f9a8}\label{func_8h_a1c0148015e29414921d92ac23554f9a8} 
+\index{func.h@{func.h}!ClearNoise@{ClearNoise}}
 \index{ClearNoise@{ClearNoise}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{ClearNoise()}{ClearNoise()}}
-{\footnotesize\ttfamily \label{func_8h_a1c0148015e29414921d92ac23554f9a8} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Clear\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Clear\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -140,41 +331,276 @@ Limpa elementos de ruído (\textquotesingle{}\#\textquotesingle{}) da lista.
 \begin{DoxyReturn}{Retorna}
 Ponteiro para a lista sem elementos de ruído. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_ab34e5ea3b4b5e91383136179e6b66c02}\index{func.h@{func.h}!CommandIO@{CommandIO}}
-\index{CommandIO@{CommandIO}!func.h@{func.h}}
-\doxysubsubsection{\texorpdfstring{CommandIO()}{CommandIO()}}
-{\footnotesize\ttfamily \label{func_8h_ab34e5ea3b4b5e91383136179e6b66c02} 
-void Command\+IO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+\Hypertarget{func_8h_a92428ff2af278af6168b74f9f814273b}\label{func_8h_a92428ff2af278af6168b74f9f814273b} 
+\index{func.h@{func.h}!ClearSeen@{ClearSeen}}
+\index{ClearSeen@{ClearSeen}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{ClearSeen()}{ClearSeen()}}
+{\footnotesize\ttfamily bool Clear\+Seen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
-Interface baseada em comandos para manipulação da lista de elementos. 
+Limpa o estado de "{}visitado"{} (seen) de todos os vértices. 
 
-
-\begin{DoxyParams}{Parâmetros}
-{\em st} & Lista de nós. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{func_8h_a7be92bf9b511af4d5466b4b9f637099b}\index{func.h@{func.h}!DrawMatrix@{DrawMatrix}}
-\index{DrawMatrix@{DrawMatrix}!func.h@{func.h}}
-\doxysubsubsection{\texorpdfstring{DrawMatrix()}{DrawMatrix()}}
-{\footnotesize\ttfamily \label{func_8h_a7be92bf9b511af4d5466b4b9f637099b} 
-void Draw\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
-
-
-
-Desenha a matriz com os elementos presentes na lista. 
+Define seen = 0 para todos os vértices, preparando para uma nova pesquisa.
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em st} & Lista de nós. \\
+{\em st} & Lista de vértices. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{func_8h_aa1d47b76a7910f0ad9895087baa394b4}\index{func.h@{func.h}!FindNodePos@{FindNodePos}}
+\begin{DoxyReturn}{Retorna}
+true Se os valores foram reiniciados com sucesso. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a3b296bff29803ac8e1f509bf85a2e810}\label{func_8h_a3b296bff29803ac8e1f509bf85a2e810} 
+\index{func.h@{func.h}!CopyGraphToList@{CopyGraphToList}}
+\index{CopyGraphToList@{CopyGraphToList}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{CopyGraphToList()}{CopyGraphToList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Copy\+Graph\+To\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Copia os vértices de um grafo para uma lista de nós. 
+
+Cria uma nova lista de elementos baseada na posição e tipo dos vértices do grafo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em gr} & Grafo de origem. \\
+\hline
+{\em st} & Lista de destino, será atualizada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Node\texorpdfstring{$\ast$}{*} Ponteiro para a nova lista resultante. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a7ce3c2cb8b61c39547e43c5da88a442f}\label{func_8h_a7ce3c2cb8b61c39547e43c5da88a442f} 
+\index{func.h@{func.h}!CopyListToGraph@{CopyListToGraph}}
+\index{CopyListToGraph@{CopyListToGraph}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{CopyListToGraph()}{CopyListToGraph()}}
+{\footnotesize\ttfamily bool Copy\+List\+To\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Copia os nós de uma lista para um grafo. 
+
+Converte cada nó da lista de elementos (\doxylink{struct_node}{Node}) para um vértice no grafo, mantendo as posições e valores. Atribui automaticamente arestas entre os vértices conforme necessário.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós a converter. \\
+\hline
+{\em gr} & Grafo onde os vértices serão inseridos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a operação foi concluída com sucesso. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a5682ddf9d26aaf8b19732524dc847fee}\label{func_8h_a5682ddf9d26aaf8b19732524dc847fee} 
+\index{func.h@{func.h}!DFSMark@{DFSMark}}
+\index{DFSMark@{DFSMark}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{DFSMark()}{DFSMark()}}
+{\footnotesize\ttfamily void DFSMark (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{current,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Marca recursivamente os vértices visitados em profundidade (DFS). 
+
+Utilizado para contagem ou verificação de conectividade.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em current} & Vértice atual. \\
+\hline
+{\em count} & Ponteiro para o contador de visitas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{func_8h_a575c2238b1dff5254f7263d9b3e166a3}\label{func_8h_a575c2238b1dff5254f7263d9b3e166a3} 
+\index{func.h@{func.h}!EdgeFindDest@{EdgeFindDest}}
+\index{EdgeFindDest@{EdgeFindDest}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{EdgeFindDest()}{EdgeFindDest()}}
+{\footnotesize\ttfamily bool Edge\+Find\+Dest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_edge}{Edge}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{current,  }\item[{\mbox{\hyperlink{struct_edge}{Edge}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{previous,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{pick }\end{DoxyParamCaption})}
+
+
+
+Encontra uma aresta de destino e os ponteiros anteriores na lista. 
+
+Auxiliar para remoção de arestas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em current} & Ponteiro para a aresta atual. \\
+\hline
+{\em previous} & Ponteiro para a aresta anterior. \\
+\hline
+{\em pick} & Vértice de destino a encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a aresta foi encontrada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_ae1f589dba662cca72a9156e1094d89e7}\label{func_8h_ae1f589dba662cca72a9156e1094d89e7} 
+\index{func.h@{func.h}!FindElement@{FindElement}}
+\index{FindElement@{FindElement}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FindElement()}{FindElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Find\+Element (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{item,  }\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Procura um elemento na lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em item} & Ponteiro para o item a procurar. \\
+\hline
+{\em st} & Lista onde será feita a procura. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Ponteiro para o elemento encontrado ou NULL. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_aa1d47b76a7910f0ad9895087baa394b4}\label{func_8h_aa1d47b76a7910f0ad9895087baa394b4} 
+\index{func.h@{func.h}!FindNodePos@{FindNodePos}}
 \index{FindNodePos@{FindNodePos}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{FindNodePos()}{FindNodePos()}}
-{\footnotesize\ttfamily \label{func_8h_aa1d47b76a7910f0ad9895087baa394b4} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Find\+Node\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{npos}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Find\+Node\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{npos }\end{DoxyParamCaption})}
+
+
+
+Procura um nó numa posição específica da matriz. 
+
+Percorre a lista de nós para encontrar um nó cuja posição coincida com a posição fornecida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de nós a pesquisar. \\
+\hline
+{\em npos} & Posição (\doxylink{struct_vector2}{Vector2}) a procurar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Node\texorpdfstring{$\ast$}{*} Ponteiro para o nó encontrado ou NULL se não existir nenhum nó nessa posição.
+\end{DoxyReturn}
+Procura um nó numa posição específica da matriz.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Ponteiro para a lista. \\
+\hline
+{\em npos} & Posição do nó a ser encontrado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó encontrado, ou NULL se não existir. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_afb3a0bdce29c0e561f623478f98fe7e9}\label{func_8h_afb3a0bdce29c0e561f623478f98fe7e9} 
+\index{func.h@{func.h}!FindPairs@{FindPairs}}
+\index{FindPairs@{FindPairs}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FindPairs()}{FindPairs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Find\+Pairs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{char}]{a,  }\item[{char}]{b }\end{DoxyParamCaption})}
+
+
+
+Encontra e retorna uma lista de intersecções entre pares de antenas com ressonância A e B. 
+
+Percorre o grafo e encontra todos os pares de antenas (vértices) em que uma possui valor/resonância A e a outra B. Apenas regista intersecções diretas (arestas existentes). A lista resultante contém os pares encontrados.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em gr} & Ponteiro para o grafo. \\
+\hline
+{\em a} & Carácter correspondente à primeira frequência (ex\+: \textquotesingle{}A\textquotesingle{}). \\
+\hline
+{\em b} & Carácter correspondente à segunda frequência (ex\+: \textquotesingle{}B\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista de elementos contendo os pares encontrados. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a55dc194dbba334657293c0303027a9be}\label{func_8h_a55dc194dbba334657293c0303027a9be} 
+\index{func.h@{func.h}!FindVertexAt@{FindVertexAt}}
+\index{FindVertexAt@{FindVertexAt}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FindVertexAt()}{FindVertexAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} Find\+Vertex\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{npos }\end{DoxyParamCaption})}
+
+
+
+Procura um vértice no grafo a partir de uma posição. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em st} & Lista de vértices do grafo. \\
+\hline
+{\em npos} & Posição procurada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Vertex\texorpdfstring{$\ast$}{*} Ponteiro para o vértice encontrado, ou NULL se não existir. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_ae17f8b2fb0de64ec33f11ba7036aaf75}\label{func_8h_ae17f8b2fb0de64ec33f11ba7036aaf75} 
+\index{func.h@{func.h}!FindVertexById@{FindVertexById}}
+\index{FindVertexById@{FindVertexById}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FindVertexById()}{FindVertexById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} Find\+Vertex\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{vertices,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Procura um vértice no grafo com base no seu identificador (ID). 
+
+Percorre a lista de vértices e retorna o ponteiro correspondente ao ID.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em vertices} & Lista de vértices do grafo. \\
+\hline
+{\em id} & Identificador único do vértice a encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Vertex\texorpdfstring{$\ast$}{*} Ponteiro para o vértice correspondente, ou NULL se não encontrado. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_aafe085f943912ab146df17d90bd5c0de}\label{func_8h_aafe085f943912ab146df17d90bd5c0de} 
+\index{func.h@{func.h}!FreeElements@{FreeElements}}
+\index{FreeElements@{FreeElements}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FreeElements()}{FreeElements()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Free\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{head }\end{DoxyParamCaption})}
+
+
+
+Liberta toda a memória alocada por uma lista de elementos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em head} & Início da lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} NULL, lista vazia. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a12d80ad0b4078443dab2ec8062fee861}\label{func_8h_a12d80ad0b4078443dab2ec8062fee861} 
+\index{func.h@{func.h}!FreeGraph@{FreeGraph}}
+\index{FreeGraph@{FreeGraph}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FreeGraph()}{FreeGraph()}}
+{\footnotesize\ttfamily bool Free\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Liberta todos os vértices e arestas de um grafo. 
+
+Remove completamente todos os dados da estrutura de grafo e reinicia os contadores.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em gr} & Ponteiro para o grafo a ser limpo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a operação foi concluída com sucesso. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a56a2388721f31fe4aae37f92397c3b30}\label{func_8h_a56a2388721f31fe4aae37f92397c3b30} 
+\index{func.h@{func.h}!FreeNodes@{FreeNodes}}
+\index{FreeNodes@{FreeNodes}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{FreeNodes()}{FreeNodes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Free\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{head }\end{DoxyParamCaption})}
 
 
 
@@ -188,25 +614,160 @@ Procura um nó em uma posição específica.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-Node\texorpdfstring{$\ast$}{*} Ponteiro para o nó encontrado ou NULL se não existir.
+Node\texorpdfstring{$\ast$}{*} Ponteiro para o nó encontrado ou NULL se não existir. 
 \end{DoxyReturn}
-Procura um nó em uma posição específica.
+\Hypertarget{func_8h_a3224976abfc277f28fd98c0771d8b33c}\label{func_8h_a3224976abfc277f28fd98c0771d8b33c} 
+\index{func.h@{func.h}!GraphBFS@{GraphBFS}}
+\index{GraphBFS@{GraphBFS}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{GraphBFS()}{GraphBFS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Graph\+BFS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Realiza uma pesquisa em largura (BFS) a partir de um vértice inicial. 
+
+Visita todos os vértices acessíveis por níveis, e armazena os visitados numa lista.
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em st} & Ponteiro para a lista. \\
+{\em gr} & Grafo onde a pesquisa será realizada. \\
 \hline
-{\em npos} & Posição do nó a ser encontrado. \\
+{\em start} & Vértice inicial da pesquisa. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-Ponteiro para o nó encontrado, ou NULL se não existir. 
+Element\texorpdfstring{$\ast$}{*} Lista de elementos visitados pela BFS. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_a70bbb1c93db2333346b26e22ec3bda09}\index{func.h@{func.h}!InsertNode@{InsertNode}}
+\Hypertarget{func_8h_af913187cef479d5cf7b5dff41ae01fcc}\label{func_8h_af913187cef479d5cf7b5dff41ae01fcc} 
+\index{func.h@{func.h}!GraphDFS@{GraphDFS}}
+\index{GraphDFS@{GraphDFS}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{GraphDFS()}{GraphDFS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Graph\+DFS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Realiza uma pesquisa em profundidade (DFS) a partir de um vértice inicial. 
+
+Visita todos os vértices conectados recursivamente e guarda a ordem numa lista.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em gr} & Grafo onde a pesquisa será realizada. \\
+\hline
+{\em start} & Vértice inicial da pesquisa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista de elementos visitados pela DFS. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_af6f50e47269b22ca5bb1b24360be106d}\label{func_8h_af6f50e47269b22ca5bb1b24360be106d} 
+\index{func.h@{func.h}!GraphPaths@{GraphPaths}}
+\index{GraphPaths@{GraphPaths}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{GraphPaths()}{GraphPaths()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Graph\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{end }\end{DoxyParamCaption})}
+
+
+
+Calcula todos os caminhos possíveis entre dois vértices. 
+
+Usa backtracking para encontrar todas as combinações possíveis.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em gr} & Ponteiro para o grafo. \\
+\hline
+{\em start} & Vértice de início. \\
+\hline
+{\em end} & Vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista de caminhos encontrados. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a74ada9486afaee443fd070b7bdabaf00}\label{func_8h_a74ada9486afaee443fd070b7bdabaf00} 
+\index{func.h@{func.h}!InitGraph@{InitGraph}}
+\index{InitGraph@{InitGraph}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{InitGraph()}{InitGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*} Init\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa uma estrutura de grafo vazia. 
+
+Reserva memória para um novo grafo e inicializa o contador e a lista de vértices.
+
+\begin{DoxyReturn}{Retorna}
+Graph\texorpdfstring{$\ast$}{*} Ponteiro para o novo grafo. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a2e52d380a6df9d0a46130bb8baf9efa2}\label{func_8h_a2e52d380a6df9d0a46130bb8baf9efa2} 
+\index{func.h@{func.h}!InsertEdge@{InsertEdge}}
+\index{InsertEdge@{InsertEdge}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{InsertEdge()}{InsertEdge()}}
+{\footnotesize\ttfamily bool Insert\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{from,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Cria uma nova aresta entre dois vértices. 
+
+Apenas adiciona se a ligação ainda não existir.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em from} & Vértice de origem. \\
+\hline
+{\em dest} & Vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a aresta foi criada com sucesso. 
+
+false Se a ligação já existia. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_ad77a6ba0dd9e861cbdb6893db991036f}\label{func_8h_ad77a6ba0dd9e861cbdb6893db991036f} 
+\index{func.h@{func.h}!InsertElement@{InsertElement}}
+\index{InsertElement@{InsertElement}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{InsertElement()}{InsertElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Insert\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{dnew,  }\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Insere um elemento no início de uma lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em dnew} & Novo elemento. \\
+\hline
+{\em st} & Lista existente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_add176be3c1a438403d69b4b2f3d28e87}\label{func_8h_add176be3c1a438403d69b4b2f3d28e87} 
+\index{func.h@{func.h}!InsertElementAtEnd@{InsertElementAtEnd}}
+\index{InsertElementAtEnd@{InsertElementAtEnd}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{InsertElementAtEnd()}{InsertElementAtEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Insert\+Element\+At\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{new,  }\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Insere um elemento no final da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em new} & Novo elemento. \\
+\hline
+{\em st} & Lista atual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a70bbb1c93db2333346b26e22ec3bda09}\label{func_8h_a70bbb1c93db2333346b26e22ec3bda09} 
+\index{func.h@{func.h}!InsertNode@{InsertNode}}
 \index{InsertNode@{InsertNode}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{InsertNode()}{InsertNode()}}
-{\footnotesize\ttfamily \label{func_8h_a70bbb1c93db2333346b26e22ec3bda09} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Insert\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{dnew}{, }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Insert\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{dnew,  }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -222,11 +783,73 @@ Insere um novo nó na lista, verificando se a posição está disponível.
 \begin{DoxyReturn}{Retorna}
 Ponteiro para a lista atualizada. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_a67a3b2f72e59f620bbc56dffd61715f5}\index{func.h@{func.h}!MakeNode@{MakeNode}}
+\Hypertarget{func_8h_a94090f467dbc51177ef1646905ef9f27}\label{func_8h_a94090f467dbc51177ef1646905ef9f27} 
+\index{func.h@{func.h}!InsertVertex@{InsertVertex}}
+\index{InsertVertex@{InsertVertex}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{InsertVertex()}{InsertVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} Insert\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{dnew,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{bool}]{edge }\end{DoxyParamCaption})}
+
+
+
+Insere um vértice na lista de vértices. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em dnew} & Novo vértice. \\
+\hline
+{\em st} & Lista existente de vértices. \\
+\hline
+{\em edge} & Define se deve adicionar arestas automaticamente para vértices compatíveis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Vertex\texorpdfstring{$\ast$}{*} Lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_aee2a64d31dc8237e6560d9a19bdf46a8}\label{func_8h_aee2a64d31dc8237e6560d9a19bdf46a8} 
+\index{func.h@{func.h}!IsNewEdge@{IsNewEdge}}
+\index{IsNewEdge@{IsNewEdge}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{IsNewEdge()}{IsNewEdge()}}
+{\footnotesize\ttfamily bool Is\+New\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{from,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Verifica se uma ligação entre dois vértices já existe. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em from} & Vértice de origem. \\
+\hline
+{\em dest} & Vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se já existe uma aresta entre os vértices. 
+
+false Caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a8301da0be4486019c375058acd1bc9bb}\label{func_8h_a8301da0be4486019c375058acd1bc9bb} 
+\index{func.h@{func.h}!MakeElement@{MakeElement}}
+\index{MakeElement@{MakeElement}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{MakeElement()}{MakeElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Make\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Cria um novo elemento com base num vértice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & Ponteiro para o vértice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Novo elemento criado. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a67a3b2f72e59f620bbc56dffd61715f5}\label{func_8h_a67a3b2f72e59f620bbc56dffd61715f5} 
+\index{func.h@{func.h}!MakeNode@{MakeNode}}
 \index{MakeNode@{MakeNode}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{MakeNode()}{MakeNode()}}
-{\footnotesize\ttfamily \label{func_8h_a67a3b2f72e59f620bbc56dffd61715f5} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Make\+Node (\begin{DoxyParamCaption}\item[{char}]{value}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{position}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Make\+Node (\begin{DoxyParamCaption}\item[{char}]{value,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{position }\end{DoxyParamCaption})}
 
 
 
@@ -242,26 +865,55 @@ Cria um novo elemento (nó) para a lista.
 \begin{DoxyReturn}{Retorna}
 Ponteiro para o novo nó criado. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_add83fc1f29fff30765786c6deaf5fd8d}\index{func.h@{func.h}!Menu@{Menu}}
-\index{Menu@{Menu}!func.h@{func.h}}
-\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
-{\footnotesize\ttfamily \label{func_8h_add83fc1f29fff30765786c6deaf5fd8d} 
-void Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+\Hypertarget{func_8h_a504ba92aa7e2990ee1e1c653b6ec7a01}\label{func_8h_a504ba92aa7e2990ee1e1c653b6ec7a01} 
+\index{func.h@{func.h}!MakeSeenList@{MakeSeenList}}
+\index{MakeSeenList@{MakeSeenList}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{MakeSeenList()}{MakeSeenList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Make\+Seen\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr,  }\item[{int}]{max }\end{DoxyParamCaption})}
 
 
 
-Gerencia a interface do utilizador e manipulação da lista de nós. 
+Cria uma lista ordenada de elementos com base na ordem de visita (seen). 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em st} & Lista de nós. \\
+{\em gr} & Grafo com os vértices já marcados. \\
+\hline
+{\em max} & Valor máximo da marcação seen. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{func_8h_ad0bddc06c2720a7ee20a85ddb4c5666a}\index{func.h@{func.h}!NodeInBounds@{NodeInBounds}}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista ordenada de vértices pela ordem de visita. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a40e6a3bf5f22061b375740e3a8de2f8c}\label{func_8h_a40e6a3bf5f22061b375740e3a8de2f8c} 
+\index{func.h@{func.h}!MakeVertex@{MakeVertex}}
+\index{MakeVertex@{MakeVertex}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{MakeVertex()}{MakeVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} Make\+Vertex (\begin{DoxyParamCaption}\item[{char}]{value,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{position,  }\item[{int \texorpdfstring{$\ast$}{*}}]{id }\end{DoxyParamCaption})}
+
+
+
+Cria um novo vértice com valor e posição especificados. 
+
+Gera um identificador único com base no ponteiro de contador fornecido.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & Valor (tipo) do vértice (ex\+: \textquotesingle{}A\textquotesingle{}, \textquotesingle{}B\textquotesingle{}, \textquotesingle{}\#\textquotesingle{}). \\
+\hline
+{\em position} & Posição no espaço bidimensional. \\
+\hline
+{\em id} & Ponteiro para o contador global de identificadores. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Vertex\texorpdfstring{$\ast$}{*} Novo vértice criado. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_ad0bddc06c2720a7ee20a85ddb4c5666a}\label{func_8h_ad0bddc06c2720a7ee20a85ddb4c5666a} 
+\index{func.h@{func.h}!NodeInBounds@{NodeInBounds}}
 \index{NodeInBounds@{NodeInBounds}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{NodeInBounds()}{NodeInBounds()}}
-{\footnotesize\ttfamily \label{func_8h_ad0bddc06c2720a7ee20a85ddb4c5666a} 
-bool Node\+In\+Bounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{pos}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Node\+In\+Bounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{pos }\end{DoxyParamCaption})}
 
 
 
@@ -275,11 +927,11 @@ Verifica se a posição está dentro dos limites da matriz.
 \begin{DoxyReturn}{Retorna}
 true se estiver dentro dos limites, false caso contrário. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_a674ee4c1a8c8226b6f069608db3c63b3}\index{func.h@{func.h}!NoiseCheck@{NoiseCheck}}
+\Hypertarget{func_8h_a674ee4c1a8c8226b6f069608db3c63b3}\label{func_8h_a674ee4c1a8c8226b6f069608db3c63b3} 
+\index{func.h@{func.h}!NoiseCheck@{NoiseCheck}}
 \index{NoiseCheck@{NoiseCheck}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{NoiseCheck()}{NoiseCheck()}}
-{\footnotesize\ttfamily \label{func_8h_a674ee4c1a8c8226b6f069608db3c63b3} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Noise\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Noise\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -293,11 +945,11 @@ Verifica e aplica a regra de efeito nefasto aos elementos na lista.
 \begin{DoxyReturn}{Retorna}
 Node\texorpdfstring{$\ast$}{*} Lista atualizada após a verificação do efeito nefasto. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_a160664f3d263e4e13020cb93ad1b943c}\index{func.h@{func.h}!NoiseCheckAlt@{NoiseCheckAlt}}
+\Hypertarget{func_8h_a160664f3d263e4e13020cb93ad1b943c}\label{func_8h_a160664f3d263e4e13020cb93ad1b943c} 
+\index{func.h@{func.h}!NoiseCheckAlt@{NoiseCheckAlt}}
 \index{NoiseCheckAlt@{NoiseCheckAlt}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{NoiseCheckAlt()}{NoiseCheckAlt()}}
-{\footnotesize\ttfamily \label{func_8h_a160664f3d263e4e13020cb93ad1b943c} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Noise\+Check\+Alt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Noise\+Check\+Alt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -311,11 +963,56 @@ Versão alternativa da verificação de ruído que compara todos os elementos en
 \begin{DoxyReturn}{Retorna}
 Node\texorpdfstring{$\ast$}{*} Lista atualizada após a verificação do efeito nefasto. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_acb620d127f79c45f6bc5317ff1fd7471}\index{func.h@{func.h}!ReadListFile@{ReadListFile}}
+\Hypertarget{func_8h_a6b1ddfc21c02118e413191c03d07c3e2}\label{func_8h_a6b1ddfc21c02118e413191c03d07c3e2} 
+\index{func.h@{func.h}!Pathing@{Pathing}}
+\index{Pathing@{Pathing}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{Pathing()}{Pathing()}}
+{\footnotesize\ttfamily void Pathing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{current,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{end,  }\item[{\mbox{\hyperlink{struct_path}{Path}} \texorpdfstring{$\ast$}{*}}]{head,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Caminha recursivamente no grafo entre dois vértices, acumulando o caminho atual. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em current} & Vértice atual. \\
+\hline
+{\em end} & Vértice de destino. \\
+\hline
+{\em head} & Caminho acumulado. \\
+\hline
+{\em gr} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{func_8h_ac69e6941fed30256b8da14ca7677b2cd}\label{func_8h_ac69e6941fed30256b8da14ca7677b2cd} 
+\index{func.h@{func.h}!ReadGraphFile@{ReadGraphFile}}
+\index{ReadGraphFile@{ReadGraphFile}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{ReadGraphFile()}{ReadGraphFile()}}
+{\footnotesize\ttfamily bool Read\+Graph\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Lê um grafo a partir de um ficheiro binário, incluindo os vértices e as arestas com base nas posições. 
+
+Os vértices são lidos primeiro, seguidos de um marcador (-\/1), e depois as arestas que ligam posições (\doxylink{struct_vector2}{Vector2}).
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em filename} & Nome do ficheiro a ler. \\
+\hline
+{\em gr} & Ponteiro para o grafo a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a leitura for bem-\/sucedida. 
+
+false Em caso de erro na leitura do ficheiro. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a901157c0b4a27ee88c500facff10a106}\label{func_8h_a901157c0b4a27ee88c500facff10a106} 
+\index{func.h@{func.h}!ReadListFile@{ReadListFile}}
 \index{ReadListFile@{ReadListFile}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{ReadListFile()}{ReadListFile()}}
-{\footnotesize\ttfamily \label{func_8h_acb620d127f79c45f6bc5317ff1fd7471} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Read\+List\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Read\+List\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -329,11 +1026,51 @@ Lê uma lista de elementos a partir de um ficheiro.
 \begin{DoxyReturn}{Retorna}
 Node\texorpdfstring{$\ast$}{*} Lista carregada do ficheiro. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_ad9b9f58ca8ab0113298378d8238354ac}\index{func.h@{func.h}!RemoveNode@{RemoveNode}}
+\Hypertarget{func_8h_a2b830450f7ec70344bb6554e6e6b4d6c}\label{func_8h_a2b830450f7ec70344bb6554e6e6b4d6c} 
+\index{func.h@{func.h}!RemoveEdge@{RemoveEdge}}
+\index{RemoveEdge@{RemoveEdge}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{RemoveEdge()}{RemoveEdge()}}
+{\footnotesize\ttfamily bool Remove\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{from,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Remove uma aresta entre dois vértices. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em from} & Vértice de origem. \\
+\hline
+{\em dest} & Vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a aresta foi removida com sucesso. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a0dfe54f4b79f9492be86aaef99af59c9}\label{func_8h_a0dfe54f4b79f9492be86aaef99af59c9} 
+\index{func.h@{func.h}!RemoveElement@{RemoveElement}}
+\index{RemoveElement@{RemoveElement}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{RemoveElement()}{RemoveElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*} Remove\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{rm,  }\item[{\mbox{\hyperlink{struct_element}{Element}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Remove um elemento específico da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rm} & Elemento a remover. \\
+\hline
+{\em st} & Lista original. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Element\texorpdfstring{$\ast$}{*} Lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_ad9b9f58ca8ab0113298378d8238354ac}\label{func_8h_ad9b9f58ca8ab0113298378d8238354ac} 
+\index{func.h@{func.h}!RemoveNode@{RemoveNode}}
 \index{RemoveNode@{RemoveNode}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{RemoveNode()}{RemoveNode()}}
-{\footnotesize\ttfamily \label{func_8h_ad9b9f58ca8ab0113298378d8238354ac} 
-\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Remove\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{rm}{, }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} Remove\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{rm,  }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -349,11 +1086,55 @@ Remove um nó da lista.
 \begin{DoxyReturn}{Retorna}
 Ponteiro para a lista atualizada. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_aa32dc0e8d65723f683a1d254e30ef108}\index{func.h@{func.h}!SaveList@{SaveList}}
+\Hypertarget{func_8h_a0244b4a066989671600e7b879747b209}\label{func_8h_a0244b4a066989671600e7b879747b209} 
+\index{func.h@{func.h}!RemoveVertex@{RemoveVertex}}
+\index{RemoveVertex@{RemoveVertex}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{RemoveVertex()}{RemoveVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} Remove\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{rm,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Remove um vértice e as suas arestas da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rm} & Vértice a remover. \\
+\hline
+{\em st} & Lista de vértices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Vertex\texorpdfstring{$\ast$}{*} Lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a8b30de69e80892f4e771e20f669f78b5}\label{func_8h_a8b30de69e80892f4e771e20f669f78b5} 
+\index{func.h@{func.h}!SaveGraphFile@{SaveGraphFile}}
+\index{SaveGraphFile@{SaveGraphFile}!func.h@{func.h}}
+\doxysubsubsection{\texorpdfstring{SaveGraphFile()}{SaveGraphFile()}}
+{\footnotesize\ttfamily bool Save\+Graph\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{struct_graph}{Graph}} \texorpdfstring{$\ast$}{*}}]{gr }\end{DoxyParamCaption})}
+
+
+
+Guarda um grafo num ficheiro binário, incluindo vértices e arestas por posição (\doxylink{struct_vector2}{Vector2}). 
+
+Os vértices são escritos primeiro, seguidos de um marcador (-\/1), e depois as arestas como pares de posições com peso.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em filename} & Nome do ficheiro onde será guardado. \\
+\hline
+{\em gr} & Ponteiro para o grafo a ser guardado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true Se a gravação for bem-\/sucedida. 
+
+false Em caso de erro ao abrir ou escrever no ficheiro. 
+\end{DoxyReturn}
+\Hypertarget{func_8h_a2e7fff2cc20c13a61e720cdcd23d3155}\label{func_8h_a2e7fff2cc20c13a61e720cdcd23d3155} 
+\index{func.h@{func.h}!SaveList@{SaveList}}
 \index{SaveList@{SaveList}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{SaveList()}{SaveList()}}
-{\footnotesize\ttfamily \label{func_8h_aa32dc0e8d65723f683a1d254e30ef108} 
-void Save\+List (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Save\+List (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -366,28 +1147,11 @@ Guarda a lista de elementos num ficheiro.
 {\em st} & Lista de nós a ser salva. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{func_8h_a2640af73bd39be7651f501c56562b8db}\index{func.h@{func.h}!ShowList@{ShowList}}
-\index{ShowList@{ShowList}!func.h@{func.h}}
-\doxysubsubsection{\texorpdfstring{ShowList()}{ShowList()}}
-{\footnotesize\ttfamily \label{func_8h_a2640af73bd39be7651f501c56562b8db} 
-void Show\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{, }\item[{char}]{filter}{}\end{DoxyParamCaption})}
-
-
-
-Exibe a lista de nós, com um filtro opcional. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em st} & Lista de nós. \\
-\hline
-{\em filter} & Caracter usado para filtrar os elementos exibidos. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{func_8h_af993d0fdd95ecfeb7ebafec3bc80b74a}\index{func.h@{func.h}!ValidNodePos@{ValidNodePos}}
+\Hypertarget{func_8h_af993d0fdd95ecfeb7ebafec3bc80b74a}\label{func_8h_af993d0fdd95ecfeb7ebafec3bc80b74a} 
+\index{func.h@{func.h}!ValidNodePos@{ValidNodePos}}
 \index{ValidNodePos@{ValidNodePos}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{ValidNodePos()}{ValidNodePos()}}
-{\footnotesize\ttfamily \label{func_8h_af993d0fdd95ecfeb7ebafec3bc80b74a} 
-bool Valid\+Node\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{dnew}{, }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Valid\+Node\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{dnew,  }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
 
 
 
@@ -403,11 +1167,11 @@ Verifica se a posição de um novo nó é válida (sem sobreposição).
 \begin{DoxyReturn}{Retorna}
 true se a posição for válida, false caso contrário. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_a38193ad14e49953c1c6038eec5ec0ff1}\index{func.h@{func.h}!Vector2Add@{Vector2Add}}
+\Hypertarget{func_8h_a38193ad14e49953c1c6038eec5ec0ff1}\label{func_8h_a38193ad14e49953c1c6038eec5ec0ff1} 
+\index{func.h@{func.h}!Vector2Add@{Vector2Add}}
 \index{Vector2Add@{Vector2Add}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{Vector2Add()}{Vector2Add()}}
-{\footnotesize\ttfamily \label{func_8h_a38193ad14e49953c1c6038eec5ec0ff1} 
-\mbox{\hyperlink{struct_vector2}{Vector2}} Vector2\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{a}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{b}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector2}{Vector2}} Vector2\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{a,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -423,11 +1187,11 @@ Soma dois vetores.
 \begin{DoxyReturn}{Retorna}
 \doxylink{struct_vector2}{Vector2} Resultado da soma. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_ab165979aa96500904b0b234640b80d53}\index{func.h@{func.h}!Vector2Compare@{Vector2Compare}}
+\Hypertarget{func_8h_ab165979aa96500904b0b234640b80d53}\label{func_8h_ab165979aa96500904b0b234640b80d53} 
+\index{func.h@{func.h}!Vector2Compare@{Vector2Compare}}
 \index{Vector2Compare@{Vector2Compare}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{Vector2Compare()}{Vector2Compare()}}
-{\footnotesize\ttfamily \label{func_8h_ab165979aa96500904b0b234640b80d53} 
-bool Vector2\+Compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{a}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{b}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Vector2\+Compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{a,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -445,11 +1209,11 @@ true Se forem iguais.
 
 false Se forem diferentes. 
 \end{DoxyReturn}
-\Hypertarget{func_8h_ac813f12efe4bfd7bd2dbec18f58f2bba}\index{func.h@{func.h}!Vector2Subtract@{Vector2Subtract}}
+\Hypertarget{func_8h_ac813f12efe4bfd7bd2dbec18f58f2bba}\label{func_8h_ac813f12efe4bfd7bd2dbec18f58f2bba} 
+\index{func.h@{func.h}!Vector2Subtract@{Vector2Subtract}}
 \index{Vector2Subtract@{Vector2Subtract}!func.h@{func.h}}
 \doxysubsubsection{\texorpdfstring{Vector2Subtract()}{Vector2Subtract()}}
-{\footnotesize\ttfamily \label{func_8h_ac813f12efe4bfd7bd2dbec18f58f2bba} 
-\mbox{\hyperlink{struct_vector2}{Vector2}} Vector2\+Subtract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{a}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{b}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector2}{Vector2}} Vector2\+Subtract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{a,  }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{b }\end{DoxyParamCaption})}
 
 
 

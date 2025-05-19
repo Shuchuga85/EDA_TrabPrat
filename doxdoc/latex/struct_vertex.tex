@@ -1,0 +1,42 @@
+\doxysection{Referência à estrutura Vertex}
+\hypertarget{struct_vertex}{}\label{struct_vertex}\index{Vertex@{Vertex}}
+
+
+Representa um vértice (nó) no grafo.  
+
+
+
+
+{\ttfamily \#include $<$func.\+h$>$}
+
+\doxysubsubsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_vertex_a7441ef0865bcb3db9b8064dd7375c1ea}\label{struct_vertex_a7441ef0865bcb3db9b8064dd7375c1ea} 
+int {\bfseries id}
+\item 
+\Hypertarget{struct_vertex_ac72b18fae976bd97b4832279df736b62}\label{struct_vertex_ac72b18fae976bd97b4832279df736b62} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} {\bfseries pos}
+\item 
+\Hypertarget{struct_vertex_a1de5cca0fbfc376f5a6997b84006e25e}\label{struct_vertex_a1de5cca0fbfc376f5a6997b84006e25e} 
+char {\bfseries value}
+\item 
+\Hypertarget{struct_vertex_aed4f419115c517284e5a5ec6a478a400}\label{struct_vertex_aed4f419115c517284e5a5ec6a478a400} 
+\mbox{\hyperlink{struct_edge}{Edge}} \texorpdfstring{$\ast$}{*} {\bfseries edges}
+\item 
+\Hypertarget{struct_vertex_ab3943adbbc154b66f74f3503bc03672e}\label{struct_vertex_ab3943adbbc154b66f74f3503bc03672e} 
+int {\bfseries seen}
+\item 
+\Hypertarget{struct_vertex_ad959a48c566626429c5091adfbd48bac}\label{struct_vertex_ad959a48c566626429c5091adfbd48bac} 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} {\bfseries next}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Representa um vértice (nó) no grafo. 
+
+Cada vértice possui um identificador único, uma posição na matriz (\doxylink{struct_vector2}{Vector2}), um valor (carácter representando o tipo, como \textquotesingle{}A\textquotesingle{} ou \textquotesingle{}B\textquotesingle{}), uma lista de arestas (ligações), uma flag de controlo de visitação (seen) e um ponteiro para o próximo vértice. 
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{func_8h}{func.\+h}}\end{DoxyCompactItemize}

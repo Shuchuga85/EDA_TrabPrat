@@ -1,0 +1,33 @@
+\doxysection{Referência à estrutura Edge}
+\hypertarget{struct_edge}{}\label{struct_edge}\index{Edge@{Edge}}
+
+
+Representa uma aresta (ligação) entre dois vértices no grafo.  
+
+
+
+
+{\ttfamily \#include $<$func.\+h$>$}
+
+\doxysubsubsection*{Campos de Dados}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_edge_a8128625c9e3fd04c27b82957732d8781}\label{struct_edge_a8128625c9e3fd04c27b82957732d8781} 
+float {\bfseries weight}
+\item 
+\Hypertarget{struct_edge_a25e78b6bbc5a9837ca4fefdddb2bf15a}\label{struct_edge_a25e78b6bbc5a9837ca4fefdddb2bf15a} 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} {\bfseries dest}
+\item 
+\Hypertarget{struct_edge_a556c4bee2736c58d0261c100ee43b50d}\label{struct_edge_a556c4bee2736c58d0261c100ee43b50d} 
+struct \mbox{\hyperlink{struct_edge}{Edge}} \texorpdfstring{$\ast$}{*} {\bfseries next}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Representa uma aresta (ligação) entre dois vértices no grafo. 
+
+Cada aresta possui um peso (distância ou custo), um ponteiro para o vértice de destino e um ponteiro para a próxima aresta na lista de adjacência. 
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{func_8h}{func.\+h}}\end{DoxyCompactItemize}
